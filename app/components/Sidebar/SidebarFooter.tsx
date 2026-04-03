@@ -1,8 +1,10 @@
 export default function SidebarFooter() {
   return (
-    <div className="text-center">
-      <p className="text-[#444] text-xs">COPYRIGHT © 2026</p>
-      <p className="text-[#444] text-xs">Hadi Budi Hardoyo. All rights reserved.</p>
+    <div className="text-center text-[var(--text-secondary)]">
+      <p className=" text-xs">HAK CIPTA © 2026</p>
+      <p className="text-xs">
+        Hadi Budi Hardoyo. Seluruh hak cipta <br /> dilindungi undang-undang.
+      </p>
     </div>
   );
 }

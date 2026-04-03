@@ -6,8 +6,8 @@ const statusList = [
   "Membangun Hal Keren",
   "Terbuka untuk Bekerja",
   "Belajar Hal Baru",
-  "Open Source Enthusiast",
-  "Siap Berkolaborasi",
+  "Bersemangat untuk Berkolaborasi",
+  "Mencari Tantangan Baru",
 ];
 
 export default function StatusBadge() {
@@ -21,11 +21,11 @@ export default function StatusBadge() {
   }, []);
 
   return (
-    <div className="border border-[#4a4a20] rounded-full px-4 py-1.5 flex items-center gap-2 overflow-hidden">
-      <span className="w-2 h-2 rounded-full bg-[#d4a017] shrink-0 animate-pulse" />
+    <div className="border border-[var(--border)] rounded-full px-4 py-2 flex items-center gap-2 overflow-hidden">
+      <span className="w-3 h-3 rounded-full bg-[var(--accent)] shrink-0 animate-pulse" />
       <span
         key={index}
-        className="text-[#d4a017] text-xs font-medium animate-fade-in whitespace-nowrap"
+        className="text-[var(--accent)] text-xs font-medium animate-fade-in whitespace-nowrap"
       >
         {statusList[index]}
       </span>

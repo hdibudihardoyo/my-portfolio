@@ -16,9 +16,9 @@ export default function RootLayout({
           enableSystem={false}
           themes={["light", "dark", "valentine"]}
         >
-          <div className="flex h-screen">
+          <div className="flex h-screen ">
             <Sidebar />
-            <main className="flex-1 bg-white dark:bg-[#0f0f0f] valentine:bg-[#fff0f5]">
+            <main className="flex-1 p-6 lg:p-10">
               {children}
             </main>
           </div>

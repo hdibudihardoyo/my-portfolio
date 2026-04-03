@@ -1,15 +1,15 @@
 import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
-import ThemeToggle from "./toogleTheme";
+import ThemeToggle from "./ThemeToggle";
 
 export default function SidebarControls() {
   return (
-    <div className="flex flex-col items-center gap-4 w-full">
+    <div className="flex flex-col items-center w-full gap-3">
       <div className="flex items-center gap-2">
         <LanguageToggle />
         <ThemeToggle />
       </div>
-      <button className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-[#666] hover:text-white hover:bg-[#1c1c1c] border border-[#d4a017] transition-colors w-full">
+      <button className="w-55 flex items-center justify-center gap-3 p-3 rounded-full text-sm transition-colors bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border)] transition-all duration-200 ease-out transform cursor-pointer hover:scale-105">
         <Image src="/google.svg" alt="Google" width={16} height={16} />
         Google Login
       </button>

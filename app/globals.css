@@ -5,14 +5,57 @@
 
 @layer base {
   :root {
-    --bg-main: #ffffff;
+    /* Backgrounds */
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F5F5F5;
+    --bg-card: #FFFFFF;
+
+    /* Text */
+    --text-main: #005F99;
+    --text-secondary: #00A9FF;
+    --text-muted: #A0A0A0;
+
+    /* Accent (brand blue) */
+    --accent: #00A9FF;
+    --accent-text: #FFFFFF;
+    --accent-soft: #E5F6FF;
+    --accent-soft-text: #005F99;
+
+    /* Border */
+    --border: #E2E2E2;
   }
 
   .dark {
-    --bg-main: #0f0f0f;
+    --bg-main: #0E1B1A;
+    --bg-secondary: #192524;
+    --bg-card: #1E2E2D;
+
+    --text-main: #E8F0EF;
+    --text-secondary: #7A9997;
+    --text-muted: #4A6665;
+
+    --accent: #2DD4BF;
+    --accent-text: #000;
+    --accent-soft: #0D3330;
+    --accent-soft-text: #5DCAA5;
+
+    --border: #2A3F3E;
   }
 
   .valentine {
-    --bg-main: #fff0f5;
+    --bg-main: #FFF0F3;
+    --bg-secondary: #FFE4EC;
+    --bg-card: #FFFFFF;
+
+    --text-main: #3D0A1E;
+    --text-secondary: #8B3558;
+    --text-muted: #C47A96;
+
+    --accent: #E8417A;
+    --accent-text: #FFFFFF;
+    --accent-soft: #FFD6E5;
+    --accent-soft-text: #8B1A40;
+
+    --border: #F5B8CE;
   }
 }
