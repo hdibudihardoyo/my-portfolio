@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import {
   Home,
   User,
@@ -12,40 +12,39 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const navItems = [
-  { href: "/pages/home", 
-    label: "Beranda", 
-    icon: <Home className="w-4 h-4" /> 
-  },
-  {
-    href: "/pages/about",
-    label: "Tentang",
-    icon: <User className="w-4 h-4" />,
-  },
-  {
-    href: "/pages/dashboard",
-    label: "Dashboard",
-    icon: <Monitor className="w-4 h-4" />,
-  },
-  {
-    href: "/pages/achievements",
-    label: "Pencapaian",
-    icon: <Trophy className="w-4 h-4" />,
-  },
-  {
-    href: "/pages/projects",
-    label: "Projek",
-    icon: <FolderOpen className="w-4 h-4" />,
-  },
-  {
-    href: "/pages/contacts",
-    label: "Kontak",
-    icon: <Phone className="w-4 h-4" />,
-  },
-];
-
 export default function SidebarNav() {
-  const pathname = usePathname();
+  const pathname = usePathname(); 
+  const t = useTranslations("Nav");
+  const navItems = [
+    { href: "/home", 
+      label: t("home"), 
+      icon: <Home className="w-4 h-4" /> 
+    },
+    { href: "/about", 
+      label: t("about"), 
+      icon: <User className="w-4 h-4" /> 
+    },
+    {
+      href: "/dashboard",
+      label: t("dashboard"),
+      icon: <Monitor className="w-4 h-4" />,
+    },
+    {
+      href: "/achievement",
+      label: t("achievement"),
+      icon: <Trophy className="w-4 h-4" />,
+    },
+    {
+      href: "/project",
+      label: t("project"),
+      icon: <FolderOpen className="w-4 h-4" />,
+    },
+    {
+      href: "/contact",
+      label: t("contact"),
+      icon: <Phone className="w-4 h-4" />,
+    },
+  ];
 
   return (
     <nav className="flex flex-col gap-2 w-full px-6">
@@ -65,11 +64,7 @@ export default function SidebarNav() {
             <span className="transition-transform duration-200 group-hover:-rotate-12">
               {item.icon}
             </span>
-
-            <span className="flex-1">
-              {item.label}
-            </span>
-            
+            <span className="flex-1">{item.label}</span>
             {isActive && (
               <ArrowRight className="w-4 h-4 text-[var(--accent-text)]" />
             )}

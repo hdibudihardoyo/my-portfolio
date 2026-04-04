@@ -1,25 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 const languages = [
-  { code: "US", label: "EN", key: "English" },
-  { code: "ID", label: "ID", key: "Bahasa Indonesia" },
+  { 
+    locale: "en", 
+    label: "EN", 
+    key: "English" 
+  },
+  { 
+    locale: "id", 
+    label: "ID", 
+    key: "Bahasa Indonesia" 
+  },
 ];
 
 export default function LanguageToggle() {
-  const [active, setActive] = useState("ID");
+  const locale = useLocale(); //locale default/aktif
+  const router = useRouter(); //dari next-intl i18
+  const pathname = usePathname(); //dari next-intl i18n
+
+  const handleSwitch = (newLocale: string) => {
+    if (newLocale !== locale) {
+      localStorage.setItem("locale", newLocale);
+      router.replace(pathname, { locale: newLocale });
+    }
+  };
 
   return (
     <div className="bg-[var(--bg-secondary)] rounded-full py-1 px-2 flex gap-2 items-center border border-[var(--border)]">
-      {languages.map(({ code, label, key }) => (
-        <div key={code} className="relative group">
+      {languages.map(({ locale: lang, label, key }) => (
+        <div key={lang} className="relative group">
           <button
-            onClick={() => setActive(code)}
+            onClick={() => handleSwitch(lang)}
             className={`p-2 rounded-full text-xs font-semibold transition-all duration-200 ease-out transform cursor-pointer ${
-              active === code
+              locale === lang
                 ? "bg-[var(--accent)] text-[var(--accent-text)]"
-                : "text-[var(--text-secondary)] hover:scale-125"
+                : "text-[var(--text-secondary)] hover:scale-115"
             }`}
           >
             {label}

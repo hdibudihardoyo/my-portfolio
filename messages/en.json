@@ -1,0 +1,23 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "dashboard": "Dashboard",
+    "achievement": "Achievement",
+    "project": "Project",
+    "contact": "Contact"
+  },
+  "Status": {
+    "items": [
+      "Building Cool Things",
+      "Open to Work",
+      "Learning New Stuff",
+      "Excited to Collaborate",
+      "Seeking New Challenges"
+    ]
+  },
+  "Footer": {
+    "copyright": "COPYRIGHT © 2026",
+    "right": "Hadi Budi Hardoyo. All rights reserved"
+  }
+}

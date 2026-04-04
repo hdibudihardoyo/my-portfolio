@@ -1,0 +1,23 @@
+{
+  "Nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "dashboard": "Dasbor",
+    "achievement": "Pencapaian",
+    "project": "Projek",
+    "contact": "Kontak"
+  },
+  "Status": {
+    "items": [
+      "Membangun Hal Keren",
+      "Terbuka untuk Bekerja",
+      "Belajar Hal Baru",
+      "Semangat Berkolaborasi",
+      "Mencari Tantangan Baru"
+    ]
+  },
+  "Footer": {
+    "copyright": "HAK CIPTA © 2026",
+    "right": "Hadi Budi Hardoyo. Seluruh hak cipta dilindungi undang-undang."
+  }
+}

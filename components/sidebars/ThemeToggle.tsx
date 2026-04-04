@@ -43,7 +43,7 @@ export default function ThemeToggle() {
             className={`flex items-center justify-center p-2 rounded-full transition-all duration-200 ease-out transform cursor-pointer ${
               theme === key
                 ? activeStyle
-                : "text-[var(--text-secondary)] hover:scale-125"
+                : "text-[var(--text-secondary)] hover:scale-115"
             }`}
           >
             {icon}
