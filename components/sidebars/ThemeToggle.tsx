@@ -31,22 +31,23 @@ export default function ThemeToggle() {
   ];
 
   return (
-    <div className="bg-[var(--bg-secondary)] rounded-full p-1 flex w-full justify-center gap-x-2 items-center border border-[var(--border)]">
-      {buttons.map(({ key, label, icon }) => (
-        <div key={key} className="relative group">
-          <button
-            aria-label={label}
-            onClick={() => setTheme(key)}
-            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ease-out cursor-pointer ${
-              theme === key
+    <div className="bg-[var(--bg-secondary)] rounded-full px-2 py-1 border border-[var(--border)] w-fit mx-auto">
+      <div className="flex items-center gap-2">
+        {buttons.map(({ key, label, icon }) => (
+          <div key={key} className="relative group">
+            <button
+              aria-label={label}
+              onClick={() => setTheme(key)}
+              className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ease-out cursor-pointer ${theme === key
                 ? "bg-[var(--accent)] text-[var(--accent-text)] scale-110"
                 : "text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--bg-main)]/50"
-            }`}
-          >
-            {icon}
-          </button>
-        </div>
-      ))}
+                }`}
+            >
+              {icon}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

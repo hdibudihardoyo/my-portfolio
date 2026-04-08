@@ -1,60 +1,113 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Award, Trophy, Bookmark, ExternalLink } from "lucide-react";
+import { Award, Trophy, Bookmark, ExternalLink, Medal, LayoutGrid, Cloud, Monitor, Smartphone, Database, Globe, Briefcase } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const iconMap: Record<string, any> = {
+  "Data Science": <Database className="w-12 h-12" />,
+  "Web": <Monitor className="w-12 h-12" />,
+  "Network": <Globe className="w-12 h-12" />,
+  "Internship": <Briefcase className="w-12 h-12" />,
+};
+
+const typeIconMap: Record<string, any> = {
+  "Data Science": <Database className="w-3.5 h-3.5" />,
+  "Web": <Monitor className="w-3.5 h-3.5" />,
+  "Network": <Globe className="w-3.5 h-3.5" />,
+  "Internship": <Briefcase className="w-3.5 h-3.5" />,
+};
+
+const categoryMap: Record<string, string> = {
+  "Data Science": "filter_ds",
+  "Web": "filter_web",
+  "Network": "filter_net",
+  "Internship": "filter_intern",
+};
 
 export default function AchievementPage() {
   const t = useTranslations("Achievement");
+  const [mounted, setMounted] = useState(false);
+  const [filter, setFilter] = useState("all");
 
-  const achievements = [
-    {
-      title: "Google Cloud Certified: Associate Cloud Engineer",
-      issuer: "Google Cloud",
-      year: "2024",
-      icon: <Trophy className="w-6 h-6 text-yellow-500" />
-    },
-    {
-      title: "Meta Front-End Developer Professional Certificate",
-      issuer: "Coursera / Meta",
-      year: "2023",
-      icon: <Award className="w-6 h-6 text-blue-500" />
-    },
-    {
-      title: "Mobile Development Bootcamp Graduate",
-      issuer: "Bangkit Academy",
-      year: "2023",
-      icon: <Bookmark className="w-6 h-6 text-green-500" />
-    }
-  ];
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  const achievements = t.raw("items");
+
+  const filteredAchievements = achievements.filter(
+    (a: any) => filter === "all" || a.category === filter
+  );
 
   return (
-    <div className="max-w-4xl mx-auto space-y-12 py-10 animate-in fade-in slide-in-from-bottom-5 duration-700">
-      <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-[var(--text-main)] tracking-tight">{t("title")}</h1>
-        <p className="text-[var(--text-secondary)] max-w-2xl text-lg">{t("subtitle")}</p>
-      </div>
-
+    <div className="max-w-6xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
+      <h1 className="text-3xl font-bold text-[var(--text-main)] tracking-tight">{t("title")}</h1>
       <div className="w-full h-px bg-[var(--border)] opacity-30"></div>
 
-      <div className="grid grid-cols-1 gap-6">
-        {achievements.map((item, i) => (
-          <div key={i} className="group flex flex-col md:flex-row items-start md:items-center gap-6 bg-[var(--bg-secondary)] border border-[var(--border)] rounded-3xl p-8 transition-all hover:border-[var(--accent)]/50">
-            <div className="p-4 rounded-2xl bg-[var(--bg-main)] border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors">
-              {item.icon}
-            </div>
-            
-            <div className="flex-1 space-y-1">
-              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                <h3 className="text-xl font-bold text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors">{item.title}</h3>
-                <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-[var(--text-muted)]"></span>
-                <span className="text-sm font-bold text-[var(--accent)] uppercase tracking-wider">{item.year}</span>
+      {/* Filter Tabs */}
+      <div className="flex items-center justify-center gap-2 bg-[var(--bg-secondary)] p-2 rounded-2xl border border-[var(--border)] w-fit mx-auto lg:mx-0">
+        {[
+          { id: "all", label: t("filter_all"), icon: <LayoutGrid className="w-3.5 h-3.5" /> },
+          { id: "Data Science", label: t("filter_ds"), icon: <Database className="w-3.5 h-3.5" /> },
+          { id: "Web", label: t("filter_web"), icon: <Monitor className="w-3.5 h-3.5" /> },
+          { id: "Network", label: t("filter_net"), icon: <Globe className="w-3.5 h-3.5" /> },
+          { id: "Internship", label: t("filter_intern"), icon: <Briefcase className="w-3.5 h-3.5" /> }
+        ].map((item) => (
+          <button
+            key={item.id}
+            onClick={() => setFilter(item.id)}
+            className={`flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${filter === item.id
+              ? "bg-[var(--accent)] text-[var(--accent-text)] scale-105"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-main)]"
+              }`}
+          >
+            {item.icon}
+            {item.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Achievements Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredAchievements.map((a: any, index: number) => (
+          <div key={index} className="group relative bg-[var(--bg-secondary)] border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-500">
+            {/* Card Header/Icon Area */}
+            <div className="aspect-[16/9] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)]/90 to-transparent z-10 p-5 flex flex-col justify-end">
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="flex items-center gap-1 px-1.5 py-1 bg-[var(--bg-main)]/80 backdrop-blur-md border border-[var(--border)] rounded-md text-[8px] font-black uppercase tracking-widest text-[var(--text-main)]">
+                    {typeIconMap[a.category] || <Medal className="w-2.5 h-2.5" />}
+                    {t(categoryMap[a.category]) || a.category}
+                  </span>
+                </div>
               </div>
-              <p className="text-[var(--text-secondary)] font-medium leading-relaxed">{item.issuer}</p>
+              <div className="text-[var(--accent)] opacity-10 scale-[2] group-hover:scale-[2.5] transition-transform duration-700">
+                {iconMap[a.category] || <Award className="w-12 h-12" />}
+              </div>
             </div>
 
-            <button className="p-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] hover:border-[var(--accent)] transition-all">
-              <ExternalLink className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--accent)]" />
-            </button>
+            {/* Card Content */}
+            <div className="p-5 space-y-2.5">
+              <div className="flex items-start justify-between gap-2.5">
+                <div className="space-y-0.5 flex-1">
+                  <h3 className="text-base font-bold text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors line-clamp-2 leading-snug">
+                    {a.title}
+                  </h3>
+                  <p className="text-[var(--text-muted)] text-[10px] font-bold uppercase tracking-widest">
+                    {a.issuer}
+                  </p>
+                </div>
+                <div className="flex flex-col items-end gap-2">
+                  <a href={a.link} target="_blank" className="p-1.5 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all hover:border-[var(--accent)] group/btn">
+                    <ExternalLink className="w-3.5 h-3.5 text-[var(--text-secondary)] group-hover/btn:text-[var(--accent)]" />
+                  </a>
+                  <span className="text-[9px] font-black text-[var(--accent)] bg-[var(--accent)]/10 px-1.5 py-0.5 rounded-md">
+                    {a.year}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>

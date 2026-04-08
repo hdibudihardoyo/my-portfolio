@@ -61,9 +61,18 @@
     "info_status": "Status",
     "info_status_value": "Open to Work",
     "education_title": "Education",
-    "education_degree": "Bachelor of Computer Science",
-    "education_school": "University of Indonesia",
-    "education_year": "2020 – 2024"
+    "education_items": [
+      {
+        "degree": "Bachelor of Informatics",
+        "school": "STMIK IKMI Cirebon",
+        "year": "2023 – Now"
+      },
+      {
+        "degree": "Science Major",
+        "school": "SMA Negeri 8 Cirebon",
+        "year": "2020 – 2023"
+      }
+    ]
   },
   "Dashboard": {
     "title": "Dashboard",
@@ -92,7 +101,6 @@
     "all": "All",
     "web": "Web",
     "mobile": "Mobile",
-    "featured": "Featured",
     "view_demo": "Live Demo",
     "view_code": "Source Code",
     "p1_title": "EcoSphere Dashboard",
@@ -104,6 +112,46 @@
     "p4_title": "Cipher Messenger",
     "p4_desc": "End-to-end encrypted messaging application focused on privacy and minimalist user experience."
   },
+  "Achievement": {
+    "title": "Certifications",
+    "subtitle": "A collection of my professional recognitions and academic milestones.",
+    "filter_all": "All",
+    "filter_ds": "Data Science",
+    "filter_web": "Web Application",
+    "filter_net": "Network",
+    "filter_intern": "Internship",
+    "view_certificate": "View Certificate",
+    "items": [
+      {
+        "title": "Data Science Specialization",
+        "issuer": "Coursera / IBM",
+        "year": "2024",
+        "category": "Data Science",
+        "link": "#"
+      },
+      {
+        "title": "Full Stack Web Development",
+        "issuer": "Meta Professional Certificate",
+        "year": "2023",
+        "category": "Web",
+        "link": "#"
+      },
+      {
+        "title": "Cisco Certified Network Associate (CCNA)",
+        "issuer": "Cisco Networking Academy",
+        "year": "2023",
+        "category": "Network",
+        "link": "#"
+      },
+      {
+        "title": "Backend Engineering Intern",
+        "issuer": "Tech Corp Indonesia",
+        "year": "2023",
+        "category": "Internship",
+        "link": "#"
+      }
+    ]
+  },
   "Contact": {
     "title": "Get In Touch",
     "subtitle": "Have a project in mind? Let's talk!",
@@ -111,4 +159,3 @@
     "send_button": "Send Message"
   }
 }
-

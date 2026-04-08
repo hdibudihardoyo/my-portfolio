@@ -20,11 +20,11 @@
       "Menjelajahi Horison Baru"
     ],
     "hire_me": "Rekrut Saya",
-    "location": "Berdomisili di Cirebon, Indonesia",
+    "location": "Berdomisili di Kota Cirebon, Indonesia",
     "onsite": "Onsite",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
-    "email": "hadibudihardoyo@email.com"
+    "email": "hdibudihardoyo@gmail.com"
   },
   "Footer": {
     "copyright": "HAK CIPTA © 2026",
@@ -34,7 +34,7 @@
     "greeting": "Halo, saya",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
-    "bio": "Seorang Front End Developer dan kreator konten coding yang berdedikasi untuk membangun solusi digital yang berdampak. Saya spesialis dalam pengembangan platform web yang skalabel dan aplikasi mobile menggunakan tech stack modern, terutama Next.js, dan TypeScript.",
+    "bio": "Seorang Front End Developer yang berdedikasi untuk membangun solusi digital yang berdampak. Saya spesialis dalam pengembangan platform web yang skalabel dan aplikasi mobile menggunakan tech stack modern, terutama Next.js, dan TypeScript.",
     "bio_focus": "Fokus saya adalah merancang arsitektur perangkat lunak yang terstruktur dengan baik, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya memadukan keahlian teknis dengan komunikasi proaktif dan kepemimpinan untuk memastikan setiap proyek memberikan kejelasan logis dan dampak nyata di dunia nyata.",
     "cta_projects": "Lihat Proyek Saya",
     "cta_contact": "Hubungi Saya",
@@ -56,14 +56,23 @@
     "info_name": "Nama",
     "info_role": "Peran",
     "info_location": "Lokasi",
-    "info_location_value": "Cirebon, Indonesia",
+    "info_location_value": "Kota Cirebon, Indonesia",
     "info_email": "Email",
     "info_status": "Status",
     "info_status_value": "Siap Bekerja",
     "education_title": "Pendidikan",
-    "education_degree": "Sarjana Ilmu Komputer",
-    "education_school": "Universitas Indonesia",
-    "education_year": "2020 – 2024"
+    "education_items": [
+      {
+        "degree": "Sarjana Teknik Informatika",
+        "school": "STMIK IKMI Cirebon",
+        "year": "2023 – Sekarang"
+      },
+      {
+        "degree": "MIPA",
+        "school": "SMA Negeri 8 Cirebon",
+        "year": "2020 – 2023"
+      }
+    ]
   },
   "Dashboard": {
     "title": "Dasbor",
@@ -92,7 +101,6 @@
     "all": "Semua",
     "web": "Web",
     "mobile": "Mobile",
-    "featured": "Unggulan",
     "view_demo": "Lihat Demo",
     "view_code": "Kode Sumber",
     "p1_title": "Dashboard EcoSphere",
@@ -104,9 +112,49 @@
     "p4_title": "Cipher Messenger",
     "p4_desc": "Aplikasi pesan instan dengan enkripsi end-to-end yang berfokus pada privasi dan kemudahan."
   },
+  "Achievement": {
+    "title": "Sertifikasi",
+    "subtitle": "Koleksi pengakuan profesional dan pencapaian akademik saya.",
+    "filter_all": "Semua",
+    "filter_ds": "Ilmu Data",
+    "filter_web": "Website Aplikasi",
+    "filter_net": "Jaringan",
+    "filter_intern": "Magang",
+    "view_certificate": "Lihat Sertifikat",
+    "items": [
+      {
+        "title": "Spesialisasi Data Science",
+        "issuer": "Coursera / IBM",
+        "year": "2024",
+        "category": "Data Science",
+        "link": "#"
+      },
+      {
+        "title": "Full Stack Web Development",
+        "issuer": "Meta Professional Certificate",
+        "year": "2023",
+        "category": "Web",
+        "link": "#"
+      },
+      {
+        "title": "Cisco Certified Network Associate (CCNA)",
+        "issuer": "Cisco Networking Academy",
+        "year": "2023",
+        "category": "Network",
+        "link": "#"
+      },
+      {
+        "title": "Backend Engineering Intern",
+        "issuer": "Tech Corp Indonesia",
+        "year": "2023",
+        "category": "Internship",
+        "link": "#"
+      }
+    ]
+  },
   "Contact": {
     "title": "Hubungi Saya",
-    "subtitle": "Punya proyek? Mari bicara!",
+    "subtitle": "Punya proyek? Mari Ngobrol!",
     "name_label": "Nama Anda",
     "send_button": "Kirim Pesan"
   }

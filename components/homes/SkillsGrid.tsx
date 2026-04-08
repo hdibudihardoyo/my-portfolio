@@ -20,7 +20,7 @@ const skills = [
   { name: "CSS3", category: ["all", "frontend"], class: "tag-css", iconName: "css3" },
   { name: "JavaScript", category: ["all", "main", "frontend", "backend"], class: "tag-js", iconName: "js" },
   { name: "TypeScript", category: ["all", "main", "frontend", "backend"], class: "tag-ts", iconName: "typescript" },
-  { name: "React.js", category: ["all", "main", "frontend"], class: "tag-react", iconName: "reactjs" },
+  { name: "React.js", category: ["all", "main", "frontend"], class: "tag-react", iconName: "react" },
   { name: "Next.js", category: ["all", "main", "frontend"], class: "tag-next", iconName: "nextjs2" },
   { name: "Tailwind", category: ["all", "frontend"], class: "tag-tailwind", iconName: "tailwindcss" },
   { name: "Node.js", category: ["all", "main", "backend"], class: "tag-node", iconName: "nodejs" },
@@ -55,14 +55,13 @@ export default function SkillsGrid() {
           <button
             key={cat.id}
             onClick={() => setActiveCategory(cat.id)}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
-              activeCategory === cat.id
+            className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${activeCategory === cat.id
                 ? "bg-[var(--accent)] text-[var(--accent-text)] border-[var(--accent)]"
-                : "bg-[var(--bg-secondary)] text-[var(--text-secondary)] border-[var(--border)] hover:border-[var(--text-muted)]"
-            }`}
+                : "bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border)]"
+              }`}
           >
             {t(cat.label)}
-            {cat.id === "all" && <span className="ml-2 opacity-60">{skills.length}</span>}
+            {cat.id === "all" && <span className="ml-1.5 opacity-60">{skills.length}</span>}
           </button>
         ))}
       </div>
@@ -72,13 +71,13 @@ export default function SkillsGrid() {
         {filteredSkills.map((skill) => (
           <div
             key={skill.name}
-            className={`flex items-center justify-center p-2 rounded-xl transition-all hover:scale-110 duration-300 ${skill.class}`}
+            className={`flex items-center justify-center p-1.5 rounded-xl transition-all hover:scale-110 duration-300 ${skill.class}`}
             title={skill.name}
           >
             {/* @ts-ignore -- Tech icons monochromatic ones need inversion in dark mode */}
-            <StackIcon 
-              name={skill.iconName} 
-              className={`w-8 h-8 flex-shrink-0 ${["nextjs2", "github", "prisma", "framer", "expressjs"].includes(skill.iconName) ? (theme === 'dark' ? 'invert' : '') : ""}`} 
+            <StackIcon
+              name={skill.iconName}
+              className={`w-7 h-7 flex-shrink-0 ${["nextjs2", "github", "prisma", "framer", "expressjs"].includes(skill.iconName) ? (theme === 'dark' ? 'invert' : '') : ""}`}
             />
           </div>
         ))}

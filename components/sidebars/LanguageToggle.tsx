@@ -20,7 +20,7 @@ export default function LanguageToggle() {
   };
 
   return (
-    <div className="bg-[var(--bg-secondary)] rounded-full p-1 flex w-full justify-around items-center border border-[var(--border)]">
+    <div className="bg-[var(--bg-secondary)] rounded-full p-1 flex w-full gap-3 justify-around items-center border border-[var(--border)]">
       {languages.map(({ locale: lang, flag }) => (
         <button
           key={lang}

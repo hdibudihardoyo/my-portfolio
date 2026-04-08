@@ -5,15 +5,10 @@ import { useTranslations } from "next-intl";
 import {
   Home,
   User,
-  LayoutGrid,
   Trophy,
   FolderOpen,
   Monitor,
-  BookOpen,
-  Wrench,
   Phone,
-  Link as LinkIcon,
-  RotateCcw,
   ArrowRight,
 } from "lucide-react";
 
@@ -24,7 +19,6 @@ export default function SidebarNav() {
   const navItems = [
     { href: "/home", label: t("home"), icon: <Home className="w-4 h-4" /> },
     { href: "/about", label: t("about"), icon: <User className="w-4 h-4" /> },
-    { href: "/creation", label: t("creation"), icon: <LayoutGrid className="w-4 h-4" /> },
     { href: "/achievement", label: t("achievement"), icon: <Trophy className="w-4 h-4" /> },
     { href: "/project", label: t("project"), icon: <FolderOpen className="w-4 h-4" /> },
     { href: "/dashboard", label: t("dashboard"), icon: <Monitor className="w-4 h-4" /> },
