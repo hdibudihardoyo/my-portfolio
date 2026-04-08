@@ -2,22 +2,113 @@
   "Nav": {
     "home": "Home",
     "about": "About",
-    "dashboard": "Dashboard",
+    "creation": "Creations",
     "achievement": "Achievement",
-    "project": "Project",
-    "contact": "Contact"
+    "project": "Projects",
+    "dashboard": "Dashboard",
+    "guestbook": "Guestbook",
+    "uses": "Uses",
+    "contact": "Contact",
+    "links": "Links",
+    "changelog": "Changelog"
   },
   "Status": {
     "items": [
       "Building Cool Things",
       "Open to Work",
       "Learning New Stuff",
-      "Excited to Collaborate",
-      "Seeking New Challenges"
-    ]
+      "Exploring New Horizons"
+    ],
+    "hire_me": "Hire Me",
+    "location": "Based in Cirebon, Indonesia",
+    "onsite": "Onsite",
+    "name": "Hadi Budi Hardoyo",
+    "role": "Front End Developer",
+    "email": "hadibudihardoyo@email.com"
   },
   "Footer": {
     "copyright": "COPYRIGHT © 2026",
     "right": "Hadi Budi Hardoyo. All rights reserved"
+  },
+  "Home": {
+    "greeting": "Hi, I'm",
+    "name": "Hadi Budi Hardoyo",
+    "role": "Front End Developer",
+    "bio": "A dedicated Front End Developer and coding content creator building impactful digital solutions. Specialized in scalable web platforms and mobile applications using modern tech stacks including Next.js, TypeScript, and Native Android (Kotlin).",
+    "bio_focus": "My focus is on designing well-structured, maintainable software architectures aligned with business goals. I blend technical expertise with proactive communication and leadership to ensure every project delivers logical clarity and real-world impact.",
+    "cta_projects": "View My Projects",
+    "cta_contact": "Get In Touch",
+    "skills_title": "Skills",
+    "skills_subtitle": "My professional skills.",
+    "skills_all": "All",
+    "skills_main": "Main",
+    "skills_frontend": "Frontend",
+    "skills_backend": "Backend",
+    "skills_mobile": "Mobile",
+    "skills_database": "Database",
+    "skills_tools": "Tools"
+  },
+  "About": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "bio_title": "Who I Am",
+    "bio_p1": "I'm a Front End Developer passionate about crafting clean, performant, and visually stunning web experiences. I specialize in modern JavaScript frameworks and love working across the full spectrum of front-end development.",
+    "info_name": "Name",
+    "info_role": "Role",
+    "info_location": "Location",
+    "info_location_value": "Cirebon, Indonesia",
+    "info_email": "Email",
+    "info_status": "Status",
+    "info_status_value": "Open to Work",
+    "education_title": "Education",
+    "education_degree": "Bachelor of Computer Science",
+    "education_school": "University of Indonesia",
+    "education_year": "2020 – 2024"
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "subtitle": "My personal dashboard built with Next.js API routes, visualizing development statistics and contributions in real-time.",
+    "umami_title": "Umami",
+    "umami_subtitle": "Monitor real-time traffic and interactions from my portfolio site.",
+    "views": "Page Views",
+    "visitors": "Visitors",
+    "visits": "Visits",
+    "countries": "Countries",
+    "events": "Events",
+    "trends": "Traffic Trends",
+    "sessions": "Sessions",
+    "page_views": "Page Views",
+    "github_title": "GitHub Contributions",
+    "github_subtitle": "Real-time activity from @hdibudihardoyo",
+    "github_streak": "365 days of code",
+    "less": "Less",
+    "more": "More"
+  },
+  "Project": {
+    "title": "Projects",
+    "subtitle": "A showcase of both private and open-source projects I've built or contributed to.",
+    "type": "TYPE",
+    "category": "CATEGORY",
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "featured": "Featured",
+    "view_demo": "Live Demo",
+    "view_code": "Source Code",
+    "p1_title": "EcoSphere Dashboard",
+    "p1_desc": "An environmental monitoring platform with real-time sensor data visualization and predictive analytics.",
+    "p2_title": "Buwuhan Event App",
+    "p2_desc": "A modern platform for managing wedding invitations and RSVPs with high-quality UI/UX.",
+    "p3_title": "Laptop QC System",
+    "p3_desc": "Internal tool for quality control management with reporting and dark mode support.",
+    "p4_title": "Cipher Messenger",
+    "p4_desc": "End-to-end encrypted messaging application focused on privacy and minimalist user experience."
+  },
+  "Contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's talk!",
+    "name_label": "Your Name",
+    "send_button": "Send Message"
   }
 }
+

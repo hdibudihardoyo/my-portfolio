@@ -5,57 +5,82 @@
 
 @layer base {
   :root {
-    /* Backgrounds */
+    /* Backgrounds (Main White, Secondary Soft Blue) */
     --bg-main: #FFFFFF;
-    --bg-secondary: #F5F5F5;
+    --bg-secondary: #F0F8FF;
     --bg-card: #FFFFFF;
 
     /* Text */
-    --text-main: #005F99;
-    --text-secondary: #00A9FF;
-    --text-muted: #A0A0A0;
+    --text-main: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
 
-    /* Accent (brand blue) */
-    --accent: #00A9FF;
+    /* Accent (Blue) */
+    --accent: #2563EB;
     --accent-text: #FFFFFF;
-    --accent-soft: #E5F6FF;
-    --accent-soft-text: #005F99;
+    --accent-soft: #DBEAFE;
+    --accent-soft-text: #1E3A8A;
 
     /* Border */
-    --border: #E2E2E2;
+    --border: #E2E8F0;
   }
 
   .dark {
-    --bg-main: #0E1B1A;
-    --bg-secondary: #192524;
-    --bg-card: #1E2E2D;
+    /* Backgrounds (GitHub Dark) */
+    --bg-main: #0D1117;
+    --bg-secondary: #161B22;
+    --bg-card: #161B22;
 
-    --text-main: #E8F0EF;
-    --text-secondary: #7A9997;
-    --text-muted: #4A6665;
+    /* Text (GitHub Colors) */
+    --text-main: #C9D1D9;
+    --text-secondary: #8B949E;
+    --text-muted: #484F58;
 
-    --accent: #2DD4BF;
-    --accent-text: #000;
-    --accent-soft: #0D3330;
-    --accent-soft-text: #5DCAA5;
+    /* Accent (GitHub Blue) */
+    --accent: #58A6FF;
+    --accent-text: #FFFFFF;
+    --accent-soft: rgba(56, 139, 253, 0.15);
+    --accent-soft-text: #58A6FF;
 
-    --border: #2A3F3E;
+    /* Border */
+    --border: #30363D;
   }
 
   .valentine {
-    --bg-main: #FFF0F3;
-    --bg-secondary: #FFE4EC;
+    /* Backgrounds (Soft Pink Blossom) */
+    --bg-main: #FFF5F7;
+    --bg-secondary: #FFE4E9;
     --bg-card: #FFFFFF;
 
-    --text-main: #3D0A1E;
-    --text-secondary: #8B3558;
-    --text-muted: #C47A96;
+    /* Text (Wine Red) */
+    --text-main: #7D1212;
+    --text-secondary: #9F4B4B;
+    --text-muted: #C47A7A;
 
-    --accent: #E8417A;
+    /* Accent (Rose Pink) */
+    --accent: #FF8DA1;
     --accent-text: #FFFFFF;
-    --accent-soft: #FFD6E5;
-    --accent-soft-text: #8B1A40;
+    --accent-soft: #FFDDE2;
+    --accent-soft-text: #E11D48;
 
-    --border: #F5B8CE;
+    /* Border */
+    --border: #FBCFE8;
   }
+
+
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Skill Tag Colors */
+  .tag-html { background: rgba(230, 81, 0, 0.1); color: #E65100; }
+  .tag-css { background: rgba(2, 136, 209, 0.1); color: #0288D1; }
+  .tag-js { background: rgba(255, 214, 0, 0.1); color: #FFD600; }
+  .tag-ts { background: rgba(25, 118, 210, 0.1); color: #1976D2; }
+  .tag-react { background: rgba(0, 188, 212, 0.1); color: #00BCD4; }
+  .tag-next { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; }
+  .tag-tailwind { background: rgba(0, 172, 193, 0.1); color: #00ACC1; }
+  .tag-node { background: rgba(56, 142, 60, 0.1); color: #388E3C; }
 }

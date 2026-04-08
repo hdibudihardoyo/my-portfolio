@@ -2,22 +2,112 @@
   "Nav": {
     "home": "Beranda",
     "about": "Tentang",
-    "dashboard": "Dasbor",
+    "creation": "Kreasi",
     "achievement": "Pencapaian",
-    "project": "Projek",
-    "contact": "Kontak"
+    "project": "Proyek",
+    "dashboard": "Dasbor",
+    "guestbook": "Buku Tamu",
+    "uses": "Kegunaan",
+    "contact": "Kontak",
+    "links": "Links",
+    "changelog": "Changelog"
   },
   "Status": {
     "items": [
-      "Membangun Hal Keren",
-      "Terbuka untuk Bekerja",
+      "Membangun Hal-hal Keren",
+      "Siap Bekerja",
       "Belajar Hal Baru",
-      "Semangat Berkolaborasi",
-      "Mencari Tantangan Baru"
-    ]
+      "Menjelajahi Horison Baru"
+    ],
+    "hire_me": "Rekrut Saya",
+    "location": "Berdomisili di Cirebon, Indonesia",
+    "onsite": "Onsite",
+    "name": "Hadi Budi Hardoyo",
+    "role": "Front End Developer",
+    "email": "hadibudihardoyo@email.com"
   },
   "Footer": {
     "copyright": "HAK CIPTA © 2026",
-    "right": "Hadi Budi Hardoyo. Seluruh hak cipta dilindungi undang-undang."
+    "right": "Hadi Budi Hardoyo. Seluruh hak cipta dilindungi."
+  },
+  "Home": {
+    "greeting": "Halo, saya",
+    "name": "Hadi Budi Hardoyo",
+    "role": "Front End Developer",
+    "bio": "Seorang Front End Developer dan kreator konten coding yang berdedikasi untuk membangun solusi digital yang berdampak. Saya spesialis dalam pengembangan platform web yang skalabel dan aplikasi mobile menggunakan tech stack modern, terutama Next.js, dan TypeScript.",
+    "bio_focus": "Fokus saya adalah merancang arsitektur perangkat lunak yang terstruktur dengan baik, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya memadukan keahlian teknis dengan komunikasi proaktif dan kepemimpinan untuk memastikan setiap proyek memberikan kejelasan logis dan dampak nyata di dunia nyata.",
+    "cta_projects": "Lihat Proyek Saya",
+    "cta_contact": "Hubungi Saya",
+    "skills_title": "Keahlian",
+    "skills_subtitle": "Keahlian profesional saya.",
+    "skills_all": "Semua",
+    "skills_main": "Utama",
+    "skills_frontend": "Frontend",
+    "skills_backend": "Backend",
+    "skills_mobile": "Mobile",
+    "skills_database": "Database",
+    "skills_tools": "Tools"
+  },
+  "About": {
+    "title": "Tentang Saya",
+    "subtitle": "Kenali saya lebih dekat",
+    "bio_title": "Siapa Saya",
+    "bio_p1": "Saya adalah seorang Front End Developer yang bersemangat dalam menciptakan pengalaman web yang bersih, berperforma tinggi, dan menakjubkan secara visual. Saya berspesialisasi dalam framework JavaScript modern dan senang bekerja di seluruh spektrum pengembangan front-end.",
+    "info_name": "Nama",
+    "info_role": "Peran",
+    "info_location": "Lokasi",
+    "info_location_value": "Cirebon, Indonesia",
+    "info_email": "Email",
+    "info_status": "Status",
+    "info_status_value": "Siap Bekerja",
+    "education_title": "Pendidikan",
+    "education_degree": "Sarjana Ilmu Komputer",
+    "education_school": "Universitas Indonesia",
+    "education_year": "2020 – 2024"
+  },
+  "Dashboard": {
+    "title": "Dasbor",
+    "subtitle": "Dasbor pribadi saya yang dibangun dengan Next.js API routes, memvisualisasikan statistik pengembangan dan kontribusi secara real-time.",
+    "umami_title": "Umami",
+    "umami_subtitle": "Pantau lalu lintas dan interaksi real-time dari situs portofolio saya.",
+    "views": "Tampilan Halaman",
+    "visitors": "Pengunjung",
+    "visits": "Kunjungan",
+    "countries": "Negara",
+    "events": "Acara",
+    "trends": "Tren Lalu Lintas",
+    "sessions": "Sesi",
+    "page_views": "Tampilan Halaman",
+    "github_title": "Kontribusi GitHub",
+    "github_subtitle": "Aktivitas real-time dari @hdibudihardoyo",
+    "github_streak": "365 hari ngoding",
+    "less": "Lebih Sedikit",
+    "more": "Lebih Banyak"
+  },
+  "Project": {
+    "title": "Proyek",
+    "subtitle": "Etalase proyek pribadi dan sumber terbuka yang telah saya bangun atau kontribusikan.",
+    "type": "TIPE",
+    "category": "KATEGORI",
+    "all": "Semua",
+    "web": "Web",
+    "mobile": "Mobile",
+    "featured": "Unggulan",
+    "view_demo": "Lihat Demo",
+    "view_code": "Kode Sumber",
+    "p1_title": "Dashboard EcoSphere",
+    "p1_desc": "Platform pemantauan lingkungan berkode terbuka dengan visualisasi data sensor real-time.",
+    "p2_title": "Aplikasi Event Buwuhan",
+    "p2_desc": "Platform modern untuk mengelola undangan pernikahan dan RSVP dengan UI/UX premium.",
+    "p3_title": "Sistem QC Laptop",
+    "p3_desc": "Proyek internal untuk sistem manajemen quality control laptop dengan dukungan tema gelap.",
+    "p4_title": "Cipher Messenger",
+    "p4_desc": "Aplikasi pesan instan dengan enkripsi end-to-end yang berfokus pada privasi dan kemudahan."
+  },
+  "Contact": {
+    "title": "Hubungi Saya",
+    "subtitle": "Punya proyek? Mari bicara!",
+    "name_label": "Nama Anda",
+    "send_button": "Kirim Pesan"
   }
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Sun, Moon, Heart } from "lucide-react";
+import { Sun, Moon, Zap, Heart, Coffee } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
@@ -10,51 +10,41 @@ export default function ThemeToggle() {
 
   useEffect(() => setMounted(true), []);
   if (!mounted)
-    return <div className="h-9 w-24 rounded-full bg-[var(--bg-secondary)]" />;
+    return <div className="h-9 w-40 rounded-full bg-[var(--bg-secondary)]" />;
 
   const buttons = [
     {
       key: "light",
-      label: "Light mode",
-      icon: <Sun className="w-3.5 h-3.5" />,
-      activeStyle: "bg-[var(--accent)] text-[var(--accent-text)]",
+      label: "Light",
+      icon: <Sun className="w-4 h-4" />,
     },
     {
       key: "dark",
-      label: "Dark mode",
-      icon: <Moon className="w-3.5 h-3.5" />,
-      activeStyle: "bg-[var(--accent)] text-[var(--accent-text)]",
+      label: "Dark",
+      icon: <Moon className="w-4 h-4" />,
     },
     {
       key: "valentine",
-      label: "Valentine mode",
-      icon: <Heart className="w-3.5 h-3.5" />,
-      activeStyle: "bg-[var(--accent)] text-[var(--accent-text)]",
+      label: "Valentine",
+      icon: <Heart className="w-4 h-4" />,
     },
   ];
 
   return (
-    <div className="bg-[var(--bg-secondary)] rounded-full py-1 px-2 flex gap-1 items-center border border-[var(--border)]">
-      {buttons.map(({ key, label, icon, activeStyle }) => (
+    <div className="bg-[var(--bg-secondary)] rounded-full p-1 flex w-full justify-center gap-x-2 items-center border border-[var(--border)]">
+      {buttons.map(({ key, label, icon }) => (
         <div key={key} className="relative group">
           <button
             aria-label={label}
             onClick={() => setTheme(key)}
-            className={`flex items-center justify-center p-2 rounded-full transition-all duration-200 ease-out transform cursor-pointer ${
+            className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ease-out cursor-pointer ${
               theme === key
-                ? activeStyle
-                : "text-[var(--text-secondary)] hover:scale-115"
+                ? "bg-[var(--accent)] text-[var(--accent-text)] scale-110"
+                : "text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--bg-main)]/50"
             }`}
           >
             {icon}
           </button>
-
-          {/* Tooltip */}
-          <div className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 rounded-lg text-xs whitespace-nowrap bg-[var(--text-main)] text-[var(--bg-main)] opacity-0 group-hover:opacity-100 transition-opacity duration-150">
-            {label}
-            {/* Arrow */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[var(--text-main)]" />
-          </div>
         </div>
       ))}
     </div>
