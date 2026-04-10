@@ -19,20 +19,17 @@ export default function SidebarProfile() {
         </div>
         <div className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-[var(--bg-main)] rounded-full"></div>
       </div>
-      
-      <div className="flex flex-col items-center">
-        <div className="flex items-center gap-1.5">
-          <span className="font-bold text-base text-[var(--text-main)] tracking-tight">
-            {t("name")}
-          </span>
-          <BadgeCheck className="w-4 h-4 shrink-0 text-blue-500" />
-        </div>
-        
-        <button className="mt-2 px-4 py-1 bg-[var(--accent)] text-[var(--accent-text)] rounded-full text-[10px] font-black uppercase tracking-wider hover:opacity-90 transition-all flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-black rounded-full animate-pulse"></span>
-          {t("hire_me")}
-        </button>
+
+      <div className="flex flex-col items-center gap-1">
+        <span className="font-extrabold text-lg text-[var(--text-main)] tracking-tight uppercase">
+          {t("name")}
+        </span>
       </div>
+
+      <button className="mt-3 px-6 py-2 bg-[var(--accent)] text-[var(--accent-text)] rounded-full text-[10px] font-black uppercase tracking-[0.15em] hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5 shadow-lg shadow-[var(--accent)]/20 group">
+        <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse shadow-[0_0_8px_white]"></span>
+        {t("hire_me")}
+      </button>
     </div>
   );
 }

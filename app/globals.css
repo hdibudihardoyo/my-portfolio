@@ -71,6 +71,10 @@
   * {
     @apply transition-colors duration-200;
   }
+
+  html, body {
+    scrollbar-gutter: stable;
+  }
 }
 
 @layer utilities {

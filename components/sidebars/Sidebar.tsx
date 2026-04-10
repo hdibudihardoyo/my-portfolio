@@ -7,18 +7,24 @@ import SidebarFooter from "./SidebarFooter";
 
 export default function Sidebar() {
   return (
-    <aside className="bg-[var(--bg-main)] w-72 h-screen hidden lg:flex flex-col shrink-0 py-6 overflow-y-auto border-r border-[var(--border)] transition-all duration-300 ease-in-out">
-      <SidebarProfile />
+    <aside className="bg-[var(--bg-main)] w-72 h-screen hidden lg:flex flex-col shrink-0 py-8 overflow-y-auto border-r border-[var(--border)] transition-all duration-300 ease-in-out">
+      {/* Profile Section */}
+      <div className="mb-8">
+        <SidebarProfile />
+      </div>
 
-      <div className="px-8 mt-2 mb-6 flex flex-col gap-3">
+      {/* Controls Section */}
+      <div className="mb-8">
         <SidebarControls />
       </div>
 
-      <div className="flex-1 w-full space-y-2">
+      {/* Navigation Section */}
+      <div className="flex-1 w-full">
         <SidebarNav />
       </div>
 
-      <div className="mt-auto px-8 pt-4">
+      {/* Footer Section */}
+      <div className="mt-auto pt-6 border-t border-[var(--border)]/50 mx-8">
         <SidebarFooter />
       </div>
     </aside>

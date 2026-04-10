@@ -48,36 +48,24 @@ export default function SkillsGrid() {
   if (!mounted) return null;
 
   return (
-    <div className="space-y-8">
-      {/* Category Tabs */}
-      <div className="flex flex-wrap gap-2">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setActiveCategory(cat.id)}
-            className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${activeCategory === cat.id
-                ? "bg-[var(--accent)] text-[var(--accent-text)] border-[var(--accent)]"
-                : "bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border)]"
-              }`}
-          >
-            {t(cat.label)}
-            {cat.id === "all" && <span className="ml-1.5 opacity-60">{skills.length}</span>}
-          </button>
-        ))}
-      </div>
-
-      {/* Skills Grid */}
-      <div className="flex flex-wrap gap-3">
-        {filteredSkills.map((skill) => (
+    <div className="space-y-6">
+      {/* Skills Grid - Unified */}
+      <div className="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-3">
+        {skills.map((skill) => (
           <div
             key={skill.name}
-            className={`flex items-center justify-center p-1.5 rounded-xl transition-all hover:scale-110 duration-300 ${skill.class}`}
+            className={`group relative flex items-center justify-center p-2.5 rounded-xl bg-[var(--bg-secondary)]/50 border border-[var(--border)] transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-[var(--accent)]/15 hover:border-[var(--accent)]/40 cursor-default`}
             title={skill.name}
           >
+            {/* Hover Tooltip/Label */}
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-[var(--bg-main)] border border-[var(--border)] rounded-lg text-[7px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl z-10">
+              {skill.name}
+            </div>
+
             {/* @ts-ignore -- Tech icons monochromatic ones need inversion in dark mode */}
             <StackIcon
               name={skill.iconName}
-              className={`w-7 h-7 flex-shrink-0 ${["nextjs2", "github", "prisma", "framer", "expressjs"].includes(skill.iconName) ? (theme === 'dark' ? 'invert' : '') : ""}`}
+              className={`w-7 h-7 flex-shrink-0 transition-all duration-500 grayscale group-hover:grayscale-0 ${["nextjs2", "github", "prisma", "framer", "expressjs"].includes(skill.iconName) ? (theme === 'dark' ? 'invert' : '') : ""}`}
             />
           </div>
         ))}

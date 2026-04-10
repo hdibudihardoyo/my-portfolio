@@ -3,8 +3,8 @@
     "home": "Home",
     "about": "About",
     "creation": "Creations",
-    "achievement": "Achievement",
-    "project": "Projects",
+    "work": "Work",
+    "work-experience": "Experience",
     "dashboard": "Dashboard",
     "guestbook": "Guestbook",
     "uses": "Uses",
@@ -24,7 +24,8 @@
     "onsite": "Onsite",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
-    "email": "hadibudihardoyo@email.com"
+    "email": "hdibudihardoyo@gmail.com",
+    "status_available": "Available for new projects"
   },
   "Footer": {
     "copyright": "COPYRIGHT © 2026",
@@ -91,63 +92,83 @@
     "github_subtitle": "Real-time activity from @hdibudihardoyo",
     "github_streak": "365 days of code",
     "less": "Less",
-    "more": "More"
+    "more": "More",
+    "realtime_activity": "Real-time Activity",
+    "views_legend": "Views",
+    "sessions_legend": "Sessions",
+    "commits_year": "Commits / Year",
+    "growth_rate": "Growth Rate",
+    "loading": "Loading dashboard..."
   },
-  "Project": {
-    "title": "Projects",
-    "subtitle": "A showcase of both private and open-source projects I've built or contributed to.",
-    "type": "TYPE",
-    "category": "CATEGORY",
-    "all": "All",
-    "web": "Web",
-    "mobile": "Mobile",
-    "view_demo": "Live Demo",
-    "view_code": "Source Code",
-    "p1_title": "EcoSphere Dashboard",
-    "p1_desc": "An environmental monitoring platform with real-time sensor data visualization and predictive analytics.",
-    "p2_title": "Buwuhan Event App",
-    "p2_desc": "A modern platform for managing wedding invitations and RSVPs with high-quality UI/UX.",
-    "p3_title": "Laptop QC System",
-    "p3_desc": "Internal tool for quality control management with reporting and dark mode support.",
-    "p4_title": "Cipher Messenger",
-    "p4_desc": "End-to-end encrypted messaging application focused on privacy and minimalist user experience."
-  },
-  "Achievement": {
-    "title": "Certifications",
-    "subtitle": "A collection of my professional recognitions and academic milestones.",
+  "Work": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey, projects, and technical milestones.",
+    "section_experience": "Experience",
+    "section_projects": "Projects",
+    "section_certs": "Certifications",
     "filter_all": "All",
+    "filter_web": "Web",
+    "filter_mobile": "Mobile",
     "filter_ds": "Data Science",
-    "filter_web": "Web Application",
     "filter_net": "Network",
     "filter_intern": "Internship",
+    "cat_web": "Web",
+    "cat_mobile": "Mobile",
+    "cat_ds": "Data Science",
+    "cat_net": "Network",
+    "cat_intern": "Internship",
+    "view_demo": "Live Demo",
+    "view_code": "Source Code",
     "view_certificate": "View Certificate",
-    "items": [
+    "experience": [
+      {
+        "company": "Shrimp Developer",
+        "role": "Front End Developer",
+        "period": "2024 – Present",
+        "description": "Collaborating with various clients to build modern, responsive web applications using Next.js and TailwindCSS. Focusing on performance optimization and pixel-perfect UI implementation."
+      },
+      {
+        "company": "Quality Control",
+        "role": "DAC Indonesia",
+        "period": "2025 – 2026",
+        "description": "Performing quality control on products (Laptops, PCs, etc.) to be delivered to customers."
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "title": "Buwuhan Event App",
+        "category": "web",
+        "description": "A modern platform for managing wedding invitations and RSVPs with a premium UI/UX.",
+        "stack": [
+          "React",
+          "TailwindCSS",
+          "Firebase"
+        ],
+        "github": "https://github.com/Shrimp-Developers/buwuhan-fe",
+        "demo": "https://buku-buwuhan.vercel.app/"
+      }
+    ],
+    "certifications": [
       {
         "title": "Data Science Specialization",
         "issuer": "Coursera / IBM",
         "year": "2024",
-        "category": "Data Science",
+        "category": "cat_ds",
         "link": "#"
       },
       {
         "title": "Full Stack Web Development",
         "issuer": "Meta Professional Certificate",
         "year": "2023",
-        "category": "Web",
+        "category": "cat_web",
         "link": "#"
       },
       {
         "title": "Cisco Certified Network Associate (CCNA)",
         "issuer": "Cisco Networking Academy",
         "year": "2023",
-        "category": "Network",
-        "link": "#"
-      },
-      {
-        "title": "Backend Engineering Intern",
-        "issuer": "Tech Corp Indonesia",
-        "year": "2023",
-        "category": "Internship",
+        "category": "cat_net",
         "link": "#"
       }
     ]
@@ -155,7 +176,19 @@
   "Contact": {
     "title": "Get In Touch",
     "subtitle": "Have a project in mind? Let's talk!",
-    "name_label": "Your Name",
-    "send_button": "Send Message"
-  }
+    "name_label": "Full Name",
+    "name_placeholder": "John Doe",
+    "email_label": "Email Address",
+    "email_placeholder": "john@example.com",
+    "message_label": "Message",
+    "message_placeholder": "Tell me about your project...",
+    "send_button": "Send Message",
+    "direct_contact": "Direct Contact",
+    "social_networks": "Social Networks",
+    "method_email": "Email",
+    "method_whatsapp": "WhatsApp",
+    "method_location": "Location"
+  },
+  "Project": { "title": "Projects", "subtitle": "", "items": [] },
+  "Achievement": { "title": "Certifications", "subtitle": "", "items": [] }
 }

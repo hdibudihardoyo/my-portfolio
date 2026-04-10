@@ -9,10 +9,9 @@ import {
   FolderOpen,
   Monitor,
   Phone,
-  ArrowRight,
 } from "lucide-react";
 
-export default function SidebarNav() {
+export default function NavbarNav() {
   const pathname = usePathname();
   const t = useTranslations("Nav");
 
@@ -26,25 +25,22 @@ export default function SidebarNav() {
   ];
 
   return (
-    <nav className="flex flex-col px-8 gap-1.5 w-full">
+    <nav className="flex flex-row items-center gap-1.5 h-full">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (
           <Link
             key={item.href}
             href={item.href}
-            className={`group h-11 flex items-center gap-3 px-4 rounded-xl text-sm font-semibold transition-all duration-300 ${isActive
-              ? "bg-[var(--accent)] text-[var(--accent-text)] translate-x-1 shadow-lg"
-              : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-main)] hover:translate-x-1"
+            className={`group flex items-center gap-1 px-2 py-1.5 rounded-full text-[9px] font-extrabold transition-all duration-300 relative ${isActive
+              ? "bg-[var(--accent)] text-[var(--accent-text)] shadow-sm"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)]/50"
               }`}
           >
-            <span className={`transition-transform duration-300 ${isActive ? "" : "group-hover:scale-110"}`}>
+            <span className={`transition-transform duration-300 ${isActive ? "" : "group-hover:scale-110 shrink-0"}`}>
               {item.icon}
             </span>
-            <span className="flex-1 truncate uppercase tracking-widest text-[10px]">{item.label}</span>
-            {isActive && (
-              <ArrowRight className="w-3.5 h-3.5 animate-in slide-in-from-left-2 duration-300" />
-            )}
+            <span className="whitespace-nowrap uppercase tracking-widest">{item.label}</span>
           </Link>
         );
       })}

@@ -8,7 +8,7 @@ const languages = [
   { locale: "id", flag: "🇮🇩" },
 ];
 
-export default function LanguageToggle() {
+export default function LanguageToggle({ compact = false }: { compact?: boolean }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -20,13 +20,13 @@ export default function LanguageToggle() {
   };
 
   return (
-    <div className="bg-[var(--bg-secondary)] rounded-full p-1 flex w-full gap-3 justify-around items-center border border-[var(--border)]">
+    <div className={`bg-[var(--bg-secondary)] rounded-full flex items-center border border-[var(--border)] ${compact ? "p-1 gap-1" : "p-1 w-full gap-1.5"}`}>
       {languages.map(({ locale: lang, flag }) => (
         <button
           key={lang}
           onClick={() => handleSwitch(lang)}
-          className={`w-9 h-9 rounded-full flex items-center justify-center text-lg transition-all duration-300 ${locale === lang
-            ? "bg-[var(--accent)] scale-110"
+          className={`rounded-full flex items-center justify-center transition-all duration-300 ${compact ? "w-6 h-6 text-xs" : "w-9 h-9 text-lg"} ${locale === lang
+            ? "bg-[var(--accent)] scale-110 shadow-sm"
             : "hover:bg-[var(--bg-main)]/50 opacity-50 hover:opacity-100"
             }`}
         >

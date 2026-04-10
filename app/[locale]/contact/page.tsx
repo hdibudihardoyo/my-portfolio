@@ -3,98 +3,114 @@
 import { useTranslations } from "next-intl";
 import { Mail, MapPin, Send, Phone } from "lucide-react";
 
+const getContactMethods = (t: any) => [
+  {
+    icon: <Mail className="w-4 h-4 text-[var(--accent)]" />,
+    label: t("method_email"),
+    value: "hdibudihardoyo@email.com",
+    link: "mailto:hadibudihardoyo@email.com"
+  },
+  {
+    icon: <Phone className="w-4 h-4 text-[var(--accent)]" />,
+    label: t("method_whatsapp"),
+    value: "+62 882 0017 71113",
+    link: "https://wa.me/62882001771113"
+  },
+  {
+    icon: <MapPin className="w-4 h-4 text-[var(--accent)]" />,
+    label: t("method_location"),
+    value: t("info_location_value", { ns: "About" }),
+    link: null
+  }
+];
+
 export default function ContactPage() {
   const t = useTranslations("Contact");
+  const methods = getContactMethods(t);
 
-  const contactMethods = [
-    {
-      icon: <Mail className="w-4 h-4 text-[var(--accent)]" />,
-      label: "Email",
-      value: "hdibudihardoyo@email.com",
-      link: "mailto:hadibudihardoyo@email.com"
-    },
-    {
-      icon: <Phone className="w-4 h-4 text-[var(--accent)]" />,
-      label: "WhatsApp",
-      value: "+62 882 0017 71113",
-      link: "https://wa.me/62882001771113"
-    },
-    {
-      icon: <MapPin className="w-4 h-4 text-[var(--accent)]" />,
-      label: "Location",
-      value: "Kota Cirebon, Indonesia",
-      link: null
-    }
+  const socials = [
+    { label: "Github", icon: <GithubIcon className="w-3.5 h-3.5" />, color: "hover:bg-zinc-800" },
+    { label: "LinkedIn", icon: <LinkedinIcon className="w-3.5 h-3.5" />, color: "hover:bg-blue-600" },
+    { label: "Twitter", icon: <TwitterIcon className="w-3.5 h-3.5" />, color: "hover:bg-sky-500" },
+    { label: "Instagram", icon: <InstagramIcon className="w-3.5 h-3.5" />, color: "hover:bg-pink-600" }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
-      <h1 className="text-3xl font-bold text-[var(--text-main)] tracking-tight">{t("title")}</h1>
-      <div className="w-full h-px bg-[var(--border)] opacity-30"></div>
+    <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
+      {/* Header */}
+      <section className="space-y-3 relative">
+        {/* Backdrop Glow */}
+        <div className="absolute -top-10 -left-10 w-48 h-48 bg-[var(--accent)]/10 rounded-full blur-[80px] -z-10" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2">
+        <div className="space-y-1.5">
+          <h1 className="text-2xl font-black text-[var(--text-main)] tracking-tight uppercase tracking-widest">{t("title")}</h1>
+          <div className="w-16 h-1.5 bg-[var(--accent)] rounded-full shadow-[0_0_10px_var(--accent)]/30"></div>
+        </div>
+      </section>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
         {/* Contact Form */}
-        <div className="lg:col-span-7 space-y-6">
-          <form className="space-y-4 bg-[var(--bg-secondary)] border border-[var(--border)] p-6 md:p-7 rounded-[1.5rem]">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="lg:col-span-7 space-y-5">
+          <form className="space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               <div className="space-y-1.5">
-                <label className="text-[9px] font-black uppercase tracking-[0.15em] text-[var(--text-muted)] ml-1">
-                  Full Name
+                <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
+                  {t("name_label")}
                 </label>
                 <input
                   type="text"
-                  placeholder="John Doe"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)] transition-all duration-300 placeholder:text-[var(--text-muted)]/50"
+                  placeholder={t("name_placeholder")}
+                  className="w-full px-4 py-2 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40"
                 />
               </div>
               <div className="space-y-1.5">
-                <label className="text-[9px] font-black uppercase tracking-[0.15em] text-[var(--text-muted)] ml-1">
-                  Email Address
+                <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
+                  {t("email_label")}
                 </label>
                 <input
                   type="email"
-                  placeholder="john@example.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)] transition-all duration-300 placeholder:text-[var(--text-muted)]/50"
+                  placeholder={t("email_placeholder")}
+                  className="w-full px-4 py-2 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40"
                 />
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-[9px] font-black uppercase tracking-[0.15em] text-[var(--text-muted)] ml-1">
-                Message
+              <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
+                {t("message_label")}
               </label>
               <textarea
-                rows={4}
-                placeholder="Tell me about your project..."
-                className="w-full px-4 py-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)] transition-all duration-300 placeholder:text-[var(--text-muted)]/50 resize-none"
+                rows={3}
+                placeholder={t("message_placeholder")}
+                className="w-full px-4 py-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40 resize-none"
               ></textarea>
             </div>
 
-            <button className="group w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--accent)] text-[var(--accent-text)] rounded-xl font-black uppercase tracking-widest text-[9px] hover:scale-[1.01] active:scale-[0.99] transition-all focus:ring-2 focus:ring-[var(--accent)]/50">
+            <button className="group w-full flex items-center justify-center gap-3 h-10 bg-gradient-to-r from-[var(--accent)] to-[var(--accent)]/90 text-[var(--accent-text)] rounded-xl font-black uppercase tracking-widest text-[9px] hover:scale-[1.01] active:scale-[0.99] transition-all shadow-xl shadow-[var(--accent)]/15">
               {t("send_button")}
-              <Send className="w-3 h-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <Send className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
           </form>
         </div>
 
         {/* Contact Info & Socials */}
-        <div className="lg:col-span-5 space-y-7">
-          <div className="space-y-4">
-            <h2 className="text-base font-bold text-[var(--text-main)] ml-1">Direct Contact</h2>
-            <div className="space-y-2.5">
-              {contactMethods.map((method, i) => (
-                <div key={i} className="flex items-center gap-4 p-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border)] transition-all group hover:bg-[var(--bg-main)]/50">
-                  <div className="p-2 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] group-hover:border-[var(--accent)]/50 transition-colors">
-                    <span className="w-3.5 h-3.5 block">{method.icon}</span>
+        <div className="lg:col-span-5 space-y-6">
+          <div className="space-y-3.5">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("direct_contact")}</h2>
+            <div className="space-y-2">
+              {methods.map((method, i) => (
+                <div key={i} className="flex items-center gap-3.5 p-3 rounded-2xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] transition-all group hover:bg-[var(--bg-secondary)]/50 hover:border-[var(--accent)]/20 shadow-sm">
+                  <div className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] group-hover:border-[var(--accent)]/30 transition-colors">
+                    <span className="w-4 h-4 block">{method.icon}</span>
                   </div>
                   <div className="space-y-0.5">
-                    <p className="text-[8px] font-black uppercase tracking-widest text-[var(--text-muted)]">{method.label}</p>
+                    <p className="text-[7px] font-black uppercase tracking-widest text-[var(--text-muted)]">{method.label}</p>
                     {method.link ? (
-                      <a href={method.link} className="text-xs font-bold text-[var(--text-main)] hover:text-[var(--accent)] transition-all">
+                      <a href={method.link} className="text-[11px] font-bold text-[var(--text-main)] hover:text-[var(--accent)] transition-all truncate block overflow-hidden max-w-[180px]">
                         {method.value}
                       </a>
                     ) : (
-                      <p className="text-xs font-bold text-[var(--text-main)]">{method.value}</p>
+                      <p className="text-[11px] font-bold text-[var(--text-main)]">{method.value}</p>
                     )}
                   </div>
                 </div>
@@ -102,17 +118,13 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h2 className="text-base font-bold text-[var(--text-main)] ml-1">Social Networks</h2>
-            <div className="flex flex-wrap gap-2.5">
-              {[
-                { icon: <GithubIcon className="w-4 h-4" />, color: "hover:bg-zinc-800" },
-                { icon: <LinkedinIcon className="w-4 h-4" />, color: "hover:bg-blue-600" },
-                { icon: <TwitterIcon className="w-4 h-4" />, color: "hover:bg-sky-500" },
-                { icon: <InstagramIcon className="w-4 h-4" />, color: "hover:bg-pink-600" }
-              ].map((social, i) => (
-                <button key={i} className={`w-10 h-10 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border)] flex items-center justify-center text-[var(--text-secondary)] hover:text-white transition-all hover:scale-110 hover:-rotate-3 hover:shadow-xl ${social.color}`}>
+          <div className="space-y-3.5">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("social_networks")}</h2>
+            <div className="grid grid-cols-2 gap-2.5">
+              {socials.map((social, i) => (
+                <button key={i} className={`flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] text-[var(--text-secondary)] hover:text-white transition-all hover:border-[var(--accent)]/20 shadow-sm group ${social.color}`}>
                   {social.icon}
+                  <span className="text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity hidden group-hover:block">{social.label}</span>
                 </button>
               ))}
             </div>

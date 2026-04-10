@@ -31,67 +31,141 @@ export default function DashboardPage() {
     { label: t("events"), value: "2,105", icon: <Activity className="w-4 h-4" /> },
   ];
 
-  if (!mounted) return <div className="p-10 animate-pulse">Loading dashboard...</div>;
+  if (!mounted) return <div className="p-10 animate-pulse text-[var(--text-muted)] text-xs font-black uppercase tracking-widest">{t("loading")}</div>;
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
-      <div className="space-y-4">
-        <h1 className="text-3xl font-bold text-[var(--text-main)] tracking-tight">{t("title")}</h1>
-        <p className="text-[var(--text-secondary)] max-w-2xl text-base leading-relaxed">{t("subtitle")}</p>
-      </div>
-
-      <div className="w-full h-px bg-[var(--border)] opacity-30"></div>
-
-      {/* GitHub Section */}
-      <section className="space-y-6 pt-4">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-xl bg-[#24292e] border border-white/10 flex items-center justify-center">
-            <div className="w-4 h-4 flex items-center justify-center grayscale invert opacity-70 text-[var(--accent)]">
-              <StackIcon name="github" />
-            </div>
-          </div>
-          <div>
-            <h2 className="text-lg font-bold text-[var(--text-main)] tracking-tight">{t("github_title")}</h2>
-            <p className="text-[var(--text-muted)] text-[10px]">{t("github_subtitle")}</p>
-          </div>
-
-        </div>
-
-        <div className="bg-[var(--bg-secondary)] border border-[var(--border)] rounded-3xl p-6 overflow-x-auto transition-all group">
-          <div className="flex justify-between items-center mb-4">
-            <p className="text-xs font-medium text-[var(--text-secondary)]">{t("github_streak")}</p>
-            <div className="flex items-center gap-1.5 text-[10px] text-[var(--text-muted)] font-bold uppercase">
-              <span>{t("less")}</span>
-              <div className="flex gap-1">
-                <div className="w-2.5 h-2.5 rounded-sm bg-zinc-800"></div>
-                <div className="w-2.5 h-2.5 rounded-sm bg-green-900"></div>
-                <div className="w-2.5 h-2.5 rounded-sm bg-green-700"></div>
-                <div className="w-2.5 h-2.5 rounded-sm bg-green-500"></div>
-                <div className="w-2.5 h-2.5 rounded-sm bg-green-300"></div>
-              </div>
-              <span>{t("more")}</span>
-            </div>
-          </div>
-          <div className="flex gap-1 min-w-max">
-            {Array.from({ length: 52 }).map((_, i) => (
-              <div key={i} className="flex flex-col gap-1">
-                {Array.from({ length: 7 }).map((_, j) => {
-                  const rand = Math.random();
-                  return (
-                    <div
-                      key={j}
-                      className={`w-2.5 h-2.5 rounded-[2px] transition-all duration-500 group-hover:scale-110 ${rand > 0.8
-                        ? (rand > 0.95 ? 'bg-green-300' : rand > 0.9 ? 'bg-green-500' : 'bg-green-700')
-                        : 'bg-zinc-800'
-                        }`}
-                    ></div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
+    <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
+      {/* Header */}
+      <section className="space-y-3 relative">
+        <div className="absolute -top-10 -left-10 w-48 h-48 bg-[var(--accent)]/10 rounded-full blur-[80px] -z-10" />
+        <div className="space-y-1.5">
+          <h1 className="text-2xl font-black text-[var(--text-main)] tracking-tight uppercase tracking-widest">{t("title")}</h1>
+          <div className="w-16 h-1.5 bg-[var(--accent)] rounded-full shadow-[0_0_10px_var(--accent)]/30"></div>
+          <p className="text-[var(--text-secondary)] max-w-2xl text-xs font-medium opacity-80 pt-2 leading-relaxed uppercase tracking-wider">{t("subtitle")}</p>
         </div>
       </section>
+
+      {/* Stats Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+        {stats.map((stat, i) => (
+          <div key={i} className="bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-4 rounded-2xl flex flex-col gap-2 transition-all hover:bg-[var(--bg-secondary)]/60 hover:border-[var(--accent)]/20 group hover:-translate-y-1 duration-500 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] text-[var(--accent)] group-hover:scale-110 transition-transform">
+                {stat.icon}
+              </div>
+              <Activity className="w-3 h-3 text-[var(--accent)] opacity-20 group-hover:opacity-100 transition-opacity" />
+            </div>
+            <div className="space-y-0.5">
+              <p className="text-[7px] font-black uppercase tracking-widest text-[var(--text-muted)]">{stat.label}</p>
+              <p className="text-lg font-black text-[var(--text-main)] tracking-tight">{stat.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Main Chart */}
+        <div className="lg:col-span-8 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-6 rounded-3xl space-y-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_8px_var(--accent)]" />
+              <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-main)]">{t("realtime_activity")}</h2>
+            </div>
+            <div className="flex gap-2">
+              <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] text-[8px] font-bold text-[var(--text-muted)]">
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                <span>{t("views_legend")}</span>
+              </div>
+              <div className="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] text-[8px] font-bold text-[var(--text-muted)]">
+                <div className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
+                <span>{t("sessions_legend")}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="h-[200px] w-full mt-4">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={chartData}>
+                <XAxis 
+                  dataKey="name" 
+                  axisLine={false} 
+                  tickLine={false} 
+                  tick={{ fontSize: 9, fontWeight: 800, fill: "var(--text-muted)" }}
+                  dy={10}
+                />
+                <ReTooltip 
+                  contentStyle={{ 
+                    backgroundColor: "var(--bg-main)", 
+                    borderColor: "var(--border)", 
+                    borderRadius: "12px",
+                    fontSize: "10px",
+                    fontWeight: "700"
+                  }} 
+                />
+                <Bar 
+                  dataKey="views" 
+                  fill="var(--accent)" 
+                  radius={[4, 4, 4, 4]} 
+                  barSize={12}
+                />
+                <Bar 
+                  dataKey="sessions" 
+                  fill="var(--text-muted)" 
+                  fillOpacity={0.2}
+                  radius={[4, 4, 4, 4]} 
+                  barSize={12}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* GitHub Section */}
+        <div className="lg:col-span-4 space-y-6">
+          <div className="bg-[#24292e] border border-white/5 p-6 rounded-3xl space-y-6 shadow-xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform duration-1000">
+              <StackIcon name="github" />
+            </div>
+            <div className="space-y-1.5">
+              <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-white">{t("github_title")}</h2>
+              <p className="text-zinc-500 text-[8px] font-bold uppercase tracking-wider">{t("github_subtitle")}</p>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <div className="flex-1 space-y-1">
+                <p className="text-[18px] font-black text-white tracking-tighter">721</p>
+                <p className="text-[7px] font-black uppercase tracking-widest text-zinc-500">{t("commits_year")}</p>
+              </div>
+              <div className="w-px h-10 bg-white/10" />
+              <div className="flex-1 space-y-1 text-right">
+                <p className="text-[18px] font-black text-green-500 tracking-tighter">+12.5%</p>
+                <p className="text-[7px] font-black uppercase tracking-widest text-zinc-500">{t("growth_rate")}</p>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <div className="flex gap-0.5 justify-between">
+                {Array.from({ length: 14 }).map((_, i) => (
+                  <div key={i} className="flex flex-col gap-0.5">
+                    {Array.from({ length: 4 }).map((_, j) => {
+                      const rand = Math.random();
+                      return (
+                        <div
+                          key={j}
+                          className={`w-2.5 h-2.5 rounded-[1px] transition-all duration-500 hover:scale-150 ${rand > 0.7
+                            ? (rand > 0.9 ? 'bg-green-400' : rand > 0.85 ? 'bg-green-500' : 'bg-green-700')
+                            : 'bg-zinc-800'
+                            }`}
+                        ></div>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
