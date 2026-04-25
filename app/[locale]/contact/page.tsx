@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Mail, MapPin, Send, Phone } from "lucide-react";
 
-const getContactMethods = (t: any) => [
+const getContactMethods = (t: any, tAbout: any) => [
   {
     icon: <Mail className="w-4 h-4 text-[var(--accent)]" />,
     label: t("method_email"),
@@ -19,14 +19,15 @@ const getContactMethods = (t: any) => [
   {
     icon: <MapPin className="w-4 h-4 text-[var(--accent)]" />,
     label: t("method_location"),
-    value: t("info_location_value", { ns: "About" }),
-    link: null
+    value: tAbout("info_location_value"),
+    link: "null"
   }
 ];
 
 export default function ContactPage() {
   const t = useTranslations("Contact");
-  const methods = getContactMethods(t);
+  const tAbout = useTranslations("About");
+  const methods = getContactMethods(t, tAbout);
 
   const socials = [
     { label: "Github", icon: <GithubIcon className="w-3.5 h-3.5" />, color: "hover:bg-zinc-800" },

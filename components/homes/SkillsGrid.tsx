@@ -23,14 +23,19 @@ const skills = [
   { name: "React.js", category: ["all", "main", "frontend"], class: "tag-react", iconName: "react" },
   { name: "Next.js", category: ["all", "main", "frontend"], class: "tag-next", iconName: "nextjs2" },
   { name: "Tailwind", category: ["all", "frontend"], class: "tag-tailwind", iconName: "tailwindcss" },
+  { name: "Bootstrap", category: ["all", "frontend"], class: "tag-css", iconName: "bootstrap5" },
   { name: "Node.js", category: ["all", "main", "backend"], class: "tag-node", iconName: "nodejs" },
   { name: "Express.js", category: ["all", "backend"], class: "tag-node", iconName: "expressjs" },
+  { name: "PHP", category: ["all", "backend"], class: "tag-html", iconName: "php" },
+  { name: "Laravel", category: ["all", "backend"], class: "tag-html", iconName: "laravel" },
   { name: "PostgreSQL", category: ["all", "database"], class: "tag-ts", iconName: "postgresql" },
   { name: "MongoDB", category: ["all", "database"], class: "tag-js", iconName: "mongodb" },
+  { name: "Firebase", category: ["all", "database"], class: "tag-html", iconName: "firebase" },
   { name: "Git", category: ["all", "tools"], class: "tag-tailwind", iconName: "git" },
+  { name: "GitHub", category: ["all", "tools"], class: "tag-next", iconName: "github" },
   { name: "Docker", category: ["all", "tools"], class: "tag-next", iconName: "docker" },
-  { name: "Kotlin", category: ["all", "mobile"], class: "tag-js", iconName: "kotlin" },
-  { name: "Android", category: ["all", "mobile"], class: "tag-js", iconName: "android" },
+  { name: "Slack", category: ["all", "tools"], class: "tag-css", iconName: "slack" },
+  { name: "Figma", category: ["all", "tools"], class: "tag-html", iconName: "figma" },
 ];
 
 export default function SkillsGrid() {

@@ -122,9 +122,9 @@
     "view_certificate": "Lihat Sertifikat",
     "experience": [
       {
-        "company": "Shrimp Developer",
+        "company": "Caruban Technology",
         "role": "Front End Developer",
-        "period": "2024 – Sekarang",
+        "period": "2025 – Sekarang",
         "description": "Berkolaborasi dengan berbagai klien untuk membangun aplikasi web modern dan responsif menggunakan Next.js dan TailwindCSS. Fokus pada optimasi performa dan implementasi UI yang pixel-perfect."
       },
       {
@@ -146,30 +146,55 @@
           "Firebase"
         ],
         "github": "https://github.com/Shrimp-Developers/buwuhan-fe",
-        "demo": "https://buku-buwuhan.vercel.app/"
+        "demo": "https://buku-buwuhan.vercel.app/",
+        "image": "/buwuhan-app.png"
+      },
+      {
+        "id": 2,
+        "title": "Website Caruban Technology",
+        "category": "web",
+        "description": "Website profil perusahaan Caruban Technology yang menampilkan solusi dan layanan digital.",
+        "stack": [
+          "Next.js",
+          "TailwindCSS"
+        ],
+        "github": "#",
+        "demo": "https://caruban-technology.vercel.app/",
+        "image": "/Caruban-Technology.png"
       }
     ],
     "certifications": [
       {
-        "title": "Spesialisasi Data Science",
-        "issuer": "Coursera / IBM",
+        "title": "Junior Web Developer",
+        "issuer": "Kominfo / VSGA",
+        "year": "2024",
+        "category": "cat_web",
+        "link": "/Kominfo-Junior-Webdev.pdf",
+        "image": "/VGSAJuniorWeb.png"
+      },
+      {
+        "title": "Data Engineering Professional",
+        "issuer": "Cisco Networking Academy",
         "year": "2024",
         "category": "cat_ds",
-        "link": "#"
+        "link": "/Data Engineering Professional.pdf",
+        "image": "/Dataenggenering.png"
       },
       {
-        "title": "Full Stack Web Development",
-        "issuer": "Meta Professional Certificate",
-        "year": "2023",
-        "category": "cat_web",
-        "link": "#"
-      },
-      {
-        "title": "Cisco Certified Network Associate (CCNA)",
+        "title": "Applications & Use Cases Professional",
         "issuer": "Cisco Networking Academy",
+        "year": "2024",
+        "category": "cat_web",
+        "link": "/Applications & Use Cases Professional.pdf",
+        "image": "/Applications & Use Cases Professional.png"
+      },
+      {
+        "title": "SQL Database",
+        "issuer": "Oracle Academy",
         "year": "2023",
-        "category": "cat_net",
-        "link": "#"
+        "category": "cat_ds",
+        "link": "/Sql-Database.pdf",
+        "image": "/SqlDatabase.png"
       }
     ]
   },
@@ -177,9 +202,9 @@
     "title": "Hubungi Saya",
     "subtitle": "Punya proyek? Mari Ngobrol!",
     "name_label": "Nama Lengkap",
-    "name_placeholder": "Hadi Budi",
+    "name_placeholder": "contoh: Hadi Budi Hardoyo",
     "email_label": "Alamat Email",
-    "email_placeholder": "hadi@contoh.id",
+    "email_placeholder": "[EMAIL_ADDRESS]",
     "message_label": "Pesan",
     "message_placeholder": "Ceritakan tentang proyek Anda...",
     "send_button": "Kirim Pesan",

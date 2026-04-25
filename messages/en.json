@@ -35,7 +35,7 @@
     "greeting": "Hi, I'm",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
-    "bio": "A dedicated Front End Developer and coding content creator building impactful digital solutions. Specialized in scalable web platforms and mobile applications using modern tech stacks including Next.js, TypeScript, and Native Android (Kotlin).",
+    "bio": "A dedicated Front End Developer and coding content creator building impactful digital solutions. Specialized in scalable web platforms and mobile applications using modern tech stacks including Next.js and TypeScript.",
     "bio_focus": "My focus is on designing well-structured, maintainable software architectures aligned with business goals. I blend technical expertise with proactive communication and leadership to ensure every project delivers logical clarity and real-world impact.",
     "cta_projects": "View My Projects",
     "cta_contact": "Get In Touch",
@@ -146,30 +146,55 @@
           "Firebase"
         ],
         "github": "https://github.com/Shrimp-Developers/buwuhan-fe",
-        "demo": "https://buku-buwuhan.vercel.app/"
+        "demo": "https://buku-buwuhan.vercel.app/",
+        "image": "/buwuhan-app.png"
+      },
+      {
+        "id": 2,
+        "title": "Caruban Technology Website",
+        "category": "web",
+        "description": "Company profile website for Caruban Technology, showcasing digital solutions and services.",
+        "stack": [
+          "Next.js",
+          "TailwindCSS"
+        ],
+        "github": "#",
+        "demo": "https://caruban-technology.vercel.app/",
+        "image": "/Caruban-Technology.png"
       }
     ],
     "certifications": [
       {
-        "title": "Data Science Specialization",
-        "issuer": "Coursera / IBM",
+        "title": "Junior Web Developer",
+        "issuer": "Kominfo / VSGA",
+        "year": "2024",
+        "category": "cat_web",
+        "link": "/Kominfo-Junior-Webdev.pdf",
+        "image": "/VGSAJuniorWeb.png"
+      },
+      {
+        "title": "Data Engineering Professional",
+        "issuer": "Cisco Networking Academy",
         "year": "2024",
         "category": "cat_ds",
-        "link": "#"
+        "link": "/Data Engineering Professional.pdf",
+        "image": "/Dataenggenering.png"
       },
       {
-        "title": "Full Stack Web Development",
-        "issuer": "Meta Professional Certificate",
-        "year": "2023",
-        "category": "cat_web",
-        "link": "#"
-      },
-      {
-        "title": "Cisco Certified Network Associate (CCNA)",
+        "title": "Applications & Use Cases Professional",
         "issuer": "Cisco Networking Academy",
+        "year": "2024",
+        "category": "cat_web",
+        "link": "/Applications & Use Cases Professional.pdf",
+        "image": "/Applications & Use Cases Professional.png"
+      },
+      {
+        "title": "SQL Database",
+        "issuer": "Oracle Academy",
         "year": "2023",
-        "category": "cat_net",
-        "link": "#"
+        "category": "cat_ds",
+        "link": "/Sql-Database.pdf",
+        "image": "/SqlDatabase.png"
       }
     ]
   },

@@ -29,8 +29,6 @@ const iconMap: Record<string, string> = {
   "React": "react",
   "PostgreSQL": "postgresql",
   "Prisma": "prisma",
-  "Kotlin": "kotlin",
-  "Socket.io": "socketio",
   "SQLite": "sqlite",
 };
 
@@ -162,6 +160,10 @@ export default function WorkExperiencePage() {
           {filteredProjects.map((p: any) => (
             <div key={p.id} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/10] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
+                {/* Project Image */}
+                {p.image && (
+                  <img src={p.image} alt={p.title} className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-105 z-0" />
+                )}
                 {/* Overlay with stack */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-[var(--bg-secondary)]/40 to-transparent z-10 p-5 flex flex-col justify-end gap-3 opacity-100 group-hover:opacity-90 transition-opacity duration-500">
                   <div className="flex flex-wrap gap-1.5">
@@ -181,10 +183,12 @@ export default function WorkExperiencePage() {
                     })}
                   </div>
                 </div>
-                {/* Category large icon background */}
-                <div className="text-[var(--accent)] opacity-5 scale-[2] group-hover:scale-[2.5] group-hover:opacity-10 transition-all duration-1000 ease-out">
-                  {p.category === 'web' ? <Monitor className="w-20 h-20" /> : <Smartphone className="w-20 h-20" />}
-                </div>
+                {/* Category large icon background (only if no image) */}
+                {!p.image && (
+                  <div className="text-[var(--accent)] opacity-5 scale-[2] group-hover:scale-[2.5] group-hover:opacity-10 transition-all duration-1000 ease-out z-0">
+                    {p.category === 'web' ? <Monitor className="w-20 h-20" /> : <Smartphone className="w-20 h-20" />}
+                  </div>
+                )}
               </div>
 
               <div className="p-6 space-y-3">
@@ -193,14 +197,18 @@ export default function WorkExperiencePage() {
                     {p.title}
                   </h3>
                   <div className="flex gap-1.5">
-                    <a href={p.github} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn">
-                      <div className="w-3.5 h-3.5 grayscale group-hover/btn:grayscale-0 transition-all opacity-70 group-hover/btn:opacity-100 flex items-center justify-center">
-                        <StackIcon name="github" />
-                      </div>
-                    </a>
-                    <a href="#" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn">
-                      <ExternalLink className="w-3.5 h-3.5 text-[var(--text-muted)] group-hover/btn:text-[var(--accent)] transition-colors" />
-                    </a>
+                    {p.github !== "#" && (
+                      <a href={p.github} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn relative z-20">
+                        <div className="w-3.5 h-3.5 grayscale group-hover/btn:grayscale-0 transition-all opacity-70 group-hover/btn:opacity-100 flex items-center justify-center">
+                          <StackIcon name="github" />
+                        </div>
+                      </a>
+                    )}
+                    {p.demo && p.demo !== "#" && (
+                      <a href={p.demo} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn relative z-20">
+                        <ExternalLink className="w-3.5 h-3.5 text-[var(--text-muted)] group-hover/btn:text-[var(--accent)] transition-colors" />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <p className="text-[var(--text-secondary)] text-[13px] leading-relaxed line-clamp-2 font-medium opacity-80">
@@ -225,7 +233,12 @@ export default function WorkExperiencePage() {
           {certifications.map((a: any, index: number) => (
             <div key={index} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/8] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-[var(--bg-secondary)]/20 to-transparent z-10 p-5 flex flex-col justify-end">
+                {/* Certificate Image */}
+                {a.image && (
+                  <img src={a.image} alt={a.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0" />
+                )}
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent z-10 p-5 flex flex-col justify-end">
                   <div className="flex flex-wrap gap-1.5">
                     <span className="flex items-center gap-1.5 px-2.5 py-1 bg-[var(--bg-main)]/90 backdrop-blur-md border border-[var(--border)] rounded-lg text-[8px] font-black uppercase tracking-[0.1em] text-[var(--text-main)] shadow-sm">
                       <div className="text-[var(--accent)] opacity-50">{typeIconMap[a.category] || <Medal className="w-2.5 h-2.5" />}</div>
@@ -233,9 +246,12 @@ export default function WorkExperiencePage() {
                     </span>
                   </div>
                 </div>
-                <div className="text-[var(--accent)] opacity-5 scale-[1.5] group-hover:scale-[1.8] group-hover:opacity-10 transition-all duration-1000">
-                  {categoryIconMap[a.category] || <Award className="w-16 h-16" />}
-                </div>
+                
+                {!a.image && (
+                  <div className="text-[var(--accent)] opacity-5 scale-[1.5] group-hover:scale-[1.8] group-hover:opacity-10 transition-all duration-1000 z-0">
+                    {categoryIconMap[a.category] || <Award className="w-16 h-16" />}
+                  </div>
+                )}
               </div>
 
               <div className="p-6 space-y-3">

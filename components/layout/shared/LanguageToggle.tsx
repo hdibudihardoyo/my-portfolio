@@ -2,7 +2,8 @@
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
+import Cookies from "js-cookie";
 
 const languages = [
   { locale: "en", flag: "🇺🇸", label: "English" },
@@ -22,10 +23,15 @@ export default function LanguageToggle({ compact = false, variant = "row" }: { c
     return () => window.removeEventListener("click", handleClick);
   }, [isOpen]);
 
+  const [isPending, startTransition] = useTransition();
+
   const handleSwitch = (newLocale: string) => {
     if (newLocale !== locale) {
-      router.replace(pathname, { locale: newLocale });
       setIsOpen(false);
+      Cookies.set("NEXT_LOCALE", newLocale, { path: "/" });
+      startTransition(() => {
+        router.refresh();
+      });
     }
   };
 
