@@ -30,11 +30,23 @@ export default function ContactPage() {
   const methods = getContactMethods(t, tAbout);
 
   const socials = [
-    { label: "Github", icon: <GithubIcon className="w-3.5 h-3.5" />, color: "hover:bg-zinc-800" },
-    { label: "LinkedIn", icon: <LinkedinIcon className="w-3.5 h-3.5" />, color: "hover:bg-blue-600" },
-    { label: "Twitter", icon: <TwitterIcon className="w-3.5 h-3.5" />, color: "hover:bg-sky-500" },
-    { label: "Instagram", icon: <InstagramIcon className="w-3.5 h-3.5" />, color: "hover:bg-pink-600" }
+    { label: "Github", icon: <GithubIcon className="w-3.5 h-3.5" />, color: "hover:bg-zinc-800", link: "https://github.com/hdibudihardoyo" },
+    { label: "LinkedIn", icon: <LinkedinIcon className="w-3.5 h-3.5" />, color: "hover:bg-blue-600", link: "https://www.linkedin.com/in/hdibudihardoyo/" },
+    { label: "Instagram", icon: <InstagramIcon className="w-3.5 h-3.5" />, color: "hover:bg-pink-600", link: "https://www.instagram.com/hdibudihardoyo/" }
   ];
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    
+    const subject = encodeURIComponent(`Pesan Baru dari ${name}`);
+    const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
+    
+    window.location.href = `mailto:hdibudihardoyo@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   return (
     <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
@@ -52,7 +64,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
         {/* Contact Form */}
         <div className="lg:col-span-7 space-y-5">
-          <form className="space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+          <form onSubmit={handleSubmit} className="space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               <div className="space-y-1.5">
                 <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
@@ -60,6 +72,8 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder={t("name_placeholder")}
                   className="w-full px-4 py-2 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40"
                 />
@@ -70,6 +84,8 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder={t("email_placeholder")}
                   className="w-full px-4 py-2 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40"
                 />
@@ -82,12 +98,14 @@ export default function ContactPage() {
               </label>
               <textarea
                 rows={3}
+                name="message"
+                required
                 placeholder={t("message_placeholder")}
                 className="w-full px-4 py-3 rounded-xl bg-[var(--bg-main)] border border-[var(--border)] text-xs text-[var(--text-main)] focus:outline-none focus:border-[var(--accent)]/50 transition-all duration-300 placeholder:text-[var(--text-muted)]/40 resize-none"
               ></textarea>
             </div>
 
-            <button className="group w-full flex items-center justify-center gap-3 h-10 bg-gradient-to-r from-[var(--accent)] to-[var(--accent)]/90 text-[var(--accent-text)] rounded-xl font-black uppercase tracking-widest text-[9px] hover:scale-[1.01] active:scale-[0.99] transition-all shadow-xl shadow-[var(--accent)]/15">
+            <button type="submit" className="group w-full flex items-center justify-center gap-3 h-10 bg-gradient-to-r from-[var(--accent)] to-[var(--accent)]/90 text-[var(--accent-text)] rounded-xl font-black uppercase tracking-widest text-[9px] hover:scale-[1.01] active:scale-[0.99] transition-all shadow-xl shadow-[var(--accent)]/15">
               {t("send_button")}
               <Send className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
@@ -123,10 +141,10 @@ export default function ContactPage() {
             <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("social_networks")}</h2>
             <div className="grid grid-cols-2 gap-2.5">
               {socials.map((social, i) => (
-                <button key={i} className={`flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] text-[var(--text-secondary)] hover:text-white transition-all hover:border-[var(--accent)]/20 shadow-sm group ${social.color}`}>
+                <a key={i} href={social.link} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] text-[var(--text-secondary)] hover:text-white transition-all hover:border-[var(--accent)]/20 shadow-sm group ${social.color}`}>
                   {social.icon}
                   <span className="text-[8px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity hidden group-hover:block">{social.label}</span>
-                </button>
+                </a>
               ))}
             </div>
           </div>

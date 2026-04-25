@@ -5,16 +5,18 @@ import ThemeToggle from "../shared/ThemeToggle";
 import { LayoutGrid } from "lucide-react";
 import { useLayout } from "../LayoutContext";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function SidebarControls() {
   const { toggleLayout } = useLayout();
+  const t = useTranslations("Nav");
 
   return (
     <div className="flex flex-col items-center gap-3 w-full px-4">
       {/* Google Login (Ultra Compact) */}
       <button className="flex items-center justify-center gap-2.5 w-full h-9 rounded-xl bg-[var(--bg-secondary)]/50 backdrop-blur-lg border border-[var(--border)] text-[7px] font-black uppercase tracking-[0.2em] text-[var(--text-main)] hover:border-[var(--accent)]/30 transition-all group relative overflow-hidden shadow-sm">
         <Image src="/google.svg" alt="Google" width={14} height={14} className="group-hover:scale-110 transition-transform duration-500 opacity-70 group-hover:opacity-100" />
-        <span>Auth Status</span>
+        <span>{t("google_login")}</span>
       </button>
       {/* Settings Row (Dropdowns) */}
       <div className="w-full flex items-center justify-between gap-2 p-2 bg-[var(--bg-secondary)]/30 backdrop-blur-md rounded-2xl border border-[var(--border)] shadow-sm">

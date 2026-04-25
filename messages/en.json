@@ -10,7 +10,9 @@
     "uses": "Uses",
     "contact": "Contact",
     "links": "Links",
-    "changelog": "Changelog"
+    "changelog": "Changelog",
+    "auth_status": "Auth Status",
+    "google_login": "Google Login"
   },
   "Status": {
     "items": [
@@ -28,7 +30,7 @@
     "status_available": "Available for new projects"
   },
   "Footer": {
-    "copyright": "COPYRIGHT © 2026",
+    "copyright": "COPYRIGHT",
     "right": "Hadi Budi Hardoyo. All rights reserved"
   },
   "Home": {
