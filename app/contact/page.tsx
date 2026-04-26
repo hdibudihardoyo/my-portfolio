@@ -41,15 +41,15 @@ export default function ContactPage() {
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
-    
+
     const subject = encodeURIComponent(`Pesan Baru dari ${name}`);
     const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
-    
+
     window.location.href = `mailto:hdibudihardoyo@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
+    <div className="max-w-5xl min-h-screen w-full animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
       {/* Header */}
       <section className="space-y-3 relative">
         {/* Backdrop Glow */}
@@ -65,7 +65,7 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div className="lg:col-span-7 space-y-5">
           <form onSubmit={handleSubmit} className="moving-border space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl transition-all duration-500">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <div className="space-y-3.5">
               <div className="space-y-1.5">
                 <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
                   {t("name_label")}
@@ -118,7 +118,7 @@ export default function ContactPage() {
             <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("direct_contact")}</h2>
             <div className="space-y-2">
               {methods.map((method, i) => (
-                <div key={i} className="moving-border flex items-center gap-3.5 p-3 rounded-2xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] transition-all group hover:bg-[var(--bg-secondary)]/50 hover:border-[var(--accent)]/20 shadow-sm">
+                <div key={i} className="flex items-center gap-3.5 p-3 rounded-2xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] transition-all group hover:bg-[var(--bg-secondary)]/50 hover:border-[var(--accent)]/20 shadow-sm">
                   <div className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] group-hover:border-[var(--accent)]/30 transition-colors">
                     <span className="w-4 h-4 block">{method.icon}</span>
                   </div>

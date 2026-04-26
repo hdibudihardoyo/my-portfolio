@@ -16,7 +16,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 pb-12">
+    <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
       {/* Header */}
       <section className="space-y-3">
         <h1 className="text-2xl font-black text-[var(--text-main)] tracking-tight uppercase tracking-[0.05em]">{t("title")}</h1>
@@ -93,6 +93,6 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
-    </div>
+    </div >
   );
 }

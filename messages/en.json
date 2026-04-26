@@ -2,17 +2,10 @@
   "Nav": {
     "home": "Home",
     "about": "About",
-    "creation": "Creations",
-    "work": "Work",
     "work-experience": "Experience",
     "dashboard": "Dashboard",
-    "guestbook": "Guestbook",
-    "uses": "Uses",
     "contact": "Contact",
-    "talk": "Talk",
-    "changelog": "Changelog",
-    "auth_status": "Auth Status",
-    "google_login": "Google Login"
+    "talk": "Talk"
   },
   "Status": {
     "items": [
@@ -21,9 +14,7 @@
       "Learning New Stuff",
       "Exploring New Horizons"
     ],
-    "hire_me": "Hire Me",
     "location": "Based in Cirebon, Indonesia",
-    "onsite": "Onsite",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
     "email": "hdibudihardoyo@gmail.com",
@@ -34,26 +25,14 @@
     "right": "Hadi Budi Hardoyo. All rights reserved"
   },
   "Home": {
-    "greeting": "Hi, I'm",
     "name": "Hadi Budi Hardoyo",
-    "role": "Front End Developer",
     "bio": "A dedicated Front End Developer and coding content creator building impactful digital solutions. Specialized in scalable web platforms and mobile applications using modern tech stacks including Next.js and TypeScript.",
     "bio_focus": "My focus is on designing well-structured, maintainable software architectures aligned with business goals. I blend technical expertise with proactive communication and leadership to ensure every project delivers logical clarity and real-world impact.",
-    "cta_projects": "View My Projects",
-    "cta_contact": "Get In Touch",
     "skills_title": "Skills",
-    "skills_subtitle": "My professional skills.",
-    "skills_all": "All",
-    "skills_main": "Main",
-    "skills_frontend": "Frontend",
-    "skills_backend": "Backend",
-    "skills_mobile": "Mobile",
-    "skills_database": "Database",
-    "skills_tools": "Tools"
+    "skills_subtitle": "My professional skills."
   },
   "About": {
     "title": "About Me",
-    "subtitle": "Get to know me better",
     "bio_title": "Who I Am",
     "bio_p1": "I'm a Front End Developer passionate about crafting clean, performant, and visually stunning web experiences. I specialize in modern JavaScript frameworks and love working across the full spectrum of front-end development.",
     "info_name": "Name",
@@ -80,26 +59,6 @@
   "Dashboard": {
     "title": "Dashboard",
     "subtitle": "My personal dashboard built with Next.js API routes, visualizing development statistics and contributions in real-time.",
-    "umami_title": "Umami",
-    "umami_subtitle": "Monitor real-time traffic and interactions from my portfolio site.",
-    "views": "Page Views",
-    "visitors": "Visitors",
-    "visits": "Visits",
-    "countries": "Countries",
-    "events": "Events",
-    "trends": "Traffic Trends",
-    "sessions": "Sessions",
-    "page_views": "Page Views",
-    "github_title": "GitHub Contributions",
-    "github_subtitle": "Real-time activity from @hdibudihardoyo",
-    "github_streak": "365 days of code",
-    "less": "Less",
-    "more": "More",
-    "realtime_activity": "Real-time Activity",
-    "views_legend": "Views",
-    "sessions_legend": "Sessions",
-    "commits_year": "Commits / Year",
-    "growth_rate": "Growth Rate",
     "loading": "Loading dashboard..."
   },
   "Work": {
@@ -111,20 +70,13 @@
     "filter_all": "All",
     "filter_web": "Web",
     "filter_mobile": "Mobile",
-    "filter_ds": "Data Science",
-    "filter_net": "Network",
-    "filter_intern": "Internship",
     "cat_web": "Web",
-    "cat_mobile": "Mobile",
     "cat_ds": "Data Science",
     "cat_net": "Network",
     "cat_intern": "Internship",
-    "view_demo": "Live Demo",
-    "view_code": "Source Code",
-    "view_certificate": "View Certificate",
     "experience": [
       {
-        "company": "Shrimp Developer",
+        "company": "Caruban Technology",
         "role": "Front End Developer",
         "period": "2024 – Present",
         "description": "Collaborating with various clients to build modern, responsive web applications using Next.js and TailwindCSS. Focusing on performance optimization and pixel-perfect UI implementation."
@@ -204,9 +156,9 @@
     "title": "Get In Touch",
     "subtitle": "Have a project in mind? Let's talk!",
     "name_label": "Full Name",
-    "name_placeholder": "John Doe",
+    "name_placeholder": "example: Hadi Budi Hardoyo",
     "email_label": "Email Address",
-    "email_placeholder": "john@example.com",
+    "email_placeholder": "example: email@gmail.com",
     "message_label": "Message",
     "message_placeholder": "Tell me about your project...",
     "send_button": "Send Message",
@@ -216,6 +168,10 @@
     "method_whatsapp": "WhatsApp",
     "method_location": "Location"
   },
-  "Project": { "title": "Projects", "subtitle": "", "items": [] },
-  "Achievement": { "title": "Certifications", "subtitle": "", "items": [] }
+  "Talk": {
+    "title": "Talks & Videos",
+    "subtitle": "My public speaking, podcasts, and video content.",
+    "maintenance": "This page is currently under development.",
+    "coming_soon": "Stay tuned for exciting content!"
+  }
 }

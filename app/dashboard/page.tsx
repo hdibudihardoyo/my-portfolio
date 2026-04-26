@@ -107,9 +107,9 @@ export default function DashboardPage() {
 
             <div className="flex items-center gap-4 relative z-10">
               {githubData?.avatar_url ? (
-                <img src={githubData.avatar_url} alt="GitHub Avatar" className="w-12 h-12 rounded-full border-2 border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500" />
+                <img src={githubData.avatar_url} alt="GitHub Avatar" className="w-12 h-12 rounded-full border border-[var(--border)] group-hover:border-[var(--accent)] transition-colors duration-500" />
               ) : (
-                <div className="w-12 h-12 rounded-full bg-[var(--bg-main)] animate-pulse border-2 border-[var(--border)]" />
+                <div className="w-12 h-12 rounded-full bg-[var(--bg-main)] animate-pulse border border-[var(--border)]" />
               )}
               <div className="space-y-0.5">
                 <h2 className="text-xs font-black text-[var(--text-main)] uppercase tracking-widest">{githubData?.name || "hdibudihardoyo"}</h2>

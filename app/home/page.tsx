@@ -10,7 +10,7 @@ export default function HomePage() {
   const s = useTranslations("Status");
 
   return (
-    <div className="max-w-5xl space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+    <div className="max-w-5xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
       {/* Hero Section */}
       <section className="relative pt-6 pb-2">
         {/* Backdrop Glow */}
@@ -40,7 +40,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="max-w-3xl space-y-4 pt-2 border-l-2 border-[var(--accent)]/10 pl-8 text-sm md:text-base">
+          <div className="max-w-3xl space-y-4 pt-2 border-l border-[var(--accent)]/10 pl-8 text-sm md:text-base">
             <p className="text-[var(--text-main)] leading-relaxed font-bold tracking-tight text-justify">
               {t("bio")}
             </p>

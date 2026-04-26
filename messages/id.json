@@ -2,17 +2,10 @@
   "Nav": {
     "home": "Beranda",
     "about": "Tentang",
-    "creation": "Kreasi",
-    "work": "Pengalaman",
     "work-experience": "Pengalaman",
     "dashboard": "Dasbor",
-    "guestbook": "Buku Tamu",
-    "uses": "Kegunaan",
     "contact": "Kontak",
-    "talk": "Talk",
-    "changelog": "Changelog",
-    "auth_status": "Status Auth",
-    "google_login": "Masuk Google"
+    "talk": "Talk"
   },
   "Status": {
     "items": [
@@ -21,9 +14,7 @@
       "Belajar Hal Baru",
       "Menjelajahi Horison Baru"
     ],
-    "hire_me": "Rekrut Saya",
     "location": "Berdomisili di Kota Cirebon, Indonesia",
-    "onsite": "Onsite",
     "name": "Hadi Budi Hardoyo",
     "role": "Front End Developer",
     "email": "hdibudihardoyo@gmail.com",
@@ -34,26 +25,14 @@
     "right": "Hadi Budi Hardoyo. Seluruh hak cipta dilindungi."
   },
   "Home": {
-    "greeting": "",
     "name": "HADI BUDI HARDOYO",
-    "role": "Front End Developer",
     "bio": "Seorang Front End Developer yang berdedikasi untuk membangun solusi digital yang berdampak. Saya spesialis dalam pengembangan platform web yang skalabel dan aplikasi mobile menggunakan tech stack modern, terutama Next.js, dan TypeScript.",
     "bio_focus": "Fokus saya adalah merancang arsitektur perangkat lunak yang terstruktur dengan baik, mudah dipelihara, dan selaras dengan tujuan bisnis. Saya memadukan keahlian teknis dengan komunikasi proaktif dan kepemimpinan untuk memastikan setiap proyek memberikan kejelasan logis dan dampak nyata di dunia nyata.",
-    "cta_projects": "Lihat Proyek Saya",
-    "cta_contact": "Hubungi Saya",
     "skills_title": "Keahlian",
-    "skills_subtitle": "Keahlian profesional saya.",
-    "skills_all": "Semua",
-    "skills_main": "Utama",
-    "skills_frontend": "Frontend",
-    "skills_backend": "Backend",
-    "skills_mobile": "Mobile",
-    "skills_database": "Database",
-    "skills_tools": "Tools"
+    "skills_subtitle": "Keahlian profesional saya."
   },
   "About": {
     "title": "Tentang Saya",
-    "subtitle": "Kenali saya lebih dekat",
     "bio_title": "Siapa Saya",
     "bio_p1": "Saya adalah seorang Front End Developer yang bersemangat dalam menciptakan pengalaman web yang bersih, berperforma tinggi, dan menakjubkan secara visual. Saya berspesialisasi dalam framework JavaScript modern dan senang bekerja di seluruh spektrum pengembangan front-end.",
     "info_name": "Nama",
@@ -80,26 +59,6 @@
   "Dashboard": {
     "title": "Dasbor",
     "subtitle": "Dasbor pribadi saya yang dibangun dengan Next.js API routes, memvisualisasikan statistik pengembangan dan kontribusi secara real-time.",
-    "umami_title": "Umami",
-    "umami_subtitle": "Pantau lalu lintas dan interaksi real-time dari situs portofolio saya.",
-    "views": "Tampilan Halaman",
-    "visitors": "Pengunjung",
-    "visits": "Kunjungan",
-    "countries": "Negara",
-    "events": "Acara",
-    "trends": "Tren Lalu Lintas",
-    "sessions": "Sesi",
-    "page_views": "Tampilan Halaman",
-    "github_title": "Kontribusi GitHub",
-    "github_subtitle": "Aktivitas real-time dari @hdibudihardoyo",
-    "github_streak": "365 hari ngoding",
-    "less": "Lebih Sedikit",
-    "more": "Lebih Banyak",
-    "realtime_activity": "Aktivitas Real-time",
-    "views_legend": "Tampilan",
-    "sessions_legend": "Sesi",
-    "commits_year": "Komit / Tahun",
-    "growth_rate": "Tingkat Pertumbuhan",
     "loading": "Memuat dasbor..."
   },
   "Work": {
@@ -111,17 +70,10 @@
     "filter_all": "Semua",
     "filter_web": "Web",
     "filter_mobile": "Mobile",
-    "filter_ds": "Ilmu Data",
-    "filter_net": "Jaringan",
-    "filter_intern": "Magang",
     "cat_web": "Web",
-    "cat_mobile": "Mobile",
-    "cat_ds": "Ilmu Data",
-    "cat_net": "Jaringan",
-    "cat_intern": "Magang",
-    "view_demo": "Lihat Demo",
-    "view_code": "Kode Sumber",
-    "view_certificate": "Lihat Sertifikat",
+    "cat_ds": "Data Science",
+    "cat_net": "Network",
+    "cat_intern": "Internship",
     "experience": [
       {
         "company": "Caruban Technology",
@@ -206,7 +158,7 @@
     "name_label": "Nama Lengkap",
     "name_placeholder": "contoh: Hadi Budi Hardoyo",
     "email_label": "Alamat Email",
-    "email_placeholder": "contoh: alamat@email.com",
+    "email_placeholder": "contoh: email@gmail.com",
     "message_label": "Pesan",
     "message_placeholder": "Ceritakan tentang proyek Anda...",
     "send_button": "Kirim Pesan",
@@ -216,14 +168,10 @@
     "method_whatsapp": "WhatsApp",
     "method_location": "Lokasi"
   },
-  "Project": {
-    "title": "Proyek",
-    "subtitle": "",
-    "items": []
-  },
-  "Achievement": {
-    "title": "Sertifikasi",
-    "subtitle": "",
-    "items": []
+  "Talk": {
+    "title": "Talks & Video",
+    "subtitle": "Konten public speaking, podcast, dan video saya.",
+    "maintenance": "Halaman ini masih dalam tahap pengembangan.",
+    "coming_soon": "Nantikan konten menarik segera!"
   }
 }

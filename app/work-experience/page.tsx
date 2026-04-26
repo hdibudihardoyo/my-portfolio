@@ -86,11 +86,11 @@ export default function WorkExperiencePage() {
           <h2 className="text-xl font-black text-[var(--text-main)] uppercase tracking-tight">{t("section_experience")}</h2>
         </div>
 
-        <div className="relative border-l-2 border-[var(--border)]/50 ml-6 pl-8 space-y-12">
+        <div className="relative border-l border-[var(--border)]/50 ml-6 pl-8 space-y-12">
           {experience.map((exp: any, index: number) => (
             <div key={index} className="relative group">
               {/* Dot */}
-              <div className="absolute -left-[45px] top-1.5 w-6 h-6 rounded-full bg-[var(--bg-main)] border-4 border-[var(--border)] group-hover:border-[var(--accent)] transition-all duration-500 z-10 flex items-center justify-center">
+              <div className="absolute -left-[45px] top-1.5 w-6 h-6 rounded-full bg-[var(--bg-main)] border-2 border-[var(--border)] group-hover:border-[var(--accent)] transition-all duration-500 z-10 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_8px_var(--accent)]" />
               </div>
 
