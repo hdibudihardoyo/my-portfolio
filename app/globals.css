@@ -1,70 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
 @variant dark (&:where(.dark, .dark *));
 @variant valentine (&:where(.valentine, .valentine *));
 
 @layer base {
   :root {
-    /* Backgrounds (Main White, Secondary Soft Blue) */
-    --bg-main: #FFFFFF;
-    --bg-secondary: #F0F8FF;
+    /* Backgrounds (Facebook Light) */
+    --bg-main: #F0F2F5;
+    --bg-secondary: #FFFFFF;
     --bg-card: #FFFFFF;
 
     /* Text */
-    --text-main: #0F172A;
-    --text-secondary: #334155;
-    --text-muted: #64748B;
+    --text-main: #050505;
+    --text-secondary: #65676B;
+    --text-muted: #BCC0C4;
 
-    /* Accent (Blue) */
-    --accent: #2563EB;
+    /* Accent */
+    --accent: #1877F2;
     --accent-text: #FFFFFF;
-    --accent-soft: #DBEAFE;
-    --accent-soft-text: #1E3A8A;
+    --accent-soft: #E7F3FF;
+    --accent-soft-text: #1877F2;
 
     /* Border */
-    --border: #E2E8F0;
+    --border: #DDDFE2;
   }
 
   .dark {
     /* Backgrounds (GitHub Dark) */
     --bg-main: #0D1117;
     --bg-secondary: #161B22;
-    --bg-card: #161B22;
+    --bg-card: #0D1117;
 
-    /* Text (GitHub Colors) */
+    /* Text */
     --text-main: #C9D1D9;
     --text-secondary: #8B949E;
     --text-muted: #484F58;
 
-    /* Accent (GitHub Blue) */
-    --accent: #58A6FF;
+    /* Accent */
+    --accent: #2F81F7;
     --accent-text: #FFFFFF;
-    --accent-soft: rgba(56, 139, 253, 0.15);
-    --accent-soft-text: #58A6FF;
+    --accent-soft: #1F6FEB;
+    --accent-soft-text: #FFFFFF;
 
     /* Border */
     --border: #30363D;
   }
 
   .valentine {
-    /* Backgrounds (Soft Pink Blossom) */
-    --bg-main: #FFF5F7;
-    --bg-secondary: #FFE4E9;
+    /* Backgrounds (Instagram Pink) */
+    --bg-main: #FFFFFF;
+    --bg-secondary: #FAFAFA;
     --bg-card: #FFFFFF;
 
-    /* Text (Wine Red) */
-    --text-main: #7D1212;
-    --text-secondary: #9F4B4B;
-    --text-muted: #C47A7A;
+    /* Text */
+    --text-main: #262626;
+    --text-secondary: #8E8E8E;
+    --text-muted: #DBDBDB;
 
-    /* Accent (Rose Pink) */
-    --accent: #FF8DA1;
+    /* Accent */
+    --accent: #E1306C;
     --accent-text: #FFFFFF;
-    --accent-soft: #FFDDE2;
-    --accent-soft-text: #E11D48;
+    --accent-soft: #FDE7E9;
+    --accent-soft-text: #E1306C;
 
     /* Border */
-    --border: #FBCFE8;
+    --border: #DBDBDB;
   }
 
 
@@ -72,19 +76,52 @@
     @apply transition-colors duration-200;
   }
 
-  html, body {
+  html,
+  body {
     scrollbar-gutter: stable;
   }
 }
 
 @layer utilities {
+
   /* Skill Tag Colors */
-  .tag-html { background: rgba(230, 81, 0, 0.1); color: #E65100; }
-  .tag-css { background: rgba(2, 136, 209, 0.1); color: #0288D1; }
-  .tag-js { background: rgba(255, 214, 0, 0.1); color: #FFD600; }
-  .tag-ts { background: rgba(25, 118, 210, 0.1); color: #1976D2; }
-  .tag-react { background: rgba(0, 188, 212, 0.1); color: #00BCD4; }
-  .tag-next { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; }
-  .tag-tailwind { background: rgba(0, 172, 193, 0.1); color: #00ACC1; }
-  .tag-node { background: rgba(56, 142, 60, 0.1); color: #388E3C; }
+  .tag-html {
+    background: rgba(230, 81, 0, 0.1);
+    color: #E65100;
+  }
+
+  .tag-css {
+    background: rgba(2, 136, 209, 0.1);
+    color: #0288D1;
+  }
+
+  .tag-js {
+    background: rgba(255, 214, 0, 0.1);
+    color: #FFD600;
+  }
+
+  .tag-ts {
+    background: rgba(25, 118, 210, 0.1);
+    color: #1976D2;
+  }
+
+  .tag-react {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00BCD4;
+  }
+
+  .tag-next {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+  }
+
+  .tag-tailwind {
+    background: rgba(0, 172, 193, 0.1);
+    color: #00ACC1;
+  }
+
+  .tag-node {
+    background: rgba(56, 142, 60, 0.1);
+    color: #388E3C;
+  }
 }

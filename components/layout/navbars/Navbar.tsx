@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import NavbarNav from "./NavbarNav";
 import NavbarControls from "./NavbarControls";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
   const tStatus = useTranslations("Status");
@@ -14,8 +14,8 @@ export default function Navbar() {
         {/* Left: Branding */}
         <div className="flex items-center min-w-0">
           <Link href="/home" className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
-            <div className="w-9 h-9 rounded-xl bg-[var(--accent)] flex items-center justify-center text-[var(--accent-text)] font-black text-sm uppercase shadow-sm group-hover:rotate-6 transition-transform duration-300 shrink-0">
-              {tStatus("name").charAt(0)}
+            <div className="w-9 h-9 rounded-xl overflow-hidden border border-[var(--border)] shadow-sm transition-transform duration-300 shrink-0">
+              <img src="/avatar.png" alt="Avatar" className="object-cover object-top w-full h-full" />
             </div>
             <div className="flex flex-col -space-y-1 truncate mt-0.5">
               <span className="text-[12px] font-black tracking-tight text-[var(--text-main)] uppercase whitespace-nowrap">{tStatus("name")}</span>

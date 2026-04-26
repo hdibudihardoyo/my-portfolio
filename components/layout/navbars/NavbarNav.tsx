@@ -1,6 +1,7 @@
 "use client";
 
-import { usePathname, Link } from "@/i18n/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   Home,
@@ -8,6 +9,7 @@ import {
   Briefcase,
   Monitor,
   Phone,
+  MessageSquare,
 } from "lucide-react";
 
 export default function NavbarNav() {
@@ -20,6 +22,7 @@ export default function NavbarNav() {
     { href: "/work-experience", label: t("work-experience"), icon: <Briefcase className="w-4 h-4" /> },
     { href: "/dashboard", label: t("dashboard"), icon: <Monitor className="w-4 h-4" /> },
     { href: "/contact", label: t("contact"), icon: <Phone className="w-4 h-4" /> },
+    { href: "/talk", label: t("talk"), icon: <MessageSquare className="w-4 h-4" /> },
   ];
 
   return (
@@ -30,9 +33,9 @@ export default function NavbarNav() {
           <Link
             key={item.href}
             href={item.href}
-            className={`group flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-extrabold transition-all duration-300 relative ${isActive
-              ? "bg-[var(--accent)] text-[var(--accent-text)] shadow-sm"
-              : "text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)]/50"
+            className={`group flex items-center gap-2 px-4 py-3 text-[11px] font-extrabold transition-all duration-300 relative ${isActive
+              ? "text-[var(--accent)]"
+              : "text-[var(--text-secondary)] hover:text-[var(--text-main)]"
               }`}
           >
             <span className={`transition-transform duration-300 ${isActive ? "" : "group-hover:scale-110 shrink-0"}`}>

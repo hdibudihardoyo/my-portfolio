@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Sun, Moon, Zap, Heart, Coffee } from "lucide-react";
+import { Sun, Moon, Zap, Heart, Coffee, Monitor } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle({ compact = false, variant = "row" }: { compact?: boolean; variant?: "row" | "dropdown" }) {
@@ -33,6 +33,11 @@ export default function ThemeToggle({ compact = false, variant = "row" }: { comp
       icon: <Moon className="w-4 h-4" />,
     },
     {
+      key: "system",
+      label: "System",
+      icon: <Monitor className="w-4 h-4" />,
+    },
+    {
       key: "valentine",
       label: "Valentine",
       icon: <Heart className="w-4 h-4" />,
@@ -46,7 +51,7 @@ export default function ThemeToggle({ compact = false, variant = "row" }: { comp
       <div className="relative" onClick={(e) => e.stopPropagation()}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-9 h-9 rounded-full flex items-center justify-center bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-300 shadow-sm ${isOpen ? "ring-2 ring-[var(--accent)]/20" : ""}`}
+          className={`w-9 h-9 rounded-full flex items-center justify-center bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-all duration-300 shadow-sm cursor-pointer ${isOpen ? "ring-2 ring-[var(--accent)]/20" : ""}`}
         >
           {activeTheme.icon}
         </button>
@@ -60,7 +65,7 @@ export default function ThemeToggle({ compact = false, variant = "row" }: { comp
                   setTheme(b.key);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all ${theme === b.key
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${theme === b.key
                   ? "bg-[var(--accent)] text-[var(--accent-text)]"
                   : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-main)]"
                   }`}

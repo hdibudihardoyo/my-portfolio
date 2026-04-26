@@ -1,14 +1,25 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowLeft } from "lucide-react";
+import { Menu, X, ArrowLeft, Home, User, Briefcase, Monitor, Phone, MessageSquare } from "lucide-react";
 import { useTranslations } from "next-intl";
-import SidebarProfile from "./sidebars/SidebarProfile";
-import SidebarNav from "./sidebars/SidebarNav";
-import SidebarControls from "./sidebars/SidebarControls";
-import SidebarFooter from "./sidebars/SidebarFooter";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import LanguageToggle from "./shared/LanguageToggle";
+import ThemeToggle from "./shared/ThemeToggle";
 
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const tStatus = useTranslations("Status");
+  const tNav = useTranslations("Nav");
+  const pathname = usePathname();
+
+  const navItems = [
+    { href: "/home", label: tNav("home"), icon: <Home className="w-4 h-4" /> },
+    { href: "/about", label: tNav("about"), icon: <User className="w-4 h-4" /> },
+    { href: "/work-experience", label: tNav("work-experience"), icon: <Briefcase className="w-4 h-4" /> },
+    { href: "/dashboard", label: tNav("dashboard"), icon: <Monitor className="w-4 h-4" /> },
+    { href: "/contact", label: tNav("contact"), icon: <Phone className="w-4 h-4" /> },
+    { href: "/talk", label: tNav("talk"), icon: <MessageSquare className="w-4 h-4" /> },
+  ];
 
   // Prevent scroll when drawer is open
   useEffect(() => {
@@ -23,8 +34,8 @@ export default function MobileHeader() {
     <>
       <div className="lg:hidden w-full h-16 bg-[var(--bg-main)]/80 backdrop-blur-xl border-b border-[var(--border)] px-5 md:px-8 flex items-center justify-between sticky top-0 z-50 transition-all duration-300">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-xl bg-[var(--accent)] flex items-center justify-center text-[var(--accent-text)] text-xs font-black shadow-lg shadow-[var(--accent)]/20 rotate-3">
-            {tStatus("name").charAt(0)}
+          <div className="w-8 h-8 rounded-xl overflow-hidden border border-[var(--border)] shadow-lg shadow-[var(--accent)]/20 rotate-3">
+            <img src="/avatar.png" alt="Avatar" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col -space-y-1 mt-0.5">
             <span className="text-xs font-black tracking-tight text-[var(--text-main)] uppercase">{tStatus("name")}</span>
@@ -55,20 +66,32 @@ export default function MobileHeader() {
           </button>
         </div>
 
-        <div className="px-8 mb-10">
-          <SidebarProfile />
-        </div>
-        
-        <div className="flex-1 animate-in slide-in-from-right duration-700">
-          <SidebarNav />
+        <div className="flex-1 animate-in slide-in-from-right duration-700 px-8 flex flex-col gap-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`group flex items-center gap-4 px-4 py-3 rounded-2xl text-[12px] font-extrabold transition-all duration-300 relative ${
+                  isActive
+                    ? "bg-[var(--accent)] text-[var(--accent-text)] shadow-md shadow-[var(--accent)]/20"
+                    : "text-[var(--text-secondary)] hover:text-[var(--text-main)] hover:bg-[var(--bg-secondary)]/50"
+                }`}
+              >
+                <span className={`transition-transform duration-300 ${isActive ? "" : "group-hover:scale-110"}`}>
+                  {item.icon}
+                </span>
+                <span className="uppercase tracking-widest">{item.label}</span>
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="mb-10 animate-in slide-in-from-right duration-500">
-          <SidebarControls />
-        </div>
-
-        <div className="mt-auto px-8 py-6 border-t border-[var(--border)]/20 bg-[var(--bg-secondary)]/30">
-          <SidebarFooter />
+        <div className="mt-auto px-8 py-6 border-t border-[var(--border)]/20 bg-[var(--bg-secondary)]/30 flex justify-center gap-4">
+          <ThemeToggle variant="dropdown" compact={true} />
+          <LanguageToggle variant="dropdown" compact={true} />
         </div>
       </div>
     </>

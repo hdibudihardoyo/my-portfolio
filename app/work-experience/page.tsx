@@ -156,9 +156,9 @@ export default function WorkExperiencePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {filteredProjects.map((p: any) => (
-            <div key={p.id} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:-translate-y-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {filteredProjects.length > 0 ? filteredProjects.map((p: any) => (
+            <div key={p.id} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/10] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
                 {/* Project Image */}
                 {p.image && (
@@ -170,7 +170,7 @@ export default function WorkExperiencePage() {
                     {p.stack.map((s: string) => {
                       const iconName = iconMap[s];
                       return (
-                        <span key={s} className="flex items-center gap-1.5 px-2 py-1 bg-[var(--bg-main)]/90 backdrop-blur-md border border-[var(--border)] rounded-lg text-[8px] font-black uppercase tracking-[0.1em] text-[var(--text-main)] shadow-sm">
+                        <span key={s} className="flex items-center gap-1.5 px-2 py-1 bg-[var(--bg-main)]/90 backdrop-blur-md border border-[var(--border)] rounded-lg text-[8px] font-black uppercase tracking-[0.1em] text-[var(--text-main)]">
                           {/* @ts-ignore */}
                           {iconName ? (
                             <StackIcon name={iconName} className={`w-2.5 h-2.5 flex-shrink-0 ${["nextjs2", "github", "prisma", "framer", "expressjs"].includes(iconName) ? (theme === 'dark' ? 'invert' : '') : ""}`} />
@@ -198,14 +198,14 @@ export default function WorkExperiencePage() {
                   </h3>
                   <div className="flex gap-1.5">
                     {p.github !== "#" && (
-                      <a href={p.github} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn relative z-20">
+                      <a href={p.github} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] active:scale-95 group/btn relative z-20">
                         <div className="w-3.5 h-3.5 grayscale group-hover/btn:grayscale-0 transition-all opacity-70 group-hover/btn:opacity-100 flex items-center justify-center">
                           <StackIcon name="github" />
                         </div>
                       </a>
                     )}
                     {p.demo && p.demo !== "#" && (
-                      <a href={p.demo} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn relative z-20">
+                      <a href={p.demo} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] active:scale-95 group/btn relative z-20">
                         <ExternalLink className="w-3.5 h-3.5 text-[var(--text-muted)] group-hover/btn:text-[var(--accent)] transition-colors" />
                       </a>
                     )}
@@ -216,7 +216,14 @@ export default function WorkExperiencePage() {
                 </p>
               </div>
             </div>
-          ))}
+          )) : (
+            <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center py-20 bg-[var(--bg-secondary)]/20 border border-dashed border-[var(--border)] rounded-[1.5rem]">
+              <LayoutGrid className="w-16 h-16 text-[var(--text-muted)] opacity-30 mb-4" />
+              <p className="text-[var(--text-secondary)] font-bold uppercase tracking-widest text-xs opacity-70">
+                Tidak ada data proyek
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -229,9 +236,9 @@ export default function WorkExperiencePage() {
           <h2 className="text-xl font-black text-[var(--text-main)] uppercase tracking-tight">{t("section_certs")}</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {certifications.map((a: any, index: number) => (
-            <div key={index} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-[var(--accent)]/10 hover:border-[var(--accent)]/30 hover:-translate-y-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {certifications && certifications.length > 0 ? certifications.map((a: any, index: number) => (
+            <div key={index} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/8] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
                 {/* Certificate Image */}
                 {a.image && (
@@ -240,7 +247,7 @@ export default function WorkExperiencePage() {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent z-10 p-5 flex flex-col justify-end">
                   <div className="flex flex-wrap gap-1.5">
-                    <span className="flex items-center gap-1.5 px-2.5 py-1 bg-[var(--bg-main)]/90 backdrop-blur-md border border-[var(--border)] rounded-lg text-[8px] font-black uppercase tracking-[0.1em] text-[var(--text-main)] shadow-sm">
+                    <span className="flex items-center gap-1.5 px-2.5 py-1 bg-[var(--bg-main)]/90 backdrop-blur-md border border-[var(--border)] rounded-lg text-[8px] font-black uppercase tracking-[0.1em] text-[var(--text-main)]">
                       <div className="text-[var(--accent)] opacity-50">{typeIconMap[a.category] || <Medal className="w-2.5 h-2.5" />}</div>
                       {t(a.category)}
                     </span>
@@ -266,17 +273,24 @@ export default function WorkExperiencePage() {
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-2">
-                    <a href={a.link} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/20 active:scale-95 group/btn">
+                    <a href={a.link} target="_blank" className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] transition-all duration-500 hover:border-[var(--accent)] active:scale-95 group/btn">
                       <ExternalLink className="w-3.5 h-3.5 text-[var(--text-muted)] group-hover/btn:text-[var(--accent)] transition-colors" />
                     </a>
-                    <span className="text-[9px] font-black text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded-lg border border-[var(--accent)]/20 shadow-sm">
+                    <span className="text-[9px] font-black text-[var(--accent)] bg-[var(--accent)]/10 px-2.5 py-1 rounded-lg border border-[var(--accent)]/20">
                       {a.year}
                     </span>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+          )) : (
+            <div className="col-span-1 md:col-span-3 flex flex-col items-center justify-center py-20 bg-[var(--bg-secondary)]/20 border border-dashed border-[var(--border)] rounded-[1.5rem]">
+              <Award className="w-16 h-16 text-[var(--text-muted)] opacity-30 mb-4" />
+              <p className="text-[var(--text-secondary)] font-bold uppercase tracking-widest text-xs opacity-70">
+                Tidak ada sertifikasi
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>

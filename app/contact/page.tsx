@@ -139,7 +139,7 @@ export default function ContactPage() {
 
           <div className="space-y-3.5">
             <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("social_networks")}</h2>
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-3 gap-2.5">
               {socials.map((social, i) => (
                 <a key={i} href={social.link} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] text-[var(--text-secondary)] hover:text-white transition-all hover:border-[var(--accent)]/20 shadow-sm group ${social.color}`}>
                   {social.icon}

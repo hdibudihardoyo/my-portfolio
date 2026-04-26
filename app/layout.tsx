@@ -1,13 +1,16 @@
 import { ReactNode } from "react";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { LayoutProvider } from "@/components/layout/LayoutContext";
 import MainLayoutClient from "@/components/layout/MainLayoutClient";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins"
+});
 
 export default async function RootLayout({
   children,
@@ -18,20 +21,18 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning className={inter.variable}>
+    <html lang={locale} suppressHydrationWarning className={poppins.variable}>
       <body className="font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem={true}
             themes={["light", "dark", "valentine"]}
           >
-            <LayoutProvider>
-              <MainLayoutClient>
-                {children}
-              </MainLayoutClient>
-            </LayoutProvider>
+            <MainLayoutClient>
+              {children}
+            </MainLayoutClient>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

@@ -63,7 +63,7 @@ export default function SkillsGrid() {
             title={skill.name}
           >
             {/* Hover Tooltip/Label */}
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-[var(--bg-main)] border border-[var(--border)] rounded-lg text-[7px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl z-10">
+            <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-[var(--bg-main)] border border-[var(--border)] rounded-lg text-[7px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl z-10 text-[var(--text-main)] valentine:text-slate-900">
               {skill.name}
             </div>
 

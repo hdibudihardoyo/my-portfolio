@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useTransition } from "react";
 import Cookies from "js-cookie";
 
@@ -42,7 +42,7 @@ export default function LanguageToggle({ compact = false, variant = "row" }: { c
       <div className="relative" onClick={(e) => e.stopPropagation()}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-9 h-9 rounded-full flex items-center justify-center bg-[var(--bg-secondary)] border border-[var(--border)] text-lg hover:border-[var(--accent)] transition-all duration-300 shadow-sm ${isOpen ? "ring-2 ring-[var(--accent)]/20" : ""}`}
+          className={`w-9 h-9 rounded-full flex items-center justify-center bg-[var(--bg-secondary)] border border-[var(--border)] text-lg hover:border-[var(--accent)] transition-all duration-300 shadow-sm cursor-pointer ${isOpen ? "ring-2 ring-[var(--accent)]/20" : ""}`}
         >
           {activeLang.flag}
         </button>
@@ -53,7 +53,7 @@ export default function LanguageToggle({ compact = false, variant = "row" }: { c
               <button
                 key={l.locale}
                 onClick={() => handleSwitch(l.locale)}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all ${locale === l.locale
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${locale === l.locale
                   ? "bg-[var(--accent)] text-[var(--accent-text)]"
                   : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-main)]"
                   }`}
@@ -74,7 +74,7 @@ export default function LanguageToggle({ compact = false, variant = "row" }: { c
         <button
           key={lang}
           onClick={() => handleSwitch(lang)}
-          className={`rounded-full flex items-center justify-center transition-all duration-300 ${compact ? "w-8.5 h-8.5 text-base" : "w-9 h-9 text-lg"} ${locale === lang
+          className={`rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer ${compact ? "w-8.5 h-8.5 text-base" : "w-9 h-9 text-lg"} ${locale === lang
             ? "bg-[var(--accent)] scale-110 shadow-sm"
             : "hover:bg-[var(--bg-main)]/50 opacity-50 hover:opacity-100"
             }`}
