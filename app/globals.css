@@ -9,7 +9,7 @@
 
 @layer base {
   :root {
-    /* Backgrounds (Facebook Light) */
+    /* Backgrounds  */
     --bg-main: #F0F2F5;
     --bg-secondary: #FFFFFF;
     --bg-card: #FFFFFF;
@@ -30,7 +30,7 @@
   }
 
   .dark {
-    /* Backgrounds (GitHub Dark) */
+    /* Backgrounds  */
     --bg-main: #0D1117;
     --bg-secondary: #161B22;
     --bg-card: #0D1117;
@@ -51,7 +51,7 @@
   }
 
   .valentine {
-    /* Backgrounds (Instagram Pink) */
+    /* Backgrounds  */
     --bg-main: #FFFFFF;
     --bg-secondary: #FAFAFA;
     --bg-card: #FFFFFF;
