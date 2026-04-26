@@ -3,23 +3,24 @@
 import { useTranslations } from "next-intl";
 import { Code2, MapPin } from "lucide-react";
 import SkillsGrid from "@/components/homes/SkillsGrid";
+import Typewriter from "@/components/shared/Typewriter";
 
 export default function HomePage() {
   const t = useTranslations("Home");
   const s = useTranslations("Status");
 
   return (
-    <div className="max-w-4xl mx-auto space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
+    <div className="max-w-5xl space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000">
       {/* Hero Section */}
       <section className="relative pt-6 pb-2">
         {/* Backdrop Glow */}
         <div className="absolute -top-10 -left-10 w-48 h-48 bg-[var(--accent)]/10 rounded-full blur-[80px] -z-10" />
         <div className="absolute top-20 -right-20 w-64 h-64 bg-[var(--accent)]/5 rounded-full blur-[100px] -z-10" />
- 
+
         <div className="space-y-8 group/hero">
           <div className="space-y-3">
-            <h1 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] via-[var(--accent)]/80 to-[var(--text-main)] transition-all duration-700">
-              {t("name")}
+            <h1 className="text-xl md:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent)] via-[var(--accent)]/80 to-[var(--text-main)] transition-all duration-700 min-h-[1.5em]">
+              <Typewriter text={t("name")} speed={100} />
             </h1>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[var(--text-secondary)] text-[9px] font-black uppercase tracking-[0.2em] pt-2">
@@ -40,10 +41,10 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-3xl space-y-4 pt-2 border-l-2 border-[var(--accent)]/10 pl-8 text-sm md:text-base">
-            <p className="text-[var(--text-main)] leading-relaxed font-bold tracking-tight">
+            <p className="text-[var(--text-main)] leading-relaxed font-bold tracking-tight text-justify">
               {t("bio")}
             </p>
-            <p className="text-[var(--text-secondary)] leading-relaxed font-medium opacity-80">
+            <p className="text-[var(--text-secondary)] leading-relaxed font-medium opacity-80 text-justify">
               {t("bio_focus")}
             </p>
           </div>

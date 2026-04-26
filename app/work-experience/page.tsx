@@ -94,7 +94,7 @@ export default function WorkExperiencePage() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_0_8px_var(--accent)]" />
               </div>
 
-              <div className="bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] p-6 hover:border-[var(--accent)]/30 transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-[var(--accent)]/5 hover:-translate-y-1">
+              <div className="moving-border bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] p-6 hover:border-[var(--accent)]/30 transition-all duration-500 hover:-translate-y-1">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-5">
                   <div className="space-y-1.5">
                     <h3 className="text-xl font-black text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors duration-500">
@@ -158,7 +158,7 @@ export default function WorkExperiencePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {filteredProjects.length > 0 ? filteredProjects.map((p: any) => (
-            <div key={p.id} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
+            <div key={p.id} className="moving-border group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/10] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
                 {/* Project Image */}
                 {p.image && (
@@ -238,7 +238,7 @@ export default function WorkExperiencePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {certifications && certifications.length > 0 ? certifications.map((a: any, index: number) => (
-            <div key={index} className="group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
+            <div key={index} className="moving-border group relative bg-[var(--bg-secondary)]/40 backdrop-blur-sm border border-[var(--border)] rounded-[1.5rem] overflow-hidden transition-all duration-700 hover:border-[var(--accent)]/30 hover:-translate-y-1">
               <div className="aspect-[16/8] bg-[var(--bg-main)] relative overflow-hidden flex items-center justify-center">
                 {/* Certificate Image */}
                 {a.image && (

@@ -64,7 +64,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2">
         {/* Contact Form */}
         <div className="lg:col-span-7 space-y-5">
-          <form onSubmit={handleSubmit} className="space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500">
+          <form onSubmit={handleSubmit} className="moving-border space-y-4 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-5 rounded-2xl transition-all duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               <div className="space-y-1.5">
                 <label className="text-[8px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1">
@@ -118,7 +118,7 @@ export default function ContactPage() {
             <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] ml-1 opacity-60">{t("direct_contact")}</h2>
             <div className="space-y-2">
               {methods.map((method, i) => (
-                <div key={i} className="flex items-center gap-3.5 p-3 rounded-2xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] transition-all group hover:bg-[var(--bg-secondary)]/50 hover:border-[var(--accent)]/20 shadow-sm">
+                <div key={i} className="moving-border flex items-center gap-3.5 p-3 rounded-2xl bg-[var(--bg-secondary)]/30 border border-[var(--border)] transition-all group hover:bg-[var(--bg-secondary)]/50 hover:border-[var(--accent)]/20 shadow-sm">
                   <div className="p-2 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] group-hover:border-[var(--accent)]/30 transition-colors">
                     <span className="w-4 h-4 block">{method.icon}</span>
                   </div>

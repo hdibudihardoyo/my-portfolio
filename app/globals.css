@@ -10,9 +10,9 @@
 @layer base {
   :root {
     /* Backgrounds  */
-    --bg-main: #F0F2F5;
-    --bg-secondary: #FFFFFF;
-    --bg-card: #FFFFFF;
+    --bg-main: #ffffff;
+    --bg-secondary: #e5e5e5;
+    --bg-card: #e5e5e5;
 
     /* Text */
     --text-main: #050505;
@@ -20,10 +20,10 @@
     --text-muted: #BCC0C4;
 
     /* Accent */
-    --accent: #1877F2;
+    --accent: #3b82f6;
     --accent-text: #FFFFFF;
     --accent-soft: #E7F3FF;
-    --accent-soft-text: #1877F2;
+    --accent-soft-text: #1D9BF0;
 
     /* Border */
     --border: #DDDFE2;
@@ -31,17 +31,17 @@
 
   .dark {
     /* Backgrounds  */
-    --bg-main: #0D1117;
-    --bg-secondary: #161B22;
-    --bg-card: #0D1117;
+    --bg-main: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-card: #121212;
 
     /* Text */
-    --text-main: #C9D1D9;
+    --text-main: #E0E0E0;
     --text-secondary: #8B949E;
     --text-muted: #484F58;
 
     /* Accent */
-    --accent: #2F81F7;
+    --accent: #2089d3;
     --accent-text: #FFFFFF;
     --accent-soft: #1F6FEB;
     --accent-soft-text: #FFFFFF;
@@ -83,6 +83,50 @@
 }
 
 @layer utilities {
+  /* Moving Border Animation */
+  .moving-border {
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    z-index: 0;
+  }
+
+  .moving-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      var(--accent),
+      transparent 30%
+    );
+    animation: rotate-conic 4s linear infinite;
+    border-radius: inherit;
+  }
+
+  @keyframes rotate-conic {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Typing Cursor Animation */
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    color: var(--accent);
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
 
   /* Skill Tag Colors */
   .tag-html {

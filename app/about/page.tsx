@@ -22,7 +22,7 @@ export default function AboutPage() {
         <h1 className="text-2xl font-black text-[var(--text-main)] tracking-tight uppercase tracking-[0.05em]">{t("title")}</h1>
         <div className="w-16 h-1.5 bg-[var(--accent)] rounded-full shadow-[0_0_10px_var(--accent)]/30"></div>
       </section>
- 
+
       {/* Profile & Info Grid */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-5">
@@ -35,16 +35,16 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="prose prose-invert max-w-none text-[var(--text-secondary)] leading-relaxed text-sm font-medium">
-            <p className="bg-[var(--bg-secondary)]/30 p-5 rounded-2xl border border-[var(--border)]/30 backdrop-blur-sm">
+            <p className="moving-border bg-[var(--bg-secondary)]/30 p-5 rounded-2xl border border-[var(--border)]/30 backdrop-blur-sm text-justify">
               {t("bio_p1")}
             </p>
           </div>
         </div>
- 
+
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-3">
             {infoItems.map((item) => (
-              <div key={item.label} className="group bg-[var(--bg-secondary)]/50 border border-[var(--border)] rounded-xl p-3.5 flex items-center justify-between transition-all duration-500 hover:border-[var(--accent)]/40 hover:shadow-xl hover:shadow-[var(--accent)]/5 hover:-translate-y-1">
+              <div key={item.label} className="moving-border group bg-[var(--bg-secondary)]/50 border border-[var(--border)] rounded-xl p-3.5 flex items-center justify-between transition-all duration-500 hover:border-[var(--accent)]/40 hover:-translate-y-1">
                 <div className="flex items-center gap-3">
                   <div className="p-1.5 rounded-lg bg-[var(--bg-main)] border border-[var(--border)] text-[var(--text-muted)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]/20 transition-all duration-500">
                     {item.icon}
@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
- 
+
       {/* Education & Experience Section */}
       <section className="space-y-8">
         <div className="flex items-center gap-2.5 pb-2 border-b border-[var(--border)]/30">
@@ -68,10 +68,10 @@ export default function AboutPage() {
           </div>
           <h2 className="text-xl font-black text-[var(--text-main)] uppercase tracking-tight">{t("education_title")}</h2>
         </div>
- 
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {t.raw("education_items").map((item: any, index: number) => (
-            <div key={index} className="group relative bg-[var(--bg-secondary)]/50 border border-[var(--border)] rounded-2xl p-6 transition-all duration-500 hover:border-[var(--accent)]/30 hover:shadow-2xl hover:shadow-[var(--accent)]/5 flex flex-col gap-3">
+            <div key={index} className="moving-border group relative bg-[var(--bg-secondary)]/50 border border-[var(--border)] rounded-2xl p-6 transition-all duration-500 hover:border-[var(--accent)]/30 flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <span className="px-2.5 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[9px] font-black uppercase tracking-widest border border-[var(--accent)]/20">
                   {item.year}
@@ -84,7 +84,7 @@ export default function AboutPage() {
                 <h3 className="text-base font-black text-[var(--text-main)] group-hover:text-[var(--accent)] transition-colors duration-500">
                   {item.degree}
                 </h3>
-                <div className="text-[var(--text-muted)] text-[11px] font-bold uppercase tracking-wider flex items-center gap-2">
+                <div className="text-[var(--text-main)] text-[11px] font-bold uppercase tracking-wider flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-[var(--accent)]" />
                   {item.school}
                 </div>

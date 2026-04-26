@@ -42,7 +42,7 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* GitHub Contributions Main Section */}
-        <div className="lg:col-span-8 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-6 rounded-3xl space-y-6 shadow-sm overflow-hidden">
+        <div className="moving-border lg:col-span-8 bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-6 rounded-3xl space-y-6 shadow-sm overflow-hidden">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse shadow-[0_0_8px_var(--accent)]" />
@@ -100,7 +100,7 @@ export default function DashboardPage() {
 
         {/* GitHub Section */}
         <div className="lg:col-span-4 space-y-6">
-          <a href="https://github.com/hdibudihardoyo" target="_blank" className="block bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-6 rounded-3xl space-y-6 shadow-xl relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
+          <a href="https://github.com/hdibudihardoyo" target="_blank" className="moving-border block bg-[var(--bg-secondary)]/40 backdrop-blur-md border border-[var(--border)] p-6 rounded-3xl space-y-6 relative overflow-hidden group hover:-translate-y-1 transition-all duration-500">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-125 transition-transform duration-1000">
               <StackIcon name="github" />
             </div>
