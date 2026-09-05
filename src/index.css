@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --brutal: #17130e;
+  --background: #f4f1e3;
+  --foreground: #17130e;
+  --card: #fffdf5;
+  --card-foreground: #17130e;
+  --popover: #fbf8ec;
+  --popover-foreground: #17130e;
+  --primary: #17130e;
+  --primary-foreground: #f6efdc;
+  --secondary: #e6e0cc;
+  --secondary-foreground: #17130e;
+  --muted: #eae4d2;
+  --muted-foreground: #5c5342;
+  --accent: #f6c445;
+  --accent-foreground: #17130e;
+  --destructive: #dd4a3a;
+  --destructive-foreground: #fffdf5;
+  --border: #17130e;
+  --input: #17130e;
+  --ring: #17130e;
+  --sidebar: #efe9d6;
+  --sidebar-foreground: #17130e;
+  --sidebar-primary: #17130e;
+  --sidebar-primary-foreground: #f6efdc;
+  --sidebar-accent: #f6c445;
+  --sidebar-accent-foreground: #17130e;
+  --sidebar-border: #17130e;
+  --sidebar-ring: #17130e;
+}
+
+.dark {
+  --brutal: #f6c445;
+  --background: #17130e;
+  --foreground: #f4f1e3;
+  --card: #201b12;
+  --card-foreground: #f4f1e3;
+  --popover: #201b12;
+  --popover-foreground: #f4f1e3;
+  --primary: #f6c445;
+  --primary-foreground: #17130e;
+  --secondary: #2a2418;
+  --secondary-foreground: #f4f1e3;
+  --muted: #241f15;
+  --muted-foreground: #a79d84;
+  --accent: #f6c445;
+  --accent-foreground: #17130e;
+  --destructive: #e05540;
+  --destructive-foreground: #fffdf5;
+  --border: #f4f1e3;
+  --input: #f4f1e3;
+  --ring: #f4f1e3;
+  --sidebar: #17130e;
+  --sidebar-foreground: #f4f1e3;
+  --sidebar-primary: #f6c445;
+  --sidebar-primary-foreground: #17130e;
+  --sidebar-accent: #2a2418;
+  --sidebar-accent-foreground: #f4f1e3;
+  --sidebar-border: #f4f1e3;
+  --sidebar-ring: #f4f1e3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@theme {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --shadow-sm: 3px 3px 0 0 var(--brutal);
+  --shadow-md: 5px 5px 0 0 var(--brutal);
+  --shadow-lg: 8px 8px 0 0 var(--brutal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-mono;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility shadow-brutal {
+  box-shadow: 4px 4px 0 0 var(--brutal);
+}
+
+@utility shadow-brutal-lg {
+  box-shadow: 8px 8px 0 0 var(--brutal);
+}

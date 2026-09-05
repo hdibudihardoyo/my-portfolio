@@ -1,0 +1,103 @@
+{
+  "brand": "Portfolio",
+  "nav": {
+    "main": "Umum",
+    "karya": "Karya",
+    "lainnya": "Lainnya",
+    "dashboard": "Dashboard",
+    "about": "Tentang",
+    "projects": "Proyek",
+    "achievements": "Pencapaian",
+    "creations": "Kreasi",
+    "contact": "Kontak",
+    "links": "Tautan",
+    "guestbook": "Buku Tamu"
+  },
+  "lang": {
+    "label": "Bahasa",
+    "id": "Bahasa Indonesia",
+    "en": "English"
+  },
+  "theme": {
+    "light": "Mode terang",
+    "dark": "Mode gelap"
+  },
+  "hero": {
+    "kicker": "PORTFOLIO — 2026",
+    "hi": "Halo, saya",
+    "name": "Nama Kamu",
+    "role": "Full-Stack Developer",
+    "highlight": "dengan gaya brutalist yang berani.",
+    "desc": "Saya membangun aplikasi web yang cepat, kokoh, dan terasa hidup — tanpa takut menabrak batas desain.",
+    "work": "Lihat proyek",
+    "contact": "Hubungi saya"
+  },
+  "stats": {
+    "projects": "Total Proyek",
+    "years": "Tahun Pengalaman",
+    "tech": "Tech yang Dikuasai",
+    "oss": "Kontribusi Open Source"
+  },
+  "skills": {
+    "title": "Keahlian",
+    "subtitle": "Teknologi yang saya pakai setiap hari"
+  },
+  "recent": {
+    "title": "Proyek Terbaru",
+    "viewAll": "Lihat semua proyek"
+  },
+  "dash": {
+    "cta": "Mari bekerja sama",
+    "ctaDesc": "Punya ide? Mari kita wujudkan dengan bentukan yang berani."
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "subtitle": "Cerita singkat & latar belakang",
+    "bio1": "Saya pengembang full-stack yang menikmati proses menerjemahkan ide abstrak menjadi produk nyata. Fokus saya pada kecepatan, kejelasan, dan detail kecil yang membuat pengalaman terasa menyenangkan.",
+    "bio2": "Ketika tidak sedang menulis kode, saya suka mendokumentasikan eksperimen, naik motor keliling kota, dan menumpuk kertas bekas untuk sketsa ide.",
+    "education": "Pendidikan",
+    "experience": "Pengalaman",
+    "contact": "Kontak cepat",
+    "currently": "Saat ini"
+  },
+  "projects": {
+    "title": "Proyek",
+    "subtitle": "Kumpulan karya yang pernah saya kerjakan",
+    "year": "Tahun",
+    "repo": "Kode",
+    "demo": "Demo",
+    "empty": "Belum ada proyek untuk ditampilkan."
+  },
+  "achievements": {
+    "title": "Pencapaian",
+    "subtitle": "Momen yang membuat usaha terasa berharga"
+  },
+  "creations": {
+    "title": "Kreasi",
+    "subtitle": "Eksperimen kecil & alat pribadi",
+    "open": "Buka"
+  },
+  "contact": {
+    "title": "Kontak",
+    "subtitle": "Sampaikan salam atau ajak kolaborasi",
+    "name": "Nama",
+    "email": "Email",
+    "message": "Pesan",
+    "send": "Kirim pesan",
+    "note": "Pesan akan membuka aplikasi email Anda.",
+    "social": "Temukan saya di"
+  },
+  "links": {
+    "title": "Tautan",
+    "subtitle": "Satu tempat untuk semua jejak saya",
+    "visit": "Kunjungi"
+  },
+  "guestbook": {
+    "title": "Buku Tamu",
+    "subtitle": "Tinggalkan jejak singkat untuk saya",
+    "name": "Nama",
+    "message": "Pesan",
+    "send": "Tulis pesan",
+    "entries": "Pesan terbaru"
+  }
+}
