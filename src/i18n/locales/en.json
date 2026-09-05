@@ -139,13 +139,13 @@
         "degree": "Bachelor's in Informatics Engineering",
         "school": "IKMI Cirebon College of Informatics and Computer Management",
         "grade": "Grade: 3.64/4.00",
-        "logo": "https://picsum.photos/seed/logo-ikmi/160/160"
+        "logo": "/src/assets/images/logos/stmik-ikmi-cirebon.webp"
       },
       {
         "degree": "Natural Sciences Major (Math & Science)",
         "school": "Cirebon 8 State Senior High School",
         "grade": "Grade: 88.00/100.00",
-        "logo": "https://picsum.photos/seed/logo-sman8/160/160"
+        "logo": "/src/assets/images/logos/sman8-cirebon.webp"
       }
     ],
     "experience": [
@@ -153,7 +153,7 @@
         "role": "Frontend Developer",
         "company": "PT Kreasi Digital Inovatif",
         "period": "Jan 2026 – Mar 2026",
-        "logo": "https://picsum.photos/seed/logo-kreasi/160/160",
+        "logo": "/src/assets/images/logos/logo-kreasidigitalinovatif.webp",
         "points": [
           "Developed web applications using JavaScript with a focus on Vue.js, strengthening component architecture, state management, and modern front-end best practices.",
           "Implemented workflow automation and a Docker-based CI/CD pipeline to speed up consistent builds and deployments.",
@@ -165,7 +165,7 @@
         "role": "Quality Control",
         "company": "PT DAC Indonesia",
         "period": "Oct 2025 – Jan 2026",
-        "logo": "https://picsum.photos/seed/logo-dac/160/160",
+        "logo": "/src/assets/images/logos/dac-indonesia.webp",
         "points": [
           "Performed quality inspection on 500–1,000+ product units daily to ensure full compliance with company quality standards.",
           "Systematically identified and documented product defects, directly contributing to a 30% drop in defect rate.",
@@ -176,7 +176,7 @@
         "role": "Administrative Staff",
         "company": "CV Halona Fida",
         "period": "Aug 2023 – Dec 2025",
-        "logo": "https://picsum.photos/seed/logo-halona/160/160",
+        "logo": "/src/assets/images/logos/logo-halona-fida.webp",
         "points": [
           "Managed end-to-end e-commerce operations for 100+ products — catalog, stock, and price updates plus order processing — to keep customer transactions running smoothly.",
           "Designed and executed social media content strategies (design, copywriting, publishing) that consistently boosted engagement and product visibility.",
@@ -189,7 +189,7 @@
         "title": "Book Buwuhan",
         "description": "A digital guest-book for tracking donation contributions during traditional ceremonies.",
         "tags": ["React", "TypeScript", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-buku-buwuhan.vercel.app.png",
+        "image": "/src/assets/images/Macbook-Air-buku-buwuhan.vercel.app.webp",
         "url": "https://buku-buwuhan.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/buku-buwuhan",
         "type": "web",
@@ -199,7 +199,7 @@
         "title": "Kana Artspace",
         "description": "A web-based POS system for Kana Artspace food & beverage.",
         "tags": ["React", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-kana-artspace.png",
+        "image": "/src/assets/images/Macbook-Air-kana-artspace.webp",
         "url": "https://kana-artspace.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/kana-artspace",
         "type": "web",
@@ -209,7 +209,7 @@
         "title": "NFEducation",
         "description": "An online learning platform for MEXT Japan scholarship preparation.",
         "tags": ["Next.js", "TypeScript", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-nfeducation.png",
+        "image": "/src/assets/images/Macbook-Air-nfeducation.webp",
         "url": "https://nfeducation.id",
         "repo": "https://github.com/hdibudihardoyo/NFEducationn",
         "type": "web",
@@ -219,7 +219,7 @@
         "title": "Portfolio",
         "description": "A brutalism-style personal portfolio with i18n, theming, and guestbook.",
         "tags": ["React", "Vite", "Tailwind", "TypeScript"],
-        "image": "/src/assets/images/Macbook-Air-portfolio.png",
+        "image": "/src/assets/images/Macbook-Air-portfolio.webp",
         "url": "https://hdibudihardoyo.my.id",
         "repo": "https://github.com/hdibudihardoyo/my-portfolio",
         "type": "web",
@@ -229,7 +229,7 @@
         "title": "Sendo Express",
         "description": "An expedition management app: rate lookup, package tracking, and pickup points.",
         "tags": ["Vite", "Tailwind", "TypeScript", "React"],
-        "image": "/src/assets/images/Macbook-Air-sendo-express.vercel.app.png",
+        "image": "/src/assets/images/Macbook-Air-sendo-express.vercel.app.webp",
         "url": "https://sendo-express.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/FE-sendo-express",
         "type": "web",

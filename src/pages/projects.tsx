@@ -17,7 +17,7 @@ import { Button } from "@/ui/button";
 type TypeFilter = ProjectType | "all";
 type CategoryFilter = ProjectCategory | "all";
 
-const projectImages = import.meta.glob("/src/assets/images/Macbook-*.png", {
+const projectImages = import.meta.glob("/src/assets/images/Macbook-*.webp", {
   eager: true,
   query: "?url",
   import: "default",
@@ -80,6 +80,9 @@ export function ProjectsPage() {
                     src={projectImages[project.image] ?? project.image}
                     alt={project.title}
                     loading="lazy"
+                    decoding="async"
+                    width={1280}
+                    height={800}
                     className="mb-4 aspect-video w-full border-2 border-foreground bg-background object-cover transition duration-300 group-hover:scale-[1.02]"
                   />
                 )}

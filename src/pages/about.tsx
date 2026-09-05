@@ -4,6 +4,12 @@ import { PageHeader } from "@/components/page-header";
 import { usePortfolioData } from "@/lib/use-portfolio-data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/ui/card";
 
+const logoImages = import.meta.glob("/src/assets/images/logos/*.webp", {
+  eager: true,
+  query: "?url",
+  import: "default",
+}) as Record<string, string>;
+
 export function AboutPage() {
   const { t } = useTranslation();
   const { education, experience } = usePortfolioData();
@@ -37,10 +43,13 @@ export function AboutPage() {
                   <div className="flex min-w-0 items-center gap-3">
                     {item.logo && (
                       <img
-                        src={item.logo}
+                        src={logoImages[item.logo] ?? item.logo}
                         alt={item.school}
                         loading="lazy"
-                        className="size-11 shrink-0 border-2 border-foreground bg-background object-cover"
+                        decoding="async"
+                        width={44}
+                        height={44}
+                        className="size-11 shrink-0 border-2 border-foreground bg-background object-contain p-1"
                       />
                     )}
                     <div>
@@ -71,10 +80,13 @@ export function AboutPage() {
                   <div className="mt-1 flex items-center gap-2">
                     {job.logo && (
                       <img
-                        src={job.logo}
+                        src={logoImages[job.logo] ?? job.logo}
                         alt={job.company}
                         loading="lazy"
-                        className="size-10 shrink-0 border-2 border-foreground bg-background object-cover"
+                        decoding="async"
+                        width={40}
+                        height={40}
+                        className="size-10 shrink-0 border-2 border-foreground bg-background object-contain p-1"
                       />
                     )}
                     <div>

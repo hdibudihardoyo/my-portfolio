@@ -139,13 +139,13 @@
         "degree": "S1 Teknik Informatika",
         "school": "Sekolah Tinggi Manajemen Informatika dan Komputer IKMI Cirebon",
         "grade": "Grade: 3.64/4.00",
-        "logo": "https://picsum.photos/seed/logo-ikmi/160/160"
+        "logo": "/src/assets/images/logos/stmik-ikmi-cirebon.webp"
       },
       {
         "degree": "Matematika Ilmu Pengetahuan Alam",
         "school": "Sekolah Menengah Atas Negeri 8 Cirebon",
         "grade": "Grade: 88.00/100.00",
-        "logo": "https://picsum.photos/seed/logo-sman8/160/160"
+        "logo": "/src/assets/images/logos/sman8-cirebon.webp"
       }
     ],
     "experience": [
@@ -153,7 +153,7 @@
         "role": "Frontend Developer",
         "company": "PT Kreasi Digital Inovatif",
         "period": "Jan 2026 – Mar 2026",
-        "logo": "https://picsum.photos/seed/logo-kreasi/160/160",
+        "logo": "/src/assets/images/logos/logo-kreasidigitalinovatif.webp",
         "points": [
           "Mengembangkan aplikasi web menggunakan JavaScript dengan fokus utama pada Vue.js, memperkuat pemahaman komponen, state management, dan best practice front-end modern.",
           "Mengimplementasikan otomasi workflow dan CI/CD pipeline berbasis Docker untuk mempercepat proses build dan deployment secara konsisten.",
@@ -165,7 +165,7 @@
         "role": "Quality Control",
         "company": "PT DAC Indonesia",
         "period": "Okt 2025 – Jan 2026",
-        "logo": "https://picsum.photos/seed/logo-dac/160/160",
+        "logo": "/src/assets/images/logos/dac-indonesia.webp",
         "points": [
           "Melakukan inspeksi kualitas terhadap 500-1.000+ unit produk per hari untuk memastikan kesesuaian penuh dengan standar mutu perusahaan.",
           "Mengidentifikasi dan mendokumentasikan temuan cacat produk secara sistematis, berkontribusi langsung pada penurunan tingkat defect hingga 30%.",
@@ -176,7 +176,7 @@
         "role": "Staff Administrasi",
         "company": "CV Halona Fida",
         "period": "Ags 2023 – Des 2025",
-        "logo": "https://picsum.photos/seed/logo-halona/160/160",
+        "logo": "/src/assets/images/logos/logo-halona-fida.webp",
         "points": [
           "Mengelola operasional e-commerce end-to-end untuk 100+ produk, mulai dari pembaruan katalog, stok, dan harga hingga pemrosesan pesanan, demi menjaga kelancaran transaksi pelanggan.",
           "Merancang dan mengeksekusi strategi konten media sosial (desain, copywriting, publikasi) yang secara konsisten meningkatkan engagement dan visibilitas produk.",
@@ -189,7 +189,7 @@
         "title": "Buku Buwuhan",
         "description": "Aplikasi digital untuk mencatat daftar pemberi sumbangan pada acara hajatan.",
         "tags": ["React", "TypeScript", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-buku-buwuhan.vercel.app.png",
+        "image": "/src/assets/images/Macbook-Air-buku-buwuhan.vercel.app.webp",
         "url": "https://buku-buwuhan.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/buku-buwuhan",
         "type": "web",
@@ -199,7 +199,7 @@
         "title": "Kana Artspace",
         "description": "Aplikasi POS berbasis web untuk layanan food & beverage Kana Artspace.",
         "tags": ["React", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-kana-artspace.png",
+        "image": "/src/assets/images/Macbook-Air-kana-artspace.webp",
         "url": "https://kana-artspace.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/kana-artspace",
         "type": "web",
@@ -209,7 +209,7 @@
         "title": "NFEducation",
         "description": "Platform belajar dan mentoring untuk persiapan beasiswa MEXT Jepang.",
         "tags": ["Next.js", "TypeScript", "Tailwind"],
-        "image": "/src/assets/images/Macbook-Air-nfeducation.png",
+        "image": "/src/assets/images/Macbook-Air-nfeducation.webp",
         "url": "https://nfeducation.id",
         "repo": "https://github.com/hdibudihardoyo/NFEducationn",
         "type": "web",
@@ -219,7 +219,7 @@
         "title": "Portfolio",
         "description": "Situs portfolio pribadi dengan desain brutalisme, i18n, dan buku tamu.",
         "tags": ["React", "Vite", "Tailwind", "TypeScript"],
-        "image": "/src/assets/images/Macbook-Air-portfolio.png",
+        "image": "/src/assets/images/Macbook-Air-portfolio.webp",
         "url": "https://hdibudihardoyo.my.id",
         "repo": "https://github.com/hdibudihardoyo/my-portfolio",
         "type": "web",
@@ -229,7 +229,7 @@
         "title": "Sendo Express",
         "description": "Aplikasi manajemen ekspedisi: cek tarif, lacak paket, dan titik jemput.",
         "tags": ["Vite", "Tailwind", "TypeScript", "React"],
-        "image": "/src/assets/images/Macbook-Air-sendo-express.vercel.app.png",
+        "image": "/src/assets/images/Macbook-Air-sendo-express.vercel.app.webp",
         "url": "https://sendo-express.vercel.app",
         "repo": "https://github.com/hdibudihardoyo/FE-sendo-express",
         "type": "web",

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { GoogleLogin } from "@/components/google-login";
 import { navLinks } from "@/data/portfolio";
 import { usePortfolioData } from "@/lib/use-portfolio-data";
-import pasphoto from "@/assets/images/pasphoto.jpg";
+import pasphoto from "@/assets/images/pasphoto.webp";
 import {
   Sidebar,
   SidebarContent,
@@ -40,6 +40,9 @@ export function AppSidebar() {
                 <img
                   src={pasphoto}
                   alt={profile.name}
+                  decoding="async"
+                  width={160}
+                  height={151}
                   className="size-full object-cover"
                 />
               </div>
