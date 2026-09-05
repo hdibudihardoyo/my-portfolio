@@ -4,12 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { CategoryFilter } from "@/components/category-filter";
 import { StackIcon } from "@/components/stack-icon";
-import {
-  skillCategories,
-  skills,
-  stats,
-  type SkillCategory,
-} from "@/data/portfolio";
+import { skillCategories, skills, type SkillCategory } from "@/data/portfolio";
 import {
   Card,
   CardContent,
@@ -60,22 +55,6 @@ export function HomePage() {
             {t("hero.contact")}
           </a>
         </div>
-      </section>
-
-      <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {stats.map((stat) => (
-          <div
-            key={stat.labelKey}
-            className="border-2 border-foreground bg-card p-4 shadow-brutal"
-          >
-            <p className="font-mono text-3xl font-black leading-none md:text-4xl">
-              {stat.value}
-            </p>
-            <p className="mt-2 text-[0.65rem] font-bold uppercase tracking-wider text-muted-foreground">
-              {t(stat.labelKey)}
-            </p>
-          </div>
-        ))}
       </section>
 
       <Card className="border-2 border-foreground bg-card shadow-brutal">

@@ -90,11 +90,6 @@ export type GuestbookEntry = {
   date: string;
 };
 
-export type Stat = {
-  labelKey: string;
-  value: string;
-};
-
 export const navLinks: NavLink[] = [
   { titleKey: "nav.dashboard", url: "/", icon: LayoutDashboard },
   { titleKey: "nav.about", url: "/about", icon: Code2 },
@@ -113,13 +108,6 @@ export const achievementIcons: Record<string, LucideIcon> = {
   pen: PenTool,
   code: Code2,
 };
-
-export const stats: Stat[] = [
-  { labelKey: "stats.projects", value: "12+" },
-  { labelKey: "stats.years", value: "3+" },
-  { labelKey: "stats.tech", value: "30" },
-  { labelKey: "stats.oss", value: "40+" },
-];
 
 export const socials = [
   {
