@@ -9,10 +9,6 @@ type PageHeaderProps = {
 export function PageHeader({ title, subtitle, className }: PageHeaderProps) {
   return (
     <header className={cn("mb-6 border-b-2 border-foreground pb-4", className)}>
-      <p className="mb-1 font-mono text-xs font-bold uppercase tracking-widest text-muted-foreground">
-        {"// "}
-        {subtitle ? "about this page" : "page"}
-      </p>
       <h1 className="text-3xl font-black uppercase tracking-tight md:text-4xl">
         {title}
       </h1>

@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --cursor-brutal: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect x='2' y='2' width='20' height='20' fill='%23fffdf5' stroke='%2317130e' stroke-width='3'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%2317130e'/%3E%3C/svg%3E")
+    3 3,
+    auto;
   --brutal: #17130e;
   --background: #f4f1e3;
   --foreground: #17130e;
@@ -11,13 +14,13 @@
   --card-foreground: #17130e;
   --popover: #fbf8ec;
   --popover-foreground: #17130e;
-  --primary: #17130e;
-  --primary-foreground: #f6efdc;
-  --secondary: #e6e0cc;
+  --primary: #2b6cb0;
+  --primary-foreground: #ffffff;
+  --secondary: #cfebf0;
   --secondary-foreground: #17130e;
-  --muted: #eae4d2;
-  --muted-foreground: #5c5342;
-  --accent: #f6c445;
+  --muted: #e6f2f4;
+  --muted-foreground: #4a5568;
+  --accent: #faa82b;
   --accent-foreground: #17130e;
   --destructive: #dd4a3a;
   --destructive-foreground: #fffdf5;
@@ -26,29 +29,29 @@
   --ring: #17130e;
   --sidebar: #efe9d6;
   --sidebar-foreground: #17130e;
-  --sidebar-primary: #17130e;
-  --sidebar-primary-foreground: #f6efdc;
-  --sidebar-accent: #f6c445;
+  --sidebar-primary: #2b6cb0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #faa82b;
   --sidebar-accent-foreground: #17130e;
   --sidebar-border: #17130e;
   --sidebar-ring: #17130e;
 }
 
 .dark {
-  --brutal: #f6c445;
+  --brutal: #faa82b;
   --background: #17130e;
   --foreground: #f4f1e3;
-  --card: #201b12;
+  --card: #1f2937;
   --card-foreground: #f4f1e3;
-  --popover: #201b12;
+  --popover: #1f2937;
   --popover-foreground: #f4f1e3;
-  --primary: #f6c445;
-  --primary-foreground: #17130e;
-  --secondary: #2a2418;
+  --primary: #2b6cb0;
+  --primary-foreground: #ffffff;
+  --secondary: #2b3a4d;
   --secondary-foreground: #f4f1e3;
-  --muted: #241f15;
-  --muted-foreground: #a79d84;
-  --accent: #f6c445;
+  --muted: #243043;
+  --muted-foreground: #9fb2c9;
+  --accent: #faa82b;
   --accent-foreground: #17130e;
   --destructive: #e05540;
   --destructive-foreground: #fffdf5;
@@ -57,9 +60,9 @@
   --ring: #f4f1e3;
   --sidebar: #17130e;
   --sidebar-foreground: #f4f1e3;
-  --sidebar-primary: #f6c445;
-  --sidebar-primary-foreground: #17130e;
-  --sidebar-accent: #2a2418;
+  --sidebar-primary: #2b6cb0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2b3a4d;
   --sidebar-accent-foreground: #f4f1e3;
   --sidebar-border: #f4f1e3;
   --sidebar-ring: #f4f1e3;
@@ -122,6 +125,20 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+  }
+  html,
+  body {
+    cursor: var(--cursor-brutal);
+  }
+  a,
+  button,
+  summary,
+  select,
+  [role="button"],
+  [type="submit"],
+  [type="button"],
+  label {
+    cursor: var(--cursor-brutal);
   }
   ::selection {
     @apply bg-accent text-accent-foreground;

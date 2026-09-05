@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { LanguageToggle } from "@/components/language-toggle"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { navGroups } from "@/data/portfolio"
+import { navLinks } from "@/data/portfolio"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,10 +15,8 @@ import { Separator } from "@/ui/separator"
 import { SidebarTrigger } from "@/ui/sidebar"
 
 const pageKeys = new Map<string, string>()
-for (const group of navGroups) {
-  for (const link of group.links) {
-    pageKeys.set(link.url, link.titleKey)
-  }
+for (const link of navLinks) {
+  pageKeys.set(link.url, link.titleKey)
 }
 
 export function AppHeader() {
@@ -51,7 +49,7 @@ export function AppHeader() {
           )}
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="ml-auto flex items-center gap-1">
+      <div className="ml-auto flex items-center gap-2">
         <ThemeToggle />
         <LanguageToggle />
       </div>

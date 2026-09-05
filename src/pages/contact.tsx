@@ -1,8 +1,11 @@
 import { Mail, Send } from "lucide-react"
 import type { FormEvent } from "react"
 import { useTranslation } from "react-i18next"
+import { FaLinkedin } from "react-icons/fa"
+import { SiGithub, SiInstagram } from "react-icons/si"
 import { PageHeader } from "@/components/page-header"
-import { profile } from "@/data/portfolio"
+import { socials } from "@/data/portfolio"
+import { usePortfolioData } from "@/lib/use-portfolio-data"
 import { Button } from "@/ui/button"
 import {
   Card,
@@ -14,17 +17,26 @@ import {
 import { Input } from "@/ui/input"
 import { Textarea } from "@/ui/textarea"
 
+const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> =
+  {
+    GitHub: SiGithub,
+    LinkedIn: FaLinkedin,
+    Instagram: SiInstagram,
+    Email: Mail,
+  }
+
 export function ContactPage() {
   const { t } = useTranslation()
+  const { profile } = usePortfolioData()
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const name = String(data.get("name") ?? "")
     const message = String(data.get("message") ?? "")
-    const subject = encodeURIComponent(`[Portfolio] Pesan dari ${name}`)
+    const subject = encodeURIComponent(t("contact.subject", { name }))
     const body = encodeURIComponent(`${message}\n\n— ${name}`)
-    window.location.href = `mailto:halo@example.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:hdibudihardoyo@gmail.com?subject=${subject}&body=${body}`
   }
 
   return (
@@ -34,7 +46,7 @@ export function ContactPage() {
       <div className="grid gap-6 lg:grid-cols-5">
         <Card className="border-2 border-foreground bg-card shadow-brutal lg:col-span-3">
           <CardHeader className="border-b-2 border-foreground">
-            <CardTitle className="flex items-center gap-2 text-lg font-black uppercase tracking-tight">
+            <CardTitle className="flex items-center gap-2 text-lg font-black uppercase tracking-tight mb-2">
               <Send className="size-4" />
               {t("contact.title")}
             </CardTitle>
@@ -48,7 +60,7 @@ export function ContactPage() {
                 <Input
                   name="name"
                   required
-                  placeholder="Contoh: Adi"
+                  placeholder={t("contact.placeholderName")}
                   className="h-10 border-2 border-foreground bg-background shadow-brutal focus-visible:bg-accent"
                 />
               </label>
@@ -60,7 +72,7 @@ export function ContactPage() {
                   name="email"
                   type="email"
                   required
-                  placeholder="nama@email.com"
+                  placeholder={t("contact.placeholderEmail")}
                   className="h-10 border-2 border-foreground bg-background shadow-brutal focus-visible:bg-accent"
                 />
               </label>
@@ -71,7 +83,7 @@ export function ContactPage() {
                 <Textarea
                   name="message"
                   required
-                  placeholder="Halo, saya tertarik untuk…"
+                  placeholder={t("contact.placeholderMessage")}
                   className="min-h-28 border-2 border-foreground bg-background shadow-brutal focus-visible:bg-accent"
                 />
               </label>
@@ -83,7 +95,6 @@ export function ContactPage() {
                 {t("contact.send")}
                 <Send className="size-4" />
               </Button>
-              <p className="text-xs text-muted-foreground">{t("contact.note")}</p>
             </form>
           </CardContent>
         </Card>
@@ -91,26 +102,34 @@ export function ContactPage() {
         <div className="space-y-6 lg:col-span-2">
           <Card className="border-2 border-foreground bg-card shadow-brutal">
             <CardHeader className="border-b-2 border-foreground">
-              <CardTitle className="text-lg font-black uppercase tracking-tight">
+              <CardTitle className="mb-2 text-lg font-black uppercase tracking-tight">
                 {t("contact.social")}
               </CardTitle>
-              <CardDescription>{profile.name}</CardDescription>
+              <div className="mb-2">
+                <CardDescription>{profile.name}</CardDescription>
+                <p className="mt-1 font-mono text-xs text-muted-foreground">
+                  {profile.location}
+                </p>
+              </div>
             </CardHeader>
             <CardContent className="space-y-2 p-4">
-              {[...profile.socials, { label: "Email", value: "halo@example.com", url: "mailto:halo@example.com" }].map(
-                (social) => (
+              {socials.map((social) => {
+                const SocialIcon = SOCIAL_ICONS[social.label]
+                return (
                   <a
                     key={social.label}
                     href={social.url}
                     target={social.url.startsWith("mailto") ? undefined : "_blank"}
                     rel="noreferrer"
-                    className="flex items-center justify-between border-2 border-foreground bg-background px-3 py-2.5 shadow-brutal transition hover:-translate-y-0.5 hover:bg-accent"
+                    className="flex items-center justify-between gap-3 border-2 border-foreground bg-background px-3 py-2.5 shadow-brutal transition hover:-translate-y-0.5 hover:bg-accent"
                   >
-                    <span className="text-sm font-bold">{social.label}</span>
-                    <Mail className="size-4" />
+                    <span className="flex min-w-0 items-center gap-2">
+                      <SocialIcon className="size-5 shrink-0" />
+                      <span className="text-sm font-bold">{social.label}</span>
+                    </span>
                   </a>
-                ),
-              )}
+                )
+              })}
             </CardContent>
           </Card>
 

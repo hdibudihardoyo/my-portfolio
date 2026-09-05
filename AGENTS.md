@@ -4,10 +4,11 @@
 - Vite 8 + React 19 + TypeScript 6 (App Router? no — single-page app).
 - Tailwind CSS v4 via `@tailwindcss/vite` plugin.
 - shadcn/ui components (`master-ui` style `base-nova`, library base-ui) in `src/ui/`.
-- Icons: `lucide-react` only.
+- Icons: `lucide-react` for UI icons; brand/tech logos via `react-icons/si` (Simple Icons) wrapped in `StackIcon` (`src/components/stack-icon.tsx`).
 - Routing: `react-router-dom` (BrowserRouter) in `src/App.tsx`.
 - i18n: `react-i18next` + `i18next-browser-languagedetector`; locales in `src/i18n/locales/{id,en}.json`; setup in `src/lib/i18n.ts`.
 - Theme: custom `ThemeProvider` (`src/components/theme-provider.tsx`), class `.dark` on `<html>`, stored in localStorage `theme`.
+- Auth: Google Identity Services via `AuthProvider` (`src/lib/auth.tsx`), reads `VITE_GOOGLE_CLIENT_ID` (see `.env.example`). Stores signed-in user in localStorage `portfolio.auth.user` until a backend/database exists; guestbook form is gated behind sign-in.
 
 ## Commands
 - `npm install`

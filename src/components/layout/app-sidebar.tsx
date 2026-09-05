@@ -1,29 +1,27 @@
-import { NavLink, useLocation } from "react-router-dom"
-import { useTranslation } from "react-i18next"
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { navGroups, profile } from "@/data/portfolio"
-import { Avatar, AvatarFallback } from "@/ui/avatar"
+import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { GoogleLogin } from "@/components/google-login";
+import { navLinks } from "@/data/portfolio";
+import { usePortfolioData } from "@/lib/use-portfolio-data";
+import pasphoto from "@/assets/images/pasphoto.jpg";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/ui/sidebar"
+} from "@/ui/sidebar";
 
 export function AppSidebar() {
-  const { t } = useTranslation()
-  const { pathname } = useLocation()
+  const { t } = useTranslation();
+  const { profile } = usePortfolioData();
+  const { pathname } = useLocation();
 
   const isActive = (url: string) =>
-    url === "/" ? pathname === "/" : pathname === url
+    url === "/" ? pathname === "/" : pathname === url;
 
   return (
     <Sidebar collapsible="icon" variant="inset">
@@ -37,9 +35,13 @@ export function AppSidebar() {
             >
               <div
                 data-slot="brand-logo"
-                className="flex aspect-square size-8 shrink-0 items-center justify-center border-2 border-foreground bg-accent text-base font-black text-accent-foreground"
+                className="flex aspect-square size-8 shrink-0 items-center justify-center overflow-hidden border-2 border-foreground bg-accent"
               >
-                {profile.name.charAt(0)}
+                <img
+                  src={pasphoto}
+                  alt={profile.name}
+                  className="size-full object-cover"
+                />
               </div>
               <div className="grid flex-1 leading-tight group-data-[collapsible=icon]:hidden">
                 <span className="truncate font-black uppercase tracking-tight">
@@ -54,62 +56,39 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarHeader>
 
-      <SidebarContent>
-        {navGroups.map((group) => (
-            <SidebarGroup key={group.labelKey}>
-              <SidebarGroupLabel>{t(group.labelKey)}</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {group.links.map((link) => {
-                    const MenuIcon = link.icon
-                    return (
-                      <SidebarMenuItem key={link.url}>
-                        <SidebarMenuButton
-                          isActive={isActive(link.url)}
-                          tooltip={t(link.titleKey)}
-                          render={<NavLink to={link.url} />}
-                        >
-                          <MenuIcon />
-                          <span>{t(link.titleKey)}</span>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    )
-                  })}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          ))}
+      <SidebarContent className="p-2">
+        <SidebarMenu className="gap-2">
+          {navLinks.map((link) => {
+            const MenuIcon = link.icon;
+            return (
+              <SidebarMenuItem key={link.url}>
+                <SidebarMenuButton
+                  isActive={isActive(link.url)}
+                  tooltip={t(link.titleKey)}
+                  render={<NavLink to={link.url} />}
+                >
+                  <MenuIcon />
+                  <span>{t(link.titleKey)}</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            );
+          })}
+        </SidebarMenu>
+
+        <div className="m-2 h-[2px] bg-foreground/20" />
+        <GoogleLogin />
       </SidebarContent>
 
-      <SidebarFooter>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              tooltip={t("nav.contact")}
-              render={<NavLink to="/contact" />}
-            >
-              <Avatar className="size-8 shrink-0 border-2 border-foreground">
-                <AvatarFallback className="bg-accent text-sm font-black text-accent-foreground">
-                  {profile.name.charAt(0)}
-                </AvatarFallback>
-              </Avatar>
-              <div className="grid flex-1 leading-tight group-data-[collapsible=icon]:hidden">
-                <span className="truncate font-semibold">{profile.name}</span>
-                <span className="truncate text-xs text-sidebar-foreground/60">
-                  {profile.role}
-                </span>
-              </div>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-        <div className="mt-1 flex items-center gap-1 px-2 group-data-[collapsible=icon]:hidden">
-          <ThemeToggle />
-          <LanguageToggle />
-        </div>
+      <SidebarFooter className="group-data-[collapsible=icon]:hidden">
+        <p className="px-1 font-mono text-[0.62rem] leading-relaxed text-sidebar-foreground/70">
+          <span className="block font-black tracking-widest text-sidebar-foreground">
+            {t("footer.heading")} {new Date().getFullYear()}
+          </span>
+          <span>{t("footer.rights", { name: profile.name })}</span>
+        </p>
       </SidebarFooter>
 
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

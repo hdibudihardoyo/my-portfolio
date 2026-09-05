@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react";
 import {
   Award,
   Boxes,
@@ -10,172 +10,195 @@ import {
   PenTool,
   Rocket,
   Trophy,
-} from "lucide-react"
+} from "lucide-react";
+
+export type ProjectType = "web" | "mobile" | "other";
+
+export type ProjectCategory = "personal" | "internship" | "freelance";
+
+export type AchievementCategory =
+  | "web"
+  | "database"
+  | "network"
+  | "data science"
+  | "programming";
+
+export type SkillCategory =
+  | "frontend"
+  | "backend"
+  | "mobile"
+  | "database"
+  | "tools";
 
 export type Project = {
-  title: string
-  description: string
-  tags: string[]
-  url?: string
-  repo?: string
-  year: string
-}
+  title: string;
+  description: string;
+  tags: string[];
+  image?: string;
+  url?: string;
+  repo?: string;
+  type: ProjectType;
+  category: ProjectCategory;
+};
 
 export type Skill = {
-  name: string
-  level: number
-}
+  name: string;
+  category: SkillCategory;
+};
 
-export type Achievement = {
-  title: string
-  year: string
-  icon: LucideIcon
-}
+export type AchievementItem = {
+  title: string;
+  year: string;
+  icon: string;
+  image?: string;
+  file?: string;
+  category: AchievementCategory;
+};
 
-export type NavGroup = {
-  labelKey: string
-  links: { titleKey: string; url: string; icon: LucideIcon }[]
-}
+export type NavLink = {
+  titleKey: string;
+  url: string;
+  icon: LucideIcon;
+};
 
-export const navGroups: NavGroup[] = [
+export type ProfileData = {
+  name: string;
+  role: string;
+  tagline: string;
+  bio: string;
+  location: string;
+};
+
+export type EducationItem = {
+  degree: string;
+  school: string;
+  grade: string;
+  logo?: string;
+};
+
+export type ExperienceItem = {
+  role: string;
+  company: string;
+  period: string;
+  logo?: string;
+  points: string[];
+};
+
+export type GuestbookEntry = {
+  author: string;
+  message: string;
+  date: string;
+};
+
+export type Stat = {
+  labelKey: string;
+  value: string;
+};
+
+export const navLinks: NavLink[] = [
+  { titleKey: "nav.dashboard", url: "/", icon: LayoutDashboard },
+  { titleKey: "nav.about", url: "/about", icon: Code2 },
+  { titleKey: "nav.projects", url: "/projects", icon: Boxes },
+  { titleKey: "nav.achievements", url: "/achievements", icon: Trophy },
+  { titleKey: "nav.contact", url: "/contact", icon: Mail },
+  { titleKey: "nav.guestbook", url: "/guestbook", icon: Rocket },
+];
+
+export const achievementIcons: Record<string, LucideIcon> = {
+  trophy: Trophy,
+  award: Award,
+  graduation: GraduationCap,
+  rocket: Rocket,
+  command: Command,
+  pen: PenTool,
+  code: Code2,
+};
+
+export const stats: Stat[] = [
+  { labelKey: "stats.projects", value: "12+" },
+  { labelKey: "stats.years", value: "3+" },
+  { labelKey: "stats.tech", value: "30" },
+  { labelKey: "stats.oss", value: "40+" },
+];
+
+export const socials = [
   {
-    labelKey: "nav.main",
-    links: [
-      { titleKey: "nav.dashboard", url: "/", icon: LayoutDashboard },
-      { titleKey: "nav.about", url: "/about", icon: Code2 },
-    ],
+    label: "GitHub",
+    value: "github.com/hdibudihardoyo",
+    url: "https://github.com/hdibudihardoyo",
   },
   {
-    labelKey: "nav.karya",
-    links: [
-      { titleKey: "nav.projects", url: "/projects", icon: Boxes },
-      { titleKey: "nav.achievements", url: "/achievements", icon: Trophy },
-      { titleKey: "nav.creations", url: "/creations", icon: PenTool },
-    ],
+    label: "LinkedIn",
+    value: "linkedin.com/in/hdibudihardoyo",
+    url: "https://www.linkedin.com/in/hdibudihardoyo",
   },
   {
-    labelKey: "nav.lainnya",
-    links: [
-      { titleKey: "nav.contact", url: "/contact", icon: Mail },
-      { titleKey: "nav.links", url: "/links", icon: Command },
-      { titleKey: "nav.guestbook", url: "/guestbook", icon: Rocket },
-    ],
+    label: "Instagram",
+    value: "instagram.com/hdibudihardoyo",
+    url: "https://www.instagram.com/hdibudihardoyo",
   },
-]
+  {
+    label: "Email",
+    value: "hdibudihardoyo@gmail.com",
+    url: "mailto:hdibudihardoyo@gmail.com",
+  },
+];
 
-export const profile = {
-  name: "Nama Kamu",
-  role: "Full-Stack Developer",
-  tagline: "Membangun web cepat & bisa diandalkan dengan gaya berani.",
-  bio: "Halo! Saya seorang pengembang yang suka membuat antarmuka tajam, cepat, dan menyenangkan — plus sedikit sentuhan main-main di sisi backend.",
-  stats: [
-    { labelKey: "stats.projects", value: "12+" },
-    { labelKey: "stats.years", value: "3+" },
-    { labelKey: "stats.tech", value: "8" },
-    { labelKey: "stats.oss", value: "40+" },
-  ],
-  education: [
-    {
-      degree: "S1 Informatika",
-      school: "Universitas Contoh",
-      year: "2019 - 2023",
-    },
-  ],
-  experience: [
-    {
-      role: "Full-Stack Developer",
-      company: "Studio Contoh",
-      period: "2023 - Sekarang",
-      points: [
-        "Membangun aplikasi web interior dengan React, TypeScript, dan Tailwind.",
-        "Turut merancang arsitektur API dan pipeline CI yang ringkas.",
-      ],
-    },
-  ],
-  socials: [
-    { label: "GitHub", value: "github.com/username", url: "https://github.com/" },
-    {
-      label: "LinkedIn",
-      value: "linkedin.com/in/username",
-      url: "https://www.linkedin.com/",
-    },
-    { label: "Email", value: "halo@example.com", url: "mailto:halo@example.com" },
-  ],
-}
+export const skillCategories: SkillCategory[] = [
+  "frontend",
+  "backend",
+  "mobile",
+  "database",
+  "tools",
+];
 
 export const skills: Skill[] = [
-  { name: "TypeScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "Tailwind CSS", level: 90 },
-  { name: "PostgreSQL", level: 70 },
-  { name: "Docker", level: 65 },
-]
+  { name: "TypeScript", category: "frontend" },
+  { name: "React.js", category: "frontend" },
+  { name: "Node.js", category: "backend" },
+  { name: "Next.js", category: "frontend" },
+  { name: "TailwindCSS", category: "frontend" },
+  { name: "HTML", category: "frontend" },
+  { name: "CSS", category: "frontend" },
+  { name: "Bootstrap", category: "frontend" },
+  { name: "JavaScript", category: "frontend" },
+  { name: "Vite", category: "frontend" },
+  { name: "Vue.js", category: "frontend" },
+  { name: "Shadcn UI", category: "frontend" },
+  { name: "NextAuth.js", category: "frontend" },
+  { name: "TanStack", category: "frontend" },
+  { name: "Axios", category: "frontend" },
+  { name: "Zod", category: "frontend" },
+  { name: "Framer Motion", category: "frontend" },
+  { name: "Express.js", category: "backend" },
+  { name: "PHP", category: "backend" },
+  { name: "Laravel", category: "backend" },
+  { name: "PostgreSql", category: "database" },
+  { name: "MySql", category: "database" },
+  { name: "Firebase", category: "database" },
+  { name: "Supabase", category: "database" },
+  { name: "Docker", category: "tools" },
+  { name: "Swagger", category: "tools" },
+  { name: "Jira", category: "tools" },
+  { name: "Slack", category: "tools" },
+  { name: "Npm", category: "tools" },
+  { name: "Github", category: "tools" },
+  { name: "React Native", category: "mobile" },
+  { name: "Flutter", category: "mobile" },
+];
 
-export const projects: Project[] = [
-  {
-    title: "Aplikasi Kasir Brutal",
-    description:
-      "Panel kasir real-time dengan mode offline, sinkron cloud, dan UI beraksen tajam.",
-    tags: ["React", "TypeScript", "Tailwind", "WebSocket"],
-    url: "https://example.com",
-    repo: "https://github.com/",
-    year: "2024",
-  },
-  {
-    title: "Landing Kit",
-    description:
-      "Kumpulan blok halaman beranimasi ringan, siap di-snapshot ulang untuk kampanye.",
-    tags: ["Vite", "Framer Motion", "MDX"],
-    url: "https://example.com",
-    repo: "https://github.com/",
-    year: "2023",
-  },
-  {
-    title: "CLI Auto-Jurnal",
-    description:
-      "CLI untuk mengotomatiskan catatan kerja harian dan tag waktu dari git log.",
-    tags: ["Node.js", "Commander", "SQLite"],
-    repo: "https://github.com/",
-    year: "2023",
-  },
-]
+export const projectTypes: ProjectType[] = ["web", "mobile", "other"];
 
-export const achievements: Achievement[] = [
-  {
-    title: "Pemenang Hackathon Nasional",
-    year: "2024",
-    icon: Trophy,
-  },
-  {
-    title: "Juara Lomba Desain UI",
-    year: "2023",
-    icon: Award,
-  },
-  {
-    title: "Top Contributor GitHub",
-    year: "2023",
-    icon: GraduationCap,
-  },
-]
+export const projectCategories: ProjectCategory[] = [
+  "personal",
+  "internship",
+  "freelance",
+];
 
-export const creations = [
-  {
-    title: "Tool Generator",
-    description: "Alat kecil untuk membuat data uji dan placeholder.",
-    url: "https://github.com/",
-  },
-]
-
-export const guestbookMessages = [
-  {
-    author: "Nadia",
-    message: "Suka banget sama estetik brutalism-nya. Keren!",
-    date: "2026-08-20",
-  },
-  {
-    author: "Rizky",
-    message: "Terima kasih sudah berbagi. Menginspirasi.",
-    date: "2026-07-11",
-  },
-]
+export const achievementCategories: AchievementCategory[] = [
+  "web",
+  "database",
+  "network",
+  "data science",
+  "programming",
+];

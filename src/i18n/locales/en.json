@@ -1,34 +1,38 @@
 {
-  "brand": "Portfolio",
+  "brand": "Hadi Budi Hardoyo",
   "nav": {
-    "main": "General",
-    "karya": "Work",
-    "lainnya": "More",
-    "dashboard": "Dashboard",
+    "dashboard": "Home",
     "about": "About",
     "projects": "Projects",
     "achievements": "Achievements",
-    "creations": "Creations",
     "contact": "Contact",
-    "links": "Links",
     "guestbook": "Guestbook"
   },
   "lang": {
     "label": "Language",
-    "id": "Bahasa Indonesia",
+    "id": "Indonesia",
     "en": "English"
   },
   "theme": {
     "light": "Light mode",
     "dark": "Dark mode"
   },
+  "auth": {
+    "login": "Sign in with Google",
+    "logout": "Sign out"
+  },
+  "footer": {
+    "heading": "COPYRIGHT ©",
+    "rights": "{{name}}. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading…",
+    "notFound": "Page not found."
+  },
   "hero": {
-    "kicker": "PORTFOLIO — 2026",
-    "hi": "Hi, I'm",
-    "name": "Your Name",
-    "role": "Full-Stack Developer",
-    "highlight": "with a bold, brutalist edge.",
-    "desc": "I build fast, robust web apps that feel alive — unafraid to push past design boundaries.",
+    "hi": "Hi,I'm",
+    "name": "Hadi Budi Hardoyo",
+    "role": "Frontend Developer",
     "work": "See work",
     "contact": "Contact me"
   },
@@ -40,64 +44,316 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "Technologies I use every day"
-  },
-  "recent": {
-    "title": "Latest Projects",
-    "viewAll": "View all projects"
+    "subtitle": "Tools I actually use.",
+    "filter": "Category",
+    "empty": "Nothing to show here yet.",
+    "cat": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile",
+      "database": "Database",
+      "tools": "Tools"
+    }
   },
   "dash": {
-    "cta": "Let's work together",
-    "ctaDesc": "Got an idea? Let's bring it to life with bold shapes."
+    "cta": "Let's build something",
+    "ctaDesc": "Got an idea? Big or small, let's make it happen."
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Short story & background",
-    "bio1": "I'm a full-stack developer who enjoys turning abstract ideas into real products. My focus is on speed, clarity, and the small details that make an experience delightful.",
-    "bio2": "When I'm not writing code, I love documenting experiments, riding around the city, and piling up scrap paper with sketch ideas.",
+    "subtitle": "Quick intro.",
+    "bio1": "Hey, I'm Hadi a frontend developer. My gig is turning ideas into interfaces people actually use. I chase fast, clear, and simple.",
+    "bio2": "When I'm not coding, I usually ride my motorcycle around town, or watch movies.",
     "education": "Education",
     "experience": "Experience",
-    "contact": "Quick contact",
     "currently": "Currently"
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "A selection of things I've built",
-    "year": "Year",
+    "subtitle": "Stuff I've built.",
     "repo": "Code",
     "demo": "Demo",
-    "empty": "Nothing to show here yet."
+    "empty": "Nothing to show here yet.",
+    "filterType": "Type",
+    "filterCategory": "Category",
+    "types": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "other": "Other"
+    },
+    "cat": {
+      "all": "All",
+      "personal": "Personal Project",
+      "internship": "Internship",
+      "freelance": "Freelance"
+    }
   },
   "achievements": {
     "title": "Achievements",
-    "subtitle": "Moments that make the work feel worth it"
-  },
-  "creations": {
-    "title": "Creations",
-    "subtitle": "Small experiments & personal tools",
-    "open": "Open"
+    "subtitle": "Not the biggest wins, but ones that make me proud.",
+    "view": "View certificate",
+    "cat": {
+      "all": "All",
+      "web": "Website",
+      "database": "Database",
+      "network": "Network",
+      "data science": "Data Science",
+      "programming": "Programming"
+    }
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Say hi or start a collaboration",
+    "subtitle": "Say hi, or ask me to build something.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "send": "Send message",
-    "note": "This will open your email app.",
-    "social": "Find me at"
-  },
-  "links": {
-    "title": "Links",
-    "subtitle": "One place for all my trails",
-    "visit": "Visit"
+    "social": "Find me around the web",
+    "placeholderName": "e.g. Adi",
+    "placeholderEmail": "name@gmail.com",
+    "placeholderMessage": "Hi, I'm interested in…",
+    "subject": "[Portfolio] Message from {{name}}"
   },
   "guestbook": {
     "title": "Guestbook",
-    "subtitle": "Leave a short trace for me",
-    "name": "Name",
+    "subtitle": "Drop a short note.",
     "message": "Message",
     "send": "Write message",
-    "entries": "Recent messages"
+    "loginNote": "Sign in with Google to leave a message.",
+    "entries": "Latest messages",
+    "placeholderMessage": "Leave a short note…",
+    "subject": "[Guestbook] Message from {{name}}"
+  },
+  "data": {
+    "profile": {
+      "name": "Hadi Budi Hardoyo",
+      "role": "Frontend Developer",
+      "tagline": "Building web that's fast, clean, and unapologetic.",
+      "bio": "Hi! I'm a developer who loves crafting bold, fast, memorable interfaces — with a side hobby tinkering on the backend.",
+      "location": "Cirebon, West Java, Indonesia"
+    },
+    "education": [
+      {
+        "degree": "Bachelor's in Informatics Engineering",
+        "school": "IKMI Cirebon College of Informatics and Computer Management",
+        "grade": "Grade: 3.64/4.00",
+        "logo": "https://picsum.photos/seed/logo-ikmi/160/160"
+      },
+      {
+        "degree": "Natural Sciences Major (Math & Science)",
+        "school": "Cirebon 8 State Senior High School",
+        "grade": "Grade: 88.00/100.00",
+        "logo": "https://picsum.photos/seed/logo-sman8/160/160"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Frontend Developer",
+        "company": "PT Kreasi Digital Inovatif",
+        "period": "Jan 2026 – Mar 2026",
+        "logo": "https://picsum.photos/seed/logo-kreasi/160/160",
+        "points": [
+          "Developed web applications using JavaScript with a focus on Vue.js, strengthening component architecture, state management, and modern front-end best practices.",
+          "Implemented workflow automation and a Docker-based CI/CD pipeline to speed up consistent builds and deployments.",
+          "Applied unit testing with Jest to keep code quality and reliability high before production releases.",
+          "Learned and applied deployment strategies to release and manage production-ready applications."
+        ]
+      },
+      {
+        "role": "Quality Control",
+        "company": "PT DAC Indonesia",
+        "period": "Oct 2025 – Jan 2026",
+        "logo": "https://picsum.photos/seed/logo-dac/160/160",
+        "points": [
+          "Performed quality inspection on 500–1,000+ product units daily to ensure full compliance with company quality standards.",
+          "Systematically identified and documented product defects, directly contributing to a 30% drop in defect rate.",
+          "Collaborated cross-functionally with Production, Engineering, and Warehouse teams to design corrective and preventive actions that continuously improved product quality."
+        ]
+      },
+      {
+        "role": "Administrative Staff",
+        "company": "CV Halona Fida",
+        "period": "Aug 2023 – Dec 2025",
+        "logo": "https://picsum.photos/seed/logo-halona/160/160",
+        "points": [
+          "Managed end-to-end e-commerce operations for 100+ products — catalog, stock, and price updates plus order processing — to keep customer transactions running smoothly.",
+          "Designed and executed social media content strategies (design, copywriting, publishing) that consistently boosted engagement and product visibility.",
+          "Periodically analyzed sales and content performance, coordinating with the team to optimize product and marketing strategies."
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Book Buwuhan",
+        "description": "A digital guest-book for tracking donation contributions during traditional ceremonies.",
+        "tags": ["React", "TypeScript", "Tailwind"],
+        "image": "/src/assets/images/Macbook-Air-buku-buwuhan.vercel.app.png",
+        "url": "https://buku-buwuhan.vercel.app",
+        "repo": "https://github.com/hdibudihardoyo/buku-buwuhan",
+        "type": "web",
+        "category": "personal"
+      },
+      {
+        "title": "Kana Artspace",
+        "description": "A web-based POS system for Kana Artspace food & beverage.",
+        "tags": ["React", "Tailwind"],
+        "image": "/src/assets/images/Macbook-Air-kana-artspace.png",
+        "url": "https://kana-artspace.vercel.app",
+        "repo": "https://github.com/hdibudihardoyo/kana-artspace",
+        "type": "web",
+        "category": "freelance"
+      },
+      {
+        "title": "NFEducation",
+        "description": "An online learning platform for MEXT Japan scholarship preparation.",
+        "tags": ["Next.js", "TypeScript", "Tailwind"],
+        "image": "/src/assets/images/Macbook-Air-nfeducation.png",
+        "url": "https://nfeducation.id",
+        "repo": "https://github.com/hdibudihardoyo/NFEducationn",
+        "type": "web",
+        "category": "freelance"
+      },
+      {
+        "title": "Portfolio",
+        "description": "A brutalism-style personal portfolio with i18n, theming, and guestbook.",
+        "tags": ["React", "Vite", "Tailwind", "TypeScript"],
+        "image": "/src/assets/images/Macbook-Air-portfolio.png",
+        "url": "https://hdibudihardoyo.my.id",
+        "repo": "https://github.com/hdibudihardoyo/my-portfolio",
+        "type": "web",
+        "category": "personal"
+      },
+      {
+        "title": "Sendo Express",
+        "description": "An expedition management app: rate lookup, package tracking, and pickup points.",
+        "tags": ["Vite", "Tailwind", "TypeScript", "React"],
+        "image": "/src/assets/images/Macbook-Air-sendo-express.vercel.app.png",
+        "url": "https://sendo-express.vercel.app",
+        "repo": "https://github.com/hdibudihardoyo/FE-sendo-express",
+        "type": "web",
+        "category": "personal"
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Dicoding — Belajar Pemrograman Web Dasar",
+        "year": "2025",
+        "icon": "graduation",
+        "file": "/src/assets/pdf/Dicoding/Belajar Pemograman Web Dasar.pdf",
+        "category": "web"
+      },
+      {
+        "title": "Dicoding — Belajar Dasar JavaScript",
+        "year": "2025",
+        "icon": "graduation",
+        "file": "/src/assets/pdf/Dicoding/Belajar Dasar Java Script.pdf",
+        "category": "web"
+      },
+      {
+        "title": "VSGA Kominfo — Junior Web Developer",
+        "year": "2024",
+        "icon": "award",
+        "file": "/src/assets/pdf/VGSA KOMINFO/Sertifikat_HADI BUDI HARDOYO_Junior Web Developer.pdf",
+        "category": "web"
+      },
+      {
+        "title": "SQL Database",
+        "year": "2024",
+        "icon": "rocket",
+        "file": "/src/assets/pdf/Sql Database/Sql Database.pdf",
+        "category": "database"
+      },
+      {
+        "title": "Cisco — CCNA1: Introduction to Networks",
+        "year": "2023",
+        "icon": "command",
+        "file": "/src/assets/pdf/CCNA 1/HADIBUDI HARDOYO-CCNA1-TI-2023-KI-letter.pdf",
+        "category": "network"
+      },
+      {
+        "title": "Cisco — CCNA2: Switching, Routing, and Wireless Essentials",
+        "year": "2025",
+        "icon": "command",
+        "file": "/src/assets/pdf/CCNA 2/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_hdibudihardoyo-gmail-com_95ba368f-00b8-44b7-bc1d-1473c97dfe72.pdf",
+        "category": "network"
+      },
+      {
+        "title": "Cisco — Introduction to IoT",
+        "year": "2025",
+        "icon": "command",
+        "file": "/src/assets/pdf/IOT/_certificate_hdibudihardoyo-gmail-com_25ef47c2-731f-412f-9902-a9909e74cb51.pdf",
+        "category": "network"
+      },
+      {
+        "title": "Cisco — Network Security",
+        "year": "2025",
+        "icon": "command",
+        "file": "/src/assets/pdf/Network Security/Network_Security_certificate_hdibudihardoyo-gmail-com_b3a4b152-f705-4fb7-b13b-b781a3c3e34e.pdf",
+        "category": "network"
+      },
+      {
+        "title": "Linux Essentials",
+        "year": "2025",
+        "icon": "command",
+        "file": "/src/assets/pdf/Sistem Operasi Linux/Linux_Essentials_certificate_hdibudihardoyo-gmail-com_fcad1c4b-6454-42c6-a4b9-bad75be562bc.pdf",
+        "category": "network"
+      },
+      {
+        "title": "Machine Learning Professional",
+        "year": "2025",
+        "icon": "trophy",
+        "file": "/src/assets/pdf/Machine Learning Professional/hadi-budi-hardoyo-51c74c94-b9a1-4df2-bea1-f6ecc1b8b549-certificate.pdf",
+        "category": "data science"
+      },
+      {
+        "title": "Data Engineering Professional",
+        "year": "2025",
+        "icon": "trophy",
+        "file": "/src/assets/pdf/Data Engineering Professional/hadi-budi-hardoyo-729a8e86-4cbf-4766-808f-4ee3096e37b0-certificate - Salin.pdf",
+        "category": "data science"
+      },
+      {
+        "title": "Data Engineering Master",
+        "year": "2025",
+        "icon": "trophy",
+        "file": "/src/assets/pdf/Data Engineering Master/hadi-budi-hardoyo-0532545a-9325-48e5-812e-e8a7835d64c3-certificate.pdf",
+        "category": "data science"
+      },
+      {
+        "title": "Applications & Use Cases Professional",
+        "year": "2025",
+        "icon": "trophy",
+        "file": "/src/assets/pdf/Applications & Use Cases Professional/hadi-budi-hardoyo-56773bd4-4315-401f-bec8-2c5dc2705627-certificate.pdf",
+        "category": "data science"
+      },
+      {
+        "title": "Python Institute — PCAP: Certified Associate in Python",
+        "year": "2023",
+        "icon": "code",
+        "file": "/src/assets/pdf/Python/HADIBUDI HARDOYO-PCAP-TI-2023-certificate.pdf",
+        "category": "programming"
+      },
+      {
+        "title": "C++ Institute — CPA: Certified Associate Programmer",
+        "year": "2023",
+        "icon": "code",
+        "file": "/src/assets/pdf/C++/HADIBUDI HARDOYO-CPA-TI-2023-certificate-4.pdf",
+        "category": "programming"
+      }
+    ],
+    "guestbook": [
+      {
+        "author": "Dinda",
+        "message": "The brutalism aesthetic is awesome. Love it!",
+        "date": "2026-08-20"
+      },
+      {
+        "author": "Fajar",
+        "message": "Thanks for sharing. Truly inspiring.",
+        "date": "2026-07-11"
+      }
+    ]
   }
 }
